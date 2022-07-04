@@ -7,7 +7,7 @@ public class CoreGameSignals : MonoBehaviour
 {
     #region self vars
     #region public vars
-    public CoreGameSignals Instance;
+    public static CoreGameSignals Instance;
     #endregion
     #region serializefield vars
     #endregion

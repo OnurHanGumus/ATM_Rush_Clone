@@ -7,7 +7,7 @@ public class UISignals : MonoBehaviour
 {
     #region self vars
     #region public vars
-    public UISignals Instance;
+    public static UISignals Instance;
     #endregion
     #region serializefield vars
     #endregion
@@ -30,5 +30,6 @@ public class UISignals : MonoBehaviour
     }
     #endregion
     public UnityAction onOpenPanel = delegate { };
+    public UnityAction onClosePanel = delegate { };
     public UnityAction onUpdateStageData = delegate { };
 }

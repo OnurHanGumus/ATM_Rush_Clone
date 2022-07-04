@@ -7,7 +7,7 @@ public class InputSignals : MonoBehaviour
 {
     #region self vars
     #region public vars
-    public InputSignals Instance;
+    public static InputSignals Instance;
     #endregion
     #region serializefield vars
     #endregion
@@ -30,5 +30,9 @@ public class InputSignals : MonoBehaviour
     }
     #endregion
 
+    public UnityAction onFirstTimeTouchTaken = delegate { };
+    public UnityAction onInputTaken = delegate { };
+    public UnityAction onInputDragged = delegate { };
+    public UnityAction onInputReleased = delegate { };
 
 }
