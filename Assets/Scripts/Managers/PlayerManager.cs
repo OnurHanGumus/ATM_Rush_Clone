@@ -36,11 +36,14 @@ public class PlayerManager : MonoBehaviour
     {
         CoreGameSignals.Instance.onPlay += ActivateMovement;
         InputSignals.Instance.onInputDragged += OnInputDragged;
+        InputSignals.Instance.onInputReleased += OnInputReleased;
     }
     private void UnsubscribeEvents()
     {
         CoreGameSignals.Instance.onPlay -= ActivateMovement;
         InputSignals.Instance.onInputDragged -= OnInputDragged;
+        InputSignals.Instance.onInputReleased -= OnInputReleased;
+
 
     }
 
@@ -68,5 +71,9 @@ public class PlayerManager : MonoBehaviour
     private void OnInputDragged(HorizontalInputParams horizontalInput)
     {
         playerMovementController.SetSideForces(horizontalInput);
+    }
+    private void OnInputReleased()
+    {
+        playerMovementController.SetSideForces(0);
     }
 }

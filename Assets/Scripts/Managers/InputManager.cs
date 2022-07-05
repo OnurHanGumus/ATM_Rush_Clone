@@ -34,6 +34,10 @@ public class InputManager : MonoBehaviour
                 ClampValues = 3.5f
             });
         }
+        if (fixedJoystick.Horizontal == 0f)
+        {
+            InputSignals.Instance.onInputReleased?.Invoke();
+        }
        
     }
 

@@ -23,10 +23,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         _rig = GetComponent<Rigidbody>();
     }
-    void Start()
-    {
-        
-    }
+ 
 
     // Update is called once per frame
     void FixedUpdate()
@@ -77,6 +74,12 @@ public class PlayerMovementController : MonoBehaviour
         _clamp = horizontalInput.ClampValues;
 
         ClampControl();
+    }
+    public void SetSideForces(float horizontalInput)
+    {
+
+        _horizontalInput = horizontalInput;
+
     }
 
     private void ClampControl()
