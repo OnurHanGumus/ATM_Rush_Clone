@@ -1,3 +1,4 @@
+using Keys;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,10 @@ public class PlayerMovementController : MonoBehaviour
     #endregion
     #region private vars
     Rigidbody _rig;
-    bool _isReadyToMove = false;
+    private bool _isReadyToMove = false;
     private PlayerMovementData _playerMovementData;
+    private float _horizontalInput = 0f;
+    private float _clamp = 0f;
     #endregion
     #endregion
 
@@ -50,7 +53,10 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Move()
     {
-        _rig.velocity = new Vector3(0, 0, _playerMovementData.ForwardSpeed);
+        
+         _rig.velocity = new Vector3(_horizontalInput * _playerMovementData.SidewaysSpeed, _rig.velocity.y, _playerMovementData.ForwardSpeed);
+
+        
     }
 
     private void Stop()
@@ -61,5 +67,23 @@ public class PlayerMovementController : MonoBehaviour
     public void SetMovementData(PlayerMovementData movementData)
     {
         _playerMovementData = movementData;
+    }
+
+    public void SetSideForces(HorizontalInputParams horizontalInput)
+    {
+
+        _horizontalInput = horizontalInput.XValue;
+
+        _clamp = horizontalInput.ClampValues;
+
+        ClampControl();
+    }
+
+    private void ClampControl()
+    {
+        if ((_horizontalInput < 0 && _rig.position.x <= -_clamp) || (_horizontalInput > 0 && _rig.position.x >= _clamp))
+        {
+            _horizontalInput = 0;
+        }
     }
 }

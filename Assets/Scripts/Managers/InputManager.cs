@@ -1,3 +1,4 @@
+using Keys;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,15 @@ public class InputManager : MonoBehaviour
     #region public vars
     #endregion
     #region serializefield vars
-    
+    [SerializeField] private FixedJoystick fixedJoystick;
     #endregion
     #region private vars
     #endregion
     #endregion
+    private void Awake()
+    {
 
+    }
     void Start()
     {
         SubscribeEvents();
@@ -22,20 +26,24 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //InputSignals.Instance.onInputDragged?.Invoke(new HorizontalInputParams()
-        //{
-        //    XValue = _moveVector.x,
-        //    ClampValues = new Vector2(Data.ClampSides.x, Data.ClampSides.y)
-        //});
+        if (fixedJoystick.Horizontal > 0.1f || fixedJoystick.Horizontal < -0.1f)
+        {
+            InputSignals.Instance.onInputDragged?.Invoke(new HorizontalInputParams()
+            {
+                XValue = fixedJoystick.Horizontal,
+                ClampValues = 3.5f
+            });
+        }
+       
     }
 
     private void SubscribeEvents()
     {
-        InputSignals.Instance.onInputDragged += OnInputDragged;
+        //InputSignals.Instance.onInputDragged += OnInputDragged;
     }
     private void UnsubscribeEvents()
     {
-        InputSignals.Instance.onInputDragged -= OnInputDragged;
+        //InputSignals.Instance.onInputDragged -= OnInputDragged;
 
     }
 
@@ -43,10 +51,10 @@ public class InputManager : MonoBehaviour
     {
         UnsubscribeEvents();
     }
-    private void OnInputDragged()
-    {
-
-    }
+    //private void OnInputDragged(HorizontalInputParams horizontalInput)
+    //{
+    //    PlayerManager.
+    //}
 
     
 

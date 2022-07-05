@@ -1,3 +1,4 @@
+using Keys;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,10 +35,13 @@ public class PlayerManager : MonoBehaviour
     private void SubscribeEvents()
     {
         CoreGameSignals.Instance.onPlay += ActivateMovement;
+        InputSignals.Instance.onInputDragged += OnInputDragged;
     }
     private void UnsubscribeEvents()
     {
         CoreGameSignals.Instance.onPlay -= ActivateMovement;
+        InputSignals.Instance.onInputDragged -= OnInputDragged;
+
     }
 
     private void OnDisable()
@@ -59,5 +63,10 @@ public class PlayerManager : MonoBehaviour
     private void SendPlayerDataToController()
     {
         playerMovementController.SetMovementData(playerData.playerMovementData);
+    }
+
+    private void OnInputDragged(HorizontalInputParams horizontalInput)
+    {
+        playerMovementController.SetSideForces(horizontalInput);
     }
 }

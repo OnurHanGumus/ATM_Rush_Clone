@@ -1,3 +1,4 @@
+using Keys;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +33,7 @@ public class InputSignals : MonoBehaviour
 
     public UnityAction onFirstTimeTouchTaken = delegate { };
     public UnityAction onInputTaken = delegate { };
-    public UnityAction onInputDragged = delegate { };
+    public UnityAction<HorizontalInputParams> onInputDragged = delegate { };
     public UnityAction onInputReleased = delegate { };
 
 }
