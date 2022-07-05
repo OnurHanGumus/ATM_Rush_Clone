@@ -1,3 +1,4 @@
+using Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,7 @@ public class UISignals : MonoBehaviour
         }
     }
     #endregion
-    public UnityAction onOpenPanel = delegate { };
-    public UnityAction onClosePanel = delegate { };
+    public UnityAction<UIPanels> onOpenPanel = delegate { };
+    public UnityAction<UIPanels> onClosePanel = delegate { };
     public UnityAction onUpdateStageData = delegate { };
 }
