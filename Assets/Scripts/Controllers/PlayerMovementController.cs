@@ -89,4 +89,9 @@ public class PlayerMovementController : MonoBehaviour
             _horizontalInput = 0;
         }
     }
+
+    public void PushPlayerBack()
+    {
+        _rig.AddForce(new Vector3(0, 0, -500), ForceMode.VelocityChange);
+    }
 }

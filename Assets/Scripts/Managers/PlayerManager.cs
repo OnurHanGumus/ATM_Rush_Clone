@@ -1,7 +1,9 @@
 using Keys;
+using Signals;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Controllers;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -9,16 +11,19 @@ public class PlayerManager : MonoBehaviour
     #region public vars
     #endregion
     #region serializefield vars
+    [SerializeField] PlayerScoreTextController _playerScoreTextController;
+
     #endregion
     #region private vars
-    PlayerMovementController playerMovementController;
+    PlayerMovementController _playerMovementController;
+    
     private PlayerData playerData;
     #endregion
     #endregion
 
     private void Awake()
     {
-        playerMovementController = GetComponent<PlayerMovementController>();
+        _playerMovementController = GetComponent<PlayerMovementController>();
         playerData = GetPlayerData();
         SendPlayerDataToController();
     }
@@ -37,12 +42,16 @@ public class PlayerManager : MonoBehaviour
         CoreGameSignals.Instance.onPlay += ActivateMovement;
         InputSignals.Instance.onInputDragged += OnInputDragged;
         InputSignals.Instance.onInputReleased += OnInputReleased;
+        PlayerSignals.Instance.onPlayerAndObstacleCrash += OnPlayerAndObstacleCrash;
+        ScoreSignals.Instance.onTotalScoreUpdated += UpdateCurrentScore;
     }
     private void UnsubscribeEvents()
     {
         CoreGameSignals.Instance.onPlay -= ActivateMovement;
         InputSignals.Instance.onInputDragged -= OnInputDragged;
         InputSignals.Instance.onInputReleased -= OnInputReleased;
+        PlayerSignals.Instance.onPlayerAndObstacleCrash -= OnPlayerAndObstacleCrash;
+        ScoreSignals.Instance.onTotalScoreUpdated -= UpdateCurrentScore;
 
 
     }
@@ -54,26 +63,35 @@ public class PlayerManager : MonoBehaviour
 
     private void ActivateMovement()
     {
-        playerMovementController.ActivateMovement();
+        _playerMovementController.ActivateMovement();
     }
 
     private void DeactivateMovement()
     {
-        playerMovementController.DeactivateMovement();
+        _playerMovementController.DeactivateMovement();
 
     }
 
     private void SendPlayerDataToController()
     {
-        playerMovementController.SetMovementData(playerData.playerMovementData);
+        _playerMovementController.SetMovementData(playerData.playerMovementData);
     }
 
     private void OnInputDragged(HorizontalInputParams horizontalInput)
     {
-        playerMovementController.SetSideForces(horizontalInput);
+        _playerMovementController.SetSideForces(horizontalInput);
     }
     private void OnInputReleased()
     {
-        playerMovementController.SetSideForces(0);
+        _playerMovementController.SetSideForces(0);
+    }
+
+    private void OnPlayerAndObstacleCrash()
+    {
+        _playerMovementController.PushPlayerBack();
+    }
+    private void UpdateCurrentScore(int score)
+    {
+        _playerScoreTextController.UpdateScoreText(score);
     }
 }
