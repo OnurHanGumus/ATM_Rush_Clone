@@ -152,10 +152,10 @@ public class CollectableManager : MonoBehaviour
         {
             if (atmyeGirenObje.localPosition.z <= transform.localPosition.z)
             {
+                ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(_collectableStackManager.CalculateStackValue()); 
                 collectableState = CollectableState.notCollected;
                 CollectableBreak();
             }
-            //DestroyCollectable();
         }
 
         
