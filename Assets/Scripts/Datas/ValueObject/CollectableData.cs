@@ -12,5 +12,6 @@ public class CollectableData
 public class LerpData
 {
     public float lerpSpaces = 2;
-    public float lerpSoftness = 20;
+    public float lerpSoftnessX = 20;
+    public float lerpSoftnessZ = 20;
 }

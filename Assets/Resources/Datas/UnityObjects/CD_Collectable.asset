@@ -15,5 +15,6 @@ MonoBehaviour:
   Data:
     lerpData:
       lerpSpaces: 2
-      lerpSoftness: 20
+      lerpSoftnessX: 20
+      lerpSoftnessZ: 60
   collectableType: 1

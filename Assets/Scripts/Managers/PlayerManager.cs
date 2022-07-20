@@ -52,8 +52,6 @@ public class PlayerManager : MonoBehaviour
         InputSignals.Instance.onInputReleased -= OnInputReleased;
         PlayerSignals.Instance.onPlayerAndObstacleCrash -= OnPlayerAndObstacleCrash;
         ScoreSignals.Instance.onTotalScoreUpdated -= UpdateCurrentScore;
-
-
     }
 
     private void OnDisable()
@@ -69,7 +67,6 @@ public class PlayerManager : MonoBehaviour
     private void DeactivateMovement()
     {
         _playerMovementController.DeactivateMovement();
-
     }
 
     private void SendPlayerDataToController()

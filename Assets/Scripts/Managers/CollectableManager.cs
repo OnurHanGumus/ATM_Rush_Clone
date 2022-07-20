@@ -107,13 +107,14 @@ public class CollectableManager : MonoBehaviour
         if (collectableState.Equals(CollectableState.collected))
         {
             collectableState = CollectableState.notCollected;
-            transform.tag = "Collectable";
             CollectableBreak();
         }
     }
 
     private void CollectableBreak()
     {
+        transform.tag = "Collectable";
+
         _collectableMovementController.DeactivateMovement();
         _collectableMovementController.AddDropForce();
     }

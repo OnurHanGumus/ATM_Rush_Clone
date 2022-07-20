@@ -143,7 +143,6 @@ public class CollectableStackManager : MonoBehaviour
 
         DestroyCollectables(atmyeGirenObjeninIndeksi);
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());//Oyuncu üzerindeki collectablenin azaldýðýnýn stackmanagere bildirilmesi için var
-
     }
 
     private void DestroyCollectables(int kazaYapanObjeninIndeksi)
@@ -156,6 +155,7 @@ public class CollectableStackManager : MonoBehaviour
                 collectables.RemoveAt(i);
             }
         }
+        collectables.TrimExcess();
 
     }
 
@@ -169,14 +169,14 @@ public class CollectableStackManager : MonoBehaviour
 
     public int CalculateStackValue()
     {
+        int _score = 0;
         _score = 0;
-        //_score = 0;
-        //int collectableLength = collectables.Count;
-        //for (int i = 1; i < collectableLength; i++)
-        //{
-        //    _score += (int)collectables[i].GetComponent<CollectableManager>().collectableType;
-        //}
-        CalculateStackValue2();
+        int collectableLength = collectables.Count;
+        for (int i = 1; i < collectableLength; i++)
+        {
+            _score += (int)collectables[i].GetComponent<CollectableManager>().collectableType;
+        }
+        //CalculateStackValue2();
 
         return _score;
     }

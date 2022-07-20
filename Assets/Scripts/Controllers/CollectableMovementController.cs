@@ -52,7 +52,11 @@ public class CollectableMovementController : MonoBehaviour
     {
         Vector3 targetPos = _connectedNode.position;
         targetPos.z += _collectableData.lerpData.lerpSpaces;
-        transform.position = Vector3.Lerp(transform.position, targetPos, _collectableData.lerpData.lerpSoftness * Time.deltaTime);
+        //transform.position = Vector3.Lerp(transform.position, targetPos, _collectableData.lerpData.lerpSoftness * Time.deltaTime);
+
+        _rig.position = new Vector3(Mathf.Lerp(_rig.position.x, targetPos.x, Time.deltaTime * _collectableData.lerpData.lerpSoftnessX), 
+            transform.position.y, 
+            Mathf.Lerp(_rig.position.z, targetPos.z, Time.deltaTime * _collectableData.lerpData.lerpSoftnessZ));
     }
 
     private void Stop()
