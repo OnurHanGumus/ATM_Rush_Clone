@@ -5,8 +5,8 @@ namespace Enums
     [Serializable]
     public enum AnimationStates
     {
-        idle,
-        move,
-        finish
+        Idle,
+        Run,
+        Finish
     }
 }
