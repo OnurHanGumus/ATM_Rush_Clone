@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45c59a2d-5edf-40dd-8aed-7e8923ce9fac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMeshController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMeshController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Card.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Card.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Collectable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Collectable.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/DevelopmentGate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/DevelopmentGate.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/EndArea.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/EndArea.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/HandObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/HandObstacle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Road.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Road.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/SpikedObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/SpikedObstacle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/SpinningObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/SpinningObstacle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/SwingAxe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/SwingAxe.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/WalkingPlatform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/WalkingPlatform.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Scene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Scene/Art Scene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Scene/Art Scene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ATM.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ATM.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleSceneLightingSettings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleSceneLightingSettings.lighting" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CollectableStackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CollectableStackManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Scenes/GamePlay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMeshController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMeshController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CollectableManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CollectableManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +84,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

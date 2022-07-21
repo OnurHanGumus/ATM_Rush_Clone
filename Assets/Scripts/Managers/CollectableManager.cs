@@ -86,6 +86,7 @@ public class CollectableManager : MonoBehaviour
         if (upgradedNode.Equals(transform))
         {
             ++collectableType;
+            print("Upgrade Collide");
             onCollectableTypeChanged?.Invoke(collectableType);
         }
     }
