@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Enums;
 using Signals;
+using UnityEngine.Events;
 
 public class CollectableManager : MonoBehaviour
 {
@@ -25,13 +27,14 @@ public class CollectableManager : MonoBehaviour
     #endregion
     #endregion
 
+    public UnityAction<CollectableType> onCollectableTypeChanged = delegate { };
+    
     private void Awake()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
+        // _meshRenderer = GetComponent<MeshRenderer>();
         _collectableMovementController = GetComponent<CollectableMovementController>();
         SendCollectableDataToController();
         collectableType = GetCollectableType();
-        ChangeMeshRenderer();
 
         _collectableStackManager = FindObjectOfType<CollectableStackManager>();
 
@@ -40,9 +43,12 @@ public class CollectableManager : MonoBehaviour
     void Start()
     {
         SubscribeEvents();
-        //_connectedNode = _collectableStackManager.GetLastNodeOfList(transform);
-
     }
+
+    // private void OnEnable()
+    // {
+    //     SubscribeEvents();
+    // }
 
     private void SubscribeEvents()
     {
@@ -71,13 +77,7 @@ public class CollectableManager : MonoBehaviour
     {
         UnsubscribeEvents();
     }
-
-    private void ChangeMeshRenderer()
-    {
-        _meshRenderer.material = GetMaterial();
-
-    }
-    private Material GetMaterial() => Resources.Load<Material>("Materials/" + collectableType.ToString());
+    
     private CollectableData GetCollectableData() => Resources.Load<CD_Collectable>("Datas/UnityObjects/CD_Collectable").Data;
     private CollectableType GetCollectableType() => Resources.Load<CD_Collectable>("Datas/UnityObjects/CD_Collectable").collectableType;
 
@@ -86,8 +86,8 @@ public class CollectableManager : MonoBehaviour
         if (upgradedNode.Equals(transform))
         {
             ++collectableType;
-            ChangeMeshRenderer();
-        }   
+            onCollectableTypeChanged?.Invoke(collectableType);
+        }
     }
 
     private void OnCollectableAndObstacleCollide(Transform crashedNode)

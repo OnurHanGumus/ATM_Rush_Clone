@@ -1,16 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45c59a2d-5edf-40dd-8aed-7e8923ce9fac" name="Changes" comment="" />
+    <list default="true" id="45c59a2d-5edf-40dd-8aed-7e8923ce9fac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMeshController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMeshController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Card.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Card.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Collectable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Collectable.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/DevelopmentGate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/DevelopmentGate.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/EndArea.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/EndArea.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/HandObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/HandObstacle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Road.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Road.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/SpikedObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/SpikedObstacle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/SpinningObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/SpinningObstacle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/SwingAxe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/SwingAxe.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/WalkingPlatform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/WalkingPlatform.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Scene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Scene/Art Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Scene/Art Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ATM.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ATM.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleSceneLightingSettings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleSceneLightingSettings.lighting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CollectableStackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CollectableStackManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2CGi2lP6DgsIS551KCjIEjgloZf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45c59a2d-5edf-40dd-8aed-7e8923ce9fac" name="Changes" comment="" />
+      <created>1658435127110</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658435127110</updated>
+      <workItem from="1658435140672" duration="2011000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
 </project>

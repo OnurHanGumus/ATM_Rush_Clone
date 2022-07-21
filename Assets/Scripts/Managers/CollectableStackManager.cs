@@ -142,7 +142,7 @@ public class CollectableStackManager : MonoBehaviour
         int atmyeGirenObjeninIndeksi = collectables.IndexOf(atmyeGirenObje);
 
         DestroyCollectables(atmyeGirenObjeninIndeksi);
-        ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());//Oyuncu üzerindeki collectablenin azaldýðýnýn stackmanagere bildirilmesi için var
+        ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());//Oyuncu Ã¼zerindeki collectablenin azaldÄ±ÄŸÄ±nÄ±n stackmanagere bildirilmesi iÃ§in var
     }
 
     private void DestroyCollectables(int kazaYapanObjeninIndeksi)

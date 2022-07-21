@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - WinZone
   - ATM
+  - Portal
   layers:
   - Default
   - TransparentFX
