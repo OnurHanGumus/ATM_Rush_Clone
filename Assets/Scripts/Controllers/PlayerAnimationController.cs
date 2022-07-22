@@ -1,5 +1,3 @@
-using System;
-using Managers;
 using UnityEngine;
 using Enums;
 
@@ -11,13 +9,10 @@ namespace Controllers
 
         #region Serialized Variables
 
-        [SerializeField] private Animator _animator;
-        [SerializeField] private AnimationStates _animationStates;
+        [SerializeField] private Animator animator;
+        [SerializeField] private AnimationStates animationStates;
         
         #endregion
-        #region private vars
-        #endregion
-
         #endregion
 
         private void Awake()
@@ -52,21 +47,21 @@ namespace Controllers
 
         private void ChangeAnimationData(AnimationStates animationStates)
         {
-            _animationStates = animationStates;
+            this.animationStates = animationStates;
         }
         
         private void StartIdleAnim()
         {
             ChangeAnimationData(AnimationStates.Idle);
             ResetAllAnims();
-            _animator.SetBool("Idle",true);
+            animator.SetBool("Idle",true);
         }
         
         private void StartRunAnim()
         {
             ChangeAnimationData(AnimationStates.Run);
             ResetAllAnims();
-            _animator.SetBool("Run",true);
+            animator.SetBool("Run",true);
         }
         
         private void StartFinishAnim()
@@ -76,8 +71,8 @@ namespace Controllers
 
         private void ResetAllAnims()
         {
-            _animator.SetBool("Idle" ,false);
-            _animator.SetBool("Run" ,false);
+            animator.SetBool("Idle" ,false);
+            animator.SetBool("Run" ,false);
         }
         #endregion
     }

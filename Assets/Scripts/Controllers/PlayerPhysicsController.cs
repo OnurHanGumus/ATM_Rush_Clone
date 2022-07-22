@@ -23,9 +23,5 @@ namespace Controllers
                 PlayerSignals.Instance.onPlayerAndObstacleCrash?.Invoke();
             }
         }
-
-    
-
-
     }
 }

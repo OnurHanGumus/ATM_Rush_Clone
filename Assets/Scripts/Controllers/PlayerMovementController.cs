@@ -1,31 +1,35 @@
 using Keys;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
     #region self vars
+
     #region public vars
+
     #endregion
+
     #region serializefield vars
+
     #endregion
+
     #region private vars
+
     Rigidbody _rig;
     private bool _isReadyToMove = false;
     private PlayerMovementData _playerMovementData;
     private float _horizontalInput = 0f;
     private float _clamp = 0f;
+
     #endregion
+
     #endregion
 
     private void Awake()
     {
         _rig = GetComponent<Rigidbody>();
     }
- 
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (_isReadyToMove)
@@ -50,10 +54,8 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Move()
     {
-        
-         _rig.velocity = new Vector3(_horizontalInput * _playerMovementData.SidewaysSpeed, _rig.velocity.y, _playerMovementData.ForwardSpeed);
-
-        
+        _rig.velocity = new Vector3(_horizontalInput * _playerMovementData.SidewaysSpeed, _rig.velocity.y,
+            _playerMovementData.ForwardSpeed);
     }
 
     private void Stop()
@@ -68,18 +70,16 @@ public class PlayerMovementController : MonoBehaviour
 
     public void SetSideForces(HorizontalInputParams horizontalInput)
     {
-
         _horizontalInput = horizontalInput.XValue;
 
         _clamp = horizontalInput.ClampValues;
 
         ClampControl();
     }
+
     public void SetSideForces(float horizontalInput)
     {
-
         _horizontalInput = horizontalInput;
-
     }
 
     private void ClampControl()

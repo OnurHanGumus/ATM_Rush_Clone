@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45c59a2d-5edf-40dd-8aed-7e8923ce9fac" name="Changes" comment="" />
+    <list default="true" id="45c59a2d-5edf-40dd-8aed-7e8923ce9fac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Materials/CollibtableMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Materials/CollibtableMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Models/Collibtable.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Models/Collibtable.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Textures/Atm_rush_zip_texture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Textures/Atm_rush_zip_texture.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Gameplay 1.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Gameplay 1.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AtmManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AtmManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Degistirme Gecidi Panel Yesil Transparan.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/Degistirme Gecidi Panel Yesil Transparan.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Degistirme Gecidi Panel Yesil Transparan.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/Degistirme Gecidi Panel Yesil Transparan.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Spr_Moneys.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/Spr_Moneys.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Spr_Moneys.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/Spr_Moneys.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/T_FinishLine.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/T_FinishLine.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/T_FinishLine.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/T_FinishLine.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Scenes/GamePlay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ATMPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ATMPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Decision.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Decision.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMeshController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMeshController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectablePhysicsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectablePhysicsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerAnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerAnimationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerPhysicsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerPhysicsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerScoreTextController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerScoreTextController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ScoreManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Signals/ScoreSignals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Signals/ScoreSignals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1658435127110</updated>
       <workItem from="1658435140672" duration="2011000" />
+      <workItem from="1658482312350" duration="3076000" />
     </task>
     <servers />
   </component>

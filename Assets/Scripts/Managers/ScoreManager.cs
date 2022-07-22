@@ -32,7 +32,6 @@ public class ScoreManager : MonoBehaviour
     {
         ScoreSignals.Instance.onPlayerScoreUpdated -= OnPlayerScoreUpdated;
         ScoreSignals.Instance.onATMScoreUpdated -= OnAtmScoreUpdated;
-
     }
 
     private void OnDisable()
@@ -52,6 +51,7 @@ public class ScoreManager : MonoBehaviour
     {
         atmScore += deger;
         Debug.Log("atm score: " +atmScore);
+        ScoreSignals.Instance.onUpdateAtmScore(atmScore);
     }
 
     private void UpdateTotalScore(int playerScore, int atmScore)

@@ -26,19 +26,19 @@ namespace Controllers
         #region Event Subsicription
         private void Start()
         {
-            SubsicribeEvents();
+            SubscribeEvents();
         }
         private void OnDestroy()
         {
-            UnSubsicribeEvents();
+            UnSubscribeEvents();
         }
         
-        private void SubsicribeEvents()
+        private void SubscribeEvents()
         {
             collectableManager.onCollectableTypeChanged += UpgradeMesh;
         }
         
-        private void UnSubsicribeEvents()
+        private void UnSubscribeEvents()
         {
             collectableManager.onCollectableTypeChanged -= UpgradeMesh;
         }
