@@ -17,7 +17,7 @@ namespace Managers
 
         #region Subscribe Events
 
-        private void Start()
+        private void OnEnable()
         {
             SubscribeEvents();
         }

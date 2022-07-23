@@ -1,6 +1,7 @@
 using Keys;
 using System.Collections;
 using System.Collections.Generic;
+using Signals;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -18,7 +19,7 @@ public class InputManager : MonoBehaviour
     {
 
     }
-    void Start()
+    void OnEnable()
     {
         SubscribeEvents();
     }

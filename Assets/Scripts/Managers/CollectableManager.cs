@@ -40,15 +40,11 @@ public class CollectableManager : MonoBehaviour
 
     }
 
-    void Start()
+    private void OnEnable()
     {
         SubscribeEvents();
     }
 
-    // private void OnEnable()
-    // {
-    //     SubscribeEvents();
-    // }
 
     private void SubscribeEvents()
     {
@@ -143,8 +139,9 @@ public class CollectableManager : MonoBehaviour
 
     private void OnCollectableAndATMCollide(Transform atmyeGirenObje)
     {
+
         if (atmyeGirenObje.Equals(transform))
-        {        
+        {
             ScoreSignals.Instance.onATMScoreUpdated?.Invoke((int)collectableType);
             DestroyCollectable();
         }
@@ -153,13 +150,11 @@ public class CollectableManager : MonoBehaviour
         {
             if (atmyeGirenObje.localPosition.z <= transform.localPosition.z)
             {
+                ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(_collectableStackManager.CalculateStackValue());
                 collectableState = CollectableState.notCollected;
                 CollectableBreak();
             }
-            //DestroyCollectable();
         }
-
-        
     }
 
     private void DestroyCollectable()

@@ -21,7 +21,7 @@ namespace Controllers
         }
 
         #region EventSubsicription
-        private void Start()
+        private void OnEnable()
         {
             SubscribeEvents();
         }
