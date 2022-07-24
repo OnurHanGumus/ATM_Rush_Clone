@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7255043857202212979}
   - component: {fileID: 4849216517163320505}
   m_Layer: 0
-  m_Name: FinishLine
+  m_Name: FinishLineArc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

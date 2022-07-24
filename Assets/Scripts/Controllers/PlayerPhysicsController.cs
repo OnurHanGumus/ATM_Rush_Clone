@@ -21,11 +21,15 @@ namespace Controllers
             if (other.CompareTag("Obstacle"))
             {
                 PlayerSignals.Instance.onPlayerAndObstacleCrash?.Invoke();
-                
             }
             if (other.CompareTag("ATM"))
             {
                 PlayerSignals.Instance.onPlayerAndATMCrash?.Invoke(other.transform);
+            }
+
+            if (other.CompareTag("FinishFlag"))
+            {
+                PlayerSignals.Instance.onPlayerEnterFinishLine?.Invoke();
             }
         }
     }

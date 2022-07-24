@@ -50,26 +50,26 @@ namespace Controllers
             this.animationStates = animationStates;
         }
         
-        private void StartIdleAnim()
+        public void StartIdleAnim()
         {
             ChangeAnimationData(AnimationStates.Idle);
             ResetAllAnims();
             animator.SetBool("Idle",true);
         }
         
-        private void StartRunAnim()
+        public void StartRunAnim()
         {
             ChangeAnimationData(AnimationStates.Run);
             ResetAllAnims();
             animator.SetBool("Run",true);
         }
         
-        private void StartFinishAnim()
+        public void StartFinishAnim()
         {
             ChangeAnimationData(AnimationStates.Finish);
         }
 
-        private void ResetAllAnims()
+        public void ResetAllAnims()
         {
             animator.SetBool("Idle" ,false);
             animator.SetBool("Run" ,false);

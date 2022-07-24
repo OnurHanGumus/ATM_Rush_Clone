@@ -11,7 +11,6 @@ namespace Controllers
 
         #region Serialized Variables
         [SerializeField] private CollectableManager collectableManager;
-
         #endregion
         #endregion
 
@@ -35,7 +34,18 @@ namespace Controllers
             {
                 CollectableAndATMCollide();
             }
+
+            if (other.CompareTag("WalkingPlatform"))
+            {
+                CollectableAndWalkingPlatformCollide();
+            }
+
+            if (other.CompareTag("WinZone"))
+            {
+                CollectableAndWinZoneCollide();
+            }
         }
+        
         private void CollectableAndCollectableCollide()
         {
             Transform parentNode = CollectableSignals.Instance.getLastNodeOfList(transform);
@@ -54,6 +64,16 @@ namespace Controllers
         private void CollectableAndATMCollide()
         {
             CollectableSignals.Instance.onCollectableATMCollide?.Invoke(transform);
+        }
+        
+        private void CollectableAndWalkingPlatformCollide()
+        {
+            CollectableSignals.Instance.onCollectableWalkingPlatformCollide?.Invoke(transform);
+        }
+        
+        private void CollectableAndWinZoneCollide()
+        {
+            CollectableSignals.Instance.onCollectableWinZoneCollide?.Invoke(transform);
         }
     }
 }

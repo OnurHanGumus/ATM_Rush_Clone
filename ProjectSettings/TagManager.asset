@@ -10,6 +10,9 @@ TagManager:
   - WinZone
   - ATM
   - Portal
+  - WalkingPlatform
+  - FinishFlag
+  - PlayerFinish
   layers:
   - Default
   - TransparentFX

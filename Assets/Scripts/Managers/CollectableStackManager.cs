@@ -1,9 +1,6 @@
 using Signals;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Enums;
-
 
 public class CollectableStackManager : MonoBehaviour
 {
@@ -22,7 +19,6 @@ public class CollectableStackManager : MonoBehaviour
     {
         collectables = new List<Transform>();
         collectables.Add(transform);
-
     }
 
     void OnEnable()
@@ -39,6 +35,7 @@ public class CollectableStackManager : MonoBehaviour
         CollectableSignals.Instance.onCollectableAndCollectableCollide += OnCollectableAndCollectableCollide;
         CollectableSignals.Instance.onCollectableUpgradeCollide += OnCollectableUpgradeCollide;
         CollectableSignals.Instance.onCollectableATMCollide += OnCollectableAndATMCollide;
+        CollectableSignals.Instance.onCollectableWalkingPlatformCollide += OnWalkingPlatformCollide;
     }
     private void UnsubscribeEvents()
     {
@@ -50,7 +47,9 @@ public class CollectableStackManager : MonoBehaviour
         CollectableSignals.Instance.onCollectableAndCollectableCollide -= OnCollectableAndCollectableCollide;
         CollectableSignals.Instance.onCollectableUpgradeCollide -= OnCollectableUpgradeCollide;
         CollectableSignals.Instance.onCollectableATMCollide -= OnCollectableAndATMCollide;
+        CollectableSignals.Instance.onCollectableWalkingPlatformCollide -= OnWalkingPlatformCollide;
     }
+
 
     private void OnDisable()
     {
@@ -98,6 +97,7 @@ public class CollectableStackManager : MonoBehaviour
     {
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
+    
     public void AddCollectableToList(Transform other)
     {
         Transform parentNode = collectables[collectables.Count - 1];
@@ -115,7 +115,7 @@ public class CollectableStackManager : MonoBehaviour
         collectableManager.SetControllerParentNode(parentNode);
         //collectableMovementController.ActivateMovement();
     }
-
+    
     private void OnPlayerAndObstacleCrash()
     {
         RemoveAllList();
@@ -134,7 +134,6 @@ public class CollectableStackManager : MonoBehaviour
             collectables.RemoveAt(i);
         }
         collectables.TrimExcess();
-
     }
 
     public void OnCollectableAndATMCollide(Transform atmyeGirenObje)
@@ -142,7 +141,10 @@ public class CollectableStackManager : MonoBehaviour
         int atmyeGirenObjeninIndeksi = collectables.IndexOf(atmyeGirenObje);
 
         DestroyCollectables(atmyeGirenObjeninIndeksi);
-
+    }
+    private void OnWalkingPlatformCollide(Transform arg)
+    {
+        DestroyCollectables(collectables.IndexOf(arg));
     }
 
     private void DestroyCollectables(int kazaYapanObjeninIndeksi)
@@ -156,7 +158,6 @@ public class CollectableStackManager : MonoBehaviour
             }
         }
         collectables.TrimExcess();
-
     }
 
     public Transform GetLastNodeOfList(Transform addedNode)
@@ -164,9 +165,7 @@ public class CollectableStackManager : MonoBehaviour
         AddCollectableToList(addedNode);
         return collectables[collectables.Count - 2];
     }
-
-   
-
+    
     public int CalculateStackValue()
     {
         int _score = 0;

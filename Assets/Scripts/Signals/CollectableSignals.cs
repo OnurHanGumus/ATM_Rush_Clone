@@ -41,5 +41,7 @@ namespace Signals
         public UnityAction<Transform> onCollectableAndObstacleCollide = delegate { };
         public UnityAction<Transform> onCollectableUpgradeCollide = delegate { };
         public UnityAction<Transform> onCollectableATMCollide = delegate { };
+        public UnityAction<Transform> onCollectableWalkingPlatformCollide = delegate {  };
+        public UnityAction<Transform> onCollectableWinZoneCollide = delegate {  };
     }
 }

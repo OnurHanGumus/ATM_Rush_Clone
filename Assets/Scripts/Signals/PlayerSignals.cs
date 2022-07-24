@@ -35,8 +35,6 @@ namespace Signals
 
         public  UnityAction onPlayerAndObstacleCrash = delegate { };
         public UnityAction<Transform> onPlayerAndATMCrash = delegate { };
-
+        public UnityAction onPlayerEnterFinishLine =delegate {  };
     }
-
-
 }

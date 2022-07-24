@@ -40,44 +40,45 @@ public class CollectableManager : MonoBehaviour
         _collectableMovementController = GetComponent<CollectableMovementController>();
         SendCollectableDataToController();
         collectableType = GetCollectableType();
-
         _collectableStackManager = FindObjectOfType<CollectableStackManager>();
-
     }
+
+    #region Event Subscription
 
     private void OnEnable()
     {
         SubscribeEvents();
     }
-
-
+    
     private void SubscribeEvents()
     {
+        PlayerSignals.Instance.onPlayerAndObstacleCrash += OnPlayerAndObstacleCrash;
         CollectableSignals.Instance.onCollectableAndObstacleCollide += OnCollectableAndObstacleCollide;
         CollectableSignals.Instance.onCollectableAndCollectableCollide += OnCollectableAndCollectableCollide;
         CollectableSignals.Instance.onCollectableUpgradeCollide += OnUpgradeCollectableCollide;
         CollectableSignals.Instance.onCollectableATMCollide += OnCollectableAndATMCollide;
-        PlayerSignals.Instance.onPlayerAndObstacleCrash += OnPlayerAndObstacleCrash;
-
         CollectableSignals.Instance.onGetCollectableType += OnGetCollectableType;
         
+        CollectableSignals.Instance.onCollectableWalkingPlatformCollide += OnCollectableAndWalkingPlatformCollide;
+        CollectableSignals.Instance.onCollectableWinZoneCollide += OnCollectableAndWinZoneCollide;
     }
     private void UnsubscribeEvents()
     {
+        PlayerSignals.Instance.onPlayerAndObstacleCrash -= OnPlayerAndObstacleCrash;
         CollectableSignals.Instance.onCollectableAndObstacleCollide -= OnCollectableAndObstacleCollide;
         CollectableSignals.Instance.onCollectableAndCollectableCollide -= OnCollectableAndCollectableCollide;
         CollectableSignals.Instance.onCollectableUpgradeCollide -= OnUpgradeCollectableCollide;
         CollectableSignals.Instance.onCollectableATMCollide -= OnCollectableAndATMCollide;
-        PlayerSignals.Instance.onPlayerAndObstacleCrash -= OnPlayerAndObstacleCrash;
-
         CollectableSignals.Instance.onGetCollectableType -= OnGetCollectableType;
-
+        
+        CollectableSignals.Instance.onCollectableWalkingPlatformCollide -= OnCollectableAndWalkingPlatformCollide;
+        CollectableSignals.Instance.onCollectableWinZoneCollide -= OnCollectableAndWinZoneCollide;
     }
-
     private void OnDisable()
     {
         UnsubscribeEvents();
     }
+    #endregion
     
     private CollectableData GetCollectableData() => Resources.Load<CD_Collectable>("Datas/UnityObjects/CD_Collectable").Data;
     private CollectableType GetCollectableType() => Resources.Load<CD_Collectable>("Datas/UnityObjects/CD_Collectable").collectableType;
@@ -123,6 +124,25 @@ public class CollectableManager : MonoBehaviour
 
     }
 
+    private void OnCollectableAndWalkingPlatformCollide(Transform _transform)
+    {
+        if (transform == _transform)
+        {
+            connectedNode = null;
+            _collectableMovementController.DeactivateMovement();
+            _collectableMovementController.MoveToWinZone();
+            print("x");
+        }
+        else
+            return;
+    }
+    
+    private void OnCollectableAndWinZoneCollide(Transform _transform)
+    {
+        if(transform == _transform)
+            DestroyCollectable();
+    }
+
     private void CollectableBreak()
     {
         transform.tag = "Collectable";
@@ -142,8 +162,6 @@ public class CollectableManager : MonoBehaviour
             //_collectableMovementController.SetConnectedNode(parentNode);
 
             _collectableMovementController.ActivateMovement();
-
-
         }
     }
 

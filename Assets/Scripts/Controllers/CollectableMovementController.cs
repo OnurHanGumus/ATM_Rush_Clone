@@ -81,4 +81,10 @@ public class CollectableMovementController : MonoBehaviour
         transform.DOMove(targetLocation, 0.5f);
         //transform.DOJump(new Vector3(transform.position.x, 1, transform.position.z), 1f, 0, 0.5f);
     }
+
+    public void MoveToWinZone()
+    {
+        ConnectedNode = null;
+        transform.DOMove(new Vector3(-10, _rig.position.y, _rig.position.z), .5f);
+    }
 }

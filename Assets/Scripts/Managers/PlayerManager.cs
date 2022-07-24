@@ -11,7 +11,8 @@ public class PlayerManager : MonoBehaviour
     #region public vars
     #endregion
     #region serializefield vars
-    [SerializeField] PlayerScoreTextController _playerScoreTextController;
+    [SerializeField] PlayerScoreTextController playerScoreTextController;
+    [SerializeField] PlayerAnimationController playerAnimationController;
 
     #endregion
     #region private vars
@@ -41,6 +42,7 @@ public class PlayerManager : MonoBehaviour
         InputSignals.Instance.onInputReleased += OnInputReleased;
         PlayerSignals.Instance.onPlayerAndObstacleCrash += OnPlayerAndObstacleCrash;
         ScoreSignals.Instance.onTotalScoreUpdated += UpdateCurrentScore;
+        PlayerSignals.Instance.onPlayerEnterFinishLine += DeactivateMovement;
     }
     private void UnsubscribeEvents()
     {
@@ -49,6 +51,7 @@ public class PlayerManager : MonoBehaviour
         InputSignals.Instance.onInputReleased -= OnInputReleased;
         PlayerSignals.Instance.onPlayerAndObstacleCrash -= OnPlayerAndObstacleCrash;
         ScoreSignals.Instance.onTotalScoreUpdated -= UpdateCurrentScore;
+        PlayerSignals.Instance.onPlayerEnterFinishLine -= DeactivateMovement;
     }
 
     private void OnDisable()
@@ -64,6 +67,7 @@ public class PlayerManager : MonoBehaviour
     private void DeactivateMovement()
     {
         _playerMovementController.DeactivateMovement();
+        playerAnimationController.StartIdleAnim();
     }
 
     private void SendPlayerDataToController()
@@ -86,6 +90,6 @@ public class PlayerManager : MonoBehaviour
     }
     private void UpdateCurrentScore(int score)
     {
-        _playerScoreTextController.UpdateScoreText(score);
+        playerScoreTextController.UpdateScoreText(score);
     }
 }
