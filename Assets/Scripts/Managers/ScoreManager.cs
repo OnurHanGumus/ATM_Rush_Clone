@@ -1,62 +1,66 @@
-using Controllers;
-using Enums;
-using UnityEngine;
 using Signals;
+using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+namespace Managers
 {
-    #region self vars
-    #region public vars
-    public int atmScore = 0;
-    public int playerScore = 0;
-    public int totalScore = 0;
-    #endregion
-    #region serializefield vars
-
-    #endregion
-    #region private vars
-    #endregion
-    #endregion
-
-    void Start()
+    public class ScoreManager : MonoBehaviour
     {
-        SubscribeEvents();
-    }
+        #region self vars
+        #region public vars
+        public int atmScore = 0;
+        public int playerScore = 0;
+        public int totalScore = 0;
+        #endregion
+        #region serializefield vars
 
-    private void SubscribeEvents()
-    {
-        ScoreSignals.Instance.onPlayerScoreUpdated += OnPlayerScoreUpdated;
-        ScoreSignals.Instance.onATMScoreUpdated += OnAtmScoreUpdated;
-    }
-    private void UnsubscribeEvents()
-    {
-        ScoreSignals.Instance.onPlayerScoreUpdated -= OnPlayerScoreUpdated;
-        ScoreSignals.Instance.onATMScoreUpdated -= OnAtmScoreUpdated;
+        #endregion
+        #region private vars
+        #endregion
+        #endregion
 
-    }
+        #region Event Subscribtion
 
-    private void OnDisable()
-    {
-        UnsubscribeEvents();
-    }
+        void OnEnable()
+        {
+            SubscribeEvents();
+        }
 
-    private void OnPlayerScoreUpdated(int playerScore)
-    {
-        this.playerScore = playerScore;
-        Debug.Log("oyuncu score: " +playerScore);
+        private void SubscribeEvents()
+        {
+            ScoreSignals.Instance.onPlayerScoreUpdated += OnPlayerScoreUpdated;
+            ScoreSignals.Instance.onATMScoreUpdated += OnAtmScoreUpdated;
+        }
+        private void UnsubscribeEvents()
+        {
+            ScoreSignals.Instance.onPlayerScoreUpdated -= OnPlayerScoreUpdated;
+            ScoreSignals.Instance.onATMScoreUpdated -= OnAtmScoreUpdated;
+        }
 
-        UpdateTotalScore(playerScore, atmScore);
-    }
+        private void OnDisable()
+        {
+            UnsubscribeEvents();
+        }
 
-    private void OnAtmScoreUpdated(int deger)
-    {
-        atmScore += deger;
-        Debug.Log("atm score: " +atmScore);
-    }
+        #endregion
+        private void OnPlayerScoreUpdated(int playerScore)
+        {
+            this.playerScore = playerScore;
+            Debug.Log("oyuncu score: " +playerScore);
 
-    private void UpdateTotalScore(int playerScore, int atmScore)
-    {
-        Debug.Log("toplam score: " +(playerScore + atmScore));
-        ScoreSignals.Instance.onTotalScoreUpdated?.Invoke(playerScore + atmScore);
+            UpdateTotalScore(playerScore, atmScore);
+        }
+
+        private void OnAtmScoreUpdated(int deger)
+        {
+            atmScore += deger;
+            Debug.Log("atm score: " +atmScore);
+            ScoreSignals.Instance.onUpdateAtmScore(atmScore);
+        }
+
+        private void UpdateTotalScore(int playerScore, int atmScore)
+        {
+            Debug.Log("toplam score: " +(playerScore + atmScore));
+            ScoreSignals.Instance.onTotalScoreUpdated?.Invoke(playerScore + atmScore);
+        }
     }
 }

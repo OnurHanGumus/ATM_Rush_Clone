@@ -11,10 +11,10 @@ namespace Controllers
 
         #region Serialized Variables
 
+        [SerializeField] private TextMeshPro scoreTxt;
 
         #endregion
         #region private vars
-        [SerializeField] private TextMeshPro scoreTxt;
         #endregion
         #endregion
  

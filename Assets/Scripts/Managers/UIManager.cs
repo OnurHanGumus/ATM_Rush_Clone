@@ -21,31 +21,30 @@ public class UIManager : MonoBehaviour
     {
         uiPanelController = GetComponent<UIPanelController>();
     }
-    void Start()
+
+    #region Event Subscription
+
+    void OnEnable()
     {
         SubscribeEvents();
     }
-
-
 
     private void SubscribeEvents()
     {
         CoreGameSignals.Instance.onPlay += OnPlay;
         UISignals.Instance.onClosePanel += OnClosePanel;
-
     }
     private void UnsubscribeEvents()
     {
         CoreGameSignals.Instance.onPlay -= OnPlay;
         UISignals.Instance.onClosePanel -= OnClosePanel;
-
     }
-
     private void OnDisable()
     {
         UnsubscribeEvents();
     }
 
+    #endregion
     private void OnPlay()
     {
         UISignals.Instance.onClosePanel?.Invoke(UIPanels.StartPanel);

@@ -13,10 +13,6 @@ namespace Controllers
         [SerializeField] private CollectableManager collectableManager;
 
         #endregion
-        #region private vars
-
-
-        #endregion
         #endregion
 
         private void OnTriggerEnter(Collider other)

@@ -8,8 +8,8 @@ public class CollectableMovementController : MonoBehaviour
 {
     #region self vars
     #region public vars
+    public Transform ConnectedNode;
     #endregion
-    public Transform _connectedNode;
 
     #region serializefield vars
     #endregion
@@ -23,7 +23,7 @@ public class CollectableMovementController : MonoBehaviour
     private void Awake()
     {
         _rig = GetComponent<Rigidbody>();
-        _connectedNode = transform; //hata vermesin diye bu yapýldý. Aslýnda kendinden bir öncekinin pozisyonuna gidiyor olmalý.
+        ConnectedNode = transform; //hata vermesin diye bu yapÄ±ldÄ±. AslÄ±nda kendinden bir Ã¶ncekinin pozisyonuna gidiyor olmalÄ±.
     }
 
     void Update()
@@ -50,7 +50,7 @@ public class CollectableMovementController : MonoBehaviour
 
     private void LerpMove()
     {
-        Vector3 targetPos = _connectedNode.position;
+        Vector3 targetPos = ConnectedNode.position;
         targetPos.z += _collectableData.lerpData.lerpSpaces;
         //transform.position = Vector3.Lerp(transform.position, targetPos, _collectableData.lerpData.lerpSoftness * Time.deltaTime);
 
@@ -66,7 +66,7 @@ public class CollectableMovementController : MonoBehaviour
 
     public void SetConnectedNode(Transform transform)
     {
-        _connectedNode = transform;
+        ConnectedNode = transform;
     }
 
     public void SetCollectableData(CollectableData collectableData)

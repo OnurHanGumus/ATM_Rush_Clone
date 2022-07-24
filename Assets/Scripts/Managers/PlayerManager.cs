@@ -29,14 +29,11 @@ public class PlayerManager : MonoBehaviour
     }
     private PlayerData GetPlayerData() => Resources.Load<CD_Player>("Datas/UnityObjects/CD_Player").Data;
 
-    void Start()
+    void OnEnable()
     {
         SubscribeEvents();
     }
-
-    // Update is called once per frame
-
-
+    
     private void SubscribeEvents()
     {
         CoreGameSignals.Instance.onPlay += ActivateMovement;

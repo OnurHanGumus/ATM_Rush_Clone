@@ -30,7 +30,7 @@ namespace Managers
             GetInitialPosition();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             SubscribeEvents();
             OnSetCameraTarget();
