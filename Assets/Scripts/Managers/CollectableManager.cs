@@ -94,10 +94,19 @@ public class CollectableManager : MonoBehaviour
 
     private void OnCollectableAndObstacleCollide(Transform crashedNode)
     {
-        if (collectableState.Equals(CollectableState.collected))
+        if (crashedNode.Equals(transform))
+        {
+            DestroyCollectable();
+            ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(_collectableStackManager.CalculateStackValue());
+
+        }
+        else if (collectableState.Equals(CollectableState.collected))
         {
             if (crashedNode.localPosition.z <= transform.localPosition.z)
             {
+
+                ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(_collectableStackManager.CalculateStackValue());
+
                 collectableState = CollectableState.notCollected;
                 CollectableBreak();
             }
@@ -111,6 +120,7 @@ public class CollectableManager : MonoBehaviour
             collectableState = CollectableState.notCollected;
             CollectableBreak();
         }
+
     }
 
     private void CollectableBreak()
@@ -151,7 +161,6 @@ public class CollectableManager : MonoBehaviour
             ScoreSignals.Instance.onATMScoreUpdated?.Invoke((int)collectableType);
             DestroyCollectable();
         }
-
         else if (collectableState.Equals(CollectableState.collected))
         {
             if (atmyeGirenObje.localPosition.z <= transform.localPosition.z)
