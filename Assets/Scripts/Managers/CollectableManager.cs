@@ -5,6 +5,8 @@ using UnityEngine;
 using Enums;
 using Signals;
 using UnityEngine.Events;
+using DG.Tweening;
+
 
 public class CollectableManager : MonoBehaviour
 {
@@ -23,6 +25,9 @@ public class CollectableManager : MonoBehaviour
     private CollectableMovementController _collectableMovementController;
     private CollectableData _collectableData;
     private CollectableStackManager _collectableStackManager;
+
+    private bool _isAnimating = false;
+    Sequence sequence;
 
     #endregion
     #endregion
@@ -118,9 +123,10 @@ public class CollectableManager : MonoBehaviour
 
     private void OnCollectableAndCollectableCollide(Transform otherNode, Transform parent)
     {
-        if (otherNode == transform)
+        if (otherNode.Equals(transform) && collectableState.Equals(CollectableState.notCollected))
         {
             collectableState = CollectableState.collected;
+            GetBigger();
 
             //Transform parentNode = _collectableStackManager.GetLastNodeOfList();
             //_collectableMovementController.SetConnectedNode(parentNode);
@@ -139,9 +145,9 @@ public class CollectableManager : MonoBehaviour
 
     private void OnCollectableAndATMCollide(Transform atmyeGirenObje)
     {
-
         if (atmyeGirenObje.Equals(transform))
         {
+
             ScoreSignals.Instance.onATMScoreUpdated?.Invoke((int)collectableType);
             DestroyCollectable();
         }
@@ -150,11 +156,9 @@ public class CollectableManager : MonoBehaviour
         {
             if (atmyeGirenObje.localPosition.z <= transform.localPosition.z)
             {
-<<<<<<< HEAD
+
                 ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(_collectableStackManager.CalculateStackValue()); 
-=======
-                ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(_collectableStackManager.CalculateStackValue());
->>>>>>> e9dbc0493a8709a39fd8b6c0d5a85edc9b27555e
+
                 collectableState = CollectableState.notCollected;
                 CollectableBreak();
             }
@@ -181,6 +185,32 @@ public class CollectableManager : MonoBehaviour
 
     public void SetControllerParentNode(Transform parentNode)
     {
+        connectedNode = parentNode;
         _collectableMovementController.SetConnectedNode(parentNode);
+    }
+
+    public void GetBigger()
+    {
+        StartCoroutine(Devam());
+    }
+
+    public IEnumerator Devam()
+    {
+        if (!_isAnimating)
+        {
+            _isAnimating = true;
+            Debug.Log(transform.name);
+
+            transform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f);
+            yield return new WaitForSeconds(0.05f);
+
+            if (!_collectableStackManager.collectables[1].gameObject.Equals(gameObject))
+            {
+                connectedNode.GetComponent<CollectableManager>().GetBigger();
+            }
+        }
+        yield return new WaitForSeconds(2f);
+        _isAnimating = false;
+
     }
 }

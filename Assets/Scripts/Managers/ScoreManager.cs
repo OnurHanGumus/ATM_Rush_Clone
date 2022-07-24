@@ -45,7 +45,7 @@ namespace Managers
         private void OnPlayerScoreUpdated(int playerScore)
         {
             this.playerScore = playerScore;
-            Debug.Log("oyuncu score: " +playerScore);
+            //Debug.Log("oyuncu score: " +playerScore);
 
             UpdateTotalScore(playerScore, atmScore);
         }
@@ -53,13 +53,13 @@ namespace Managers
         private void OnAtmScoreUpdated(int deger)
         {
             atmScore += deger;
-            Debug.Log("atm score: " +atmScore);
+            //Debug.Log("atm score: " +atmScore);
             ScoreSignals.Instance.onUpdateAtmScore(atmScore);
         }
 
         private void UpdateTotalScore(int playerScore, int atmScore)
         {
-            Debug.Log("toplam score: " +(playerScore + atmScore));
+            //Debug.Log("toplam score: " +(playerScore + atmScore));
             ScoreSignals.Instance.onTotalScoreUpdated?.Invoke(playerScore + atmScore);
         }
     }
