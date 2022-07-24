@@ -131,7 +131,6 @@ public class CollectableManager : MonoBehaviour
             connectedNode = null;
             _collectableMovementController.DeactivateMovement();
             _collectableMovementController.MoveToWinZone();
-            print("x");
         }
         else
             return;

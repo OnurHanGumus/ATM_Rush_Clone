@@ -13,28 +13,28 @@ public class PlayerManager : MonoBehaviour
     #region serializefield vars
     [SerializeField] PlayerScoreTextController playerScoreTextController;
     [SerializeField] PlayerAnimationController playerAnimationController;
-
     #endregion
     #region private vars
     PlayerMovementController _playerMovementController;
-    
-    private PlayerData playerData;
+    private PlayerData _playerData;
     #endregion
     #endregion
 
     private void Awake()
     {
         _playerMovementController = GetComponent<PlayerMovementController>();
-        playerData = GetPlayerData();
+        _playerData = GetPlayerData();
         SendPlayerDataToController();
     }
     private PlayerData GetPlayerData() => Resources.Load<CD_Player>("Datas/UnityObjects/CD_Player").Data;
 
+    #region Event Subsicription
+    
     void OnEnable()
     {
         SubscribeEvents();
     }
-    
+
     private void SubscribeEvents()
     {
         CoreGameSignals.Instance.onPlay += ActivateMovement;
@@ -59,6 +59,7 @@ public class PlayerManager : MonoBehaviour
         UnsubscribeEvents();
     }
 
+    #endregion
     private void ActivateMovement()
     {
         _playerMovementController.ActivateMovement();
@@ -72,7 +73,7 @@ public class PlayerManager : MonoBehaviour
 
     private void SendPlayerDataToController()
     {
-        _playerMovementController.SetMovementData(playerData.playerMovementData);
+        _playerMovementController.SetMovementData(_playerData.playerMovementData);
     }
 
     private void OnInputDragged(HorizontalInputParams horizontalInput)

@@ -42,18 +42,17 @@ namespace Managers
         }
 
         #endregion
-        private void OnPlayerScoreUpdated(int playerScore)
+        private void OnPlayerScoreUpdated(int value)
         {
-            this.playerScore = playerScore;
-            //Debug.Log("oyuncu score: " +playerScore);
-
+            playerScore = value;
             UpdateTotalScore(playerScore, atmScore);
+            ScoreSignals.Instance.onPlayerScoreUpdated(playerScore);
         }
 
-        private void OnAtmScoreUpdated(int deger)
+        private void OnAtmScoreUpdated(int value)
         {
-            atmScore += deger;
-            //Debug.Log("atm score: " +atmScore);
+            atmScore += value;
+            UpdateTotalScore(playerScore, atmScore);
             ScoreSignals.Instance.onUpdateAtmScore(atmScore);
         }
 

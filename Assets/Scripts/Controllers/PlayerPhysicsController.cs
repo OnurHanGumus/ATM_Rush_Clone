@@ -30,6 +30,7 @@ namespace Controllers
             if (other.CompareTag("FinishFlag"))
             {
                 PlayerSignals.Instance.onPlayerEnterFinishLine?.Invoke();
+                CoreGameSignals.Instance.onLevelSuccessful?.Invoke();
             }
         }
     }
