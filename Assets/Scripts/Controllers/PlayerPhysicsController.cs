@@ -19,8 +19,13 @@ namespace Controllers
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Obstacle"))
-            { 
+            {
                 PlayerSignals.Instance.onPlayerAndObstacleCrash?.Invoke();
+                
+            }
+            if (other.CompareTag("ATM"))
+            {
+                PlayerSignals.Instance.onPlayerAndATMCrash?.Invoke(other.transform);
             }
         }
     }
