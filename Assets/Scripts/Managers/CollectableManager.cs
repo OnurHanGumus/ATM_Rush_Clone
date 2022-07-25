@@ -144,10 +144,12 @@ public class CollectableManager : MonoBehaviour
 
     private void CollectableBreak()
     {
-        transform.tag = "Collectable";
-
-        _collectableMovementController.DeactivateMovement();
-        _collectableMovementController.AddDropForce();
+        if (gameObject.CompareTag("Player"))
+        {
+            transform.tag = "Collectable";
+            _collectableMovementController.DeactivateMovement();
+            _collectableMovementController.AddDropForce();
+        }
     }
 
     private void OnCollectableAndCollectableCollide(Transform otherNode, Transform parent)
@@ -179,11 +181,9 @@ public class CollectableManager : MonoBehaviour
         }
         else if (collectableState.Equals(CollectableState.collected))
         {
-            if (atmyeGirenObje.localPosition.z <= transform.localPosition.z)
+            if (atmyeGirenObje.position.z <= transform.position.z)
             {
-
-                ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(_collectableStackManager.CalculateStackValue()); 
-
+                ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(_collectableStackManager.CalculateStackValue());
                 collectableState = CollectableState.notCollected;
                 CollectableBreak();
             }

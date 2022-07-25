@@ -26,7 +26,7 @@ public class CollectableMovementController : MonoBehaviour
         ConnectedNode = transform; //hata vermesin diye bu yapıldı. Aslında kendinden bir öncekinin pozisyonuna gidiyor olmalı.
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (_isReadyToMove)
         {
