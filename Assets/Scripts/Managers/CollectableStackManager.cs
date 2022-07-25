@@ -140,20 +140,19 @@ public class CollectableStackManager : MonoBehaviour
     {
         int atmyeGirenObjeninIndeksi = collectables.IndexOf(atmyeGirenObje);
 
-        DestroyCollectables(atmyeGirenObjeninIndeksi);
+        RemoveCollectablesFromList(atmyeGirenObjeninIndeksi);
     }
     private void OnWalkingPlatformCollide(Transform arg)
     {
-        DestroyCollectables(collectables.IndexOf(arg));
+        RemoveCollectablesFromList(collectables.IndexOf(arg));
     }
 
-    private void DestroyCollectables(int kazaYapanObjeninIndeksi)
+    private void RemoveCollectablesFromList(int kazaYapanObjeninIndeksi)
     {
         for (int i = collectables.Count - 1; i > 0; i--)
         {
             if (collectables.Count > kazaYapanObjeninIndeksi)
             {
-                //Destroy(collectables[i].gameObject);
                 collectables.RemoveAt(i);
             }
         }

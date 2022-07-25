@@ -138,8 +138,8 @@ public class CollectableManager : MonoBehaviour
     
     private void OnCollectableAndWinZoneCollide(Transform _transform)
     {
-        if(transform == _transform)
-            DestroyCollectable();
+        if (transform == _transform)
+            StackCollectablesToMiniGame();
     }
 
     private void CollectableBreak()
@@ -174,9 +174,8 @@ public class CollectableManager : MonoBehaviour
     {
         if (atmyeGirenObje.Equals(transform))
         {
-
             ScoreSignals.Instance.onATMScoreUpdated?.Invoke((int)collectableType);
-            DestroyCollectable();
+            StackCollectablesToMiniGame();
         }
         else if (collectableState.Equals(CollectableState.collected))
         {
@@ -194,10 +193,15 @@ public class CollectableManager : MonoBehaviour
     private void DestroyCollectable()
     {
         _collectableMovementController.DeactivateMovement();
-        //gameObject.SetActive(false);
         Destroy(gameObject);
     }
 
+    private void StackCollectablesToMiniGame()
+    {
+        _collectableMovementController.DeactivateMovement();
+        CollectableSignals.Instance.onMiniGameStackCollected(gameObject);
+    }
+    
     private int OnGetCollectableType()
     {
 

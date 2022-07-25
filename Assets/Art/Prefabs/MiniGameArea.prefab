@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5940597900715589232}
-  - component: {fileID: 1725048411}
+  - component: {fileID: 1592304955605051853}
   m_Layer: 0
   m_Name: MiniGameArea
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1725048411
+--- !u!114 &1592304955605051853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,12 +42,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5940597900715589235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fd226e9b584e179f22e257b86adbf7, type: 3}
+  m_Script: {fileID: 11500000, guid: a16f1ba4a77744769543a27ca9133c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextPos: {x: 0, y: 0, z: 0}
-  firstDollarTransform: {fileID: 0}
-  transformAmount: -1
+  firstMoney: {fileID: 8578182916801810604}
+  stackDistanceAmount: 1.5
 --- !u!1001 &3615523185964533421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,5 +174,10 @@ PrefabInstance:
 --- !u!4 &40219344331568501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5980741921098167830, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
+  m_PrefabInstance: {fileID: 5940597900415107939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8578182916801810604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2700732306224010191, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
   m_PrefabInstance: {fileID: 5940597900415107939}
   m_PrefabAsset: {fileID: 0}
