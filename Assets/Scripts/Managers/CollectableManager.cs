@@ -217,26 +217,25 @@ public class CollectableManager : MonoBehaviour
 
     public void GetBigger()
     {
-        StartCoroutine(Devam());
+        StartCoroutine(GetBiggerCoroutine());
     }
 
-    public IEnumerator Devam()
+    public IEnumerator GetBiggerCoroutine()
     {
         if (!_isAnimating)
         {
             _isAnimating = true;
-            Debug.Log(transform.name);
 
             transform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f);
             yield return new WaitForSeconds(0.05f);
 
-            if (!_collectableStackManager.collectables[1].gameObject.Equals(gameObject))
+            if (connectedNode != null && !_collectableStackManager.collectables[1].gameObject.Equals(gameObject))
             {
                 connectedNode.GetComponent<CollectableManager>().GetBigger();
             }
-        }
-        yield return new WaitForSeconds(2f);
-        _isAnimating = false;
 
+            yield return new WaitForSeconds(2f);
+            _isAnimating = false;
+        }
     }
 }
