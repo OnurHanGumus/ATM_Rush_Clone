@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Controllers;
 using UnityEngine;
 using Enums;
 using Signals;
@@ -19,6 +20,7 @@ public class CollectableManager : MonoBehaviour
     #endregion
     #region Serialized Variables
 
+    [SerializeField] private CollectableMeshController collectableMeshController;
     #endregion
     #region private var
     private MeshRenderer _meshRenderer;
@@ -88,7 +90,7 @@ public class CollectableManager : MonoBehaviour
         if (upgradedNode.Equals(transform))
         {
             ++collectableType;
-            print("Upgrade Collide");
+            // print("Upgrade Collide");
             onCollectableTypeChanged?.Invoke(collectableType);
         }
     }
@@ -121,7 +123,6 @@ public class CollectableManager : MonoBehaviour
             collectableState = CollectableState.notCollected;
             CollectableBreak();
         }
-
     }
 
     private void OnCollectableAndWalkingPlatformCollide(Transform _transform)
@@ -132,11 +133,9 @@ public class CollectableManager : MonoBehaviour
             _collectableMovementController.DeactivateMovement();
             _collectableMovementController.MoveToWinZone();
         }
-        else
-            return;
     }
     
-    private void OnCollectableAndWinZoneCollide(Transform _transform)
+    public void OnCollectableAndWinZoneCollide(Transform _transform)
     {
         if (transform == _transform)
             StackCollectablesToMiniGame();
@@ -196,9 +195,13 @@ public class CollectableManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void StackCollectablesToMiniGame()
+    public void StackCollectablesToMiniGame()
     {
-        _collectableMovementController.DeactivateMovement();
+        collectableType = CollectableType.Money;
+        collectableMeshController.UpgradeMesh(collectableType);
+        _collectableMovementController.StopMoveToWinZone();
+        
+        gameObject.SetActive(false);
         CollectableSignals.Instance.onMiniGameStackCollected(gameObject);
     }
     
@@ -208,7 +211,6 @@ public class CollectableManager : MonoBehaviour
         if (collectableState.Equals(CollectableState.notCollected))
         {
             print(collectableType);
-
         }
         return (int) collectableType;
     }

@@ -83,6 +83,7 @@ MonoBehaviour:
   collectableType: 1
   collectableState: 0
   connectedNode: {fileID: 0}
+  collectableMeshController: {fileID: 895945716046570024}
 --- !u!114 &2156776282315811346
 MonoBehaviour:
   m_ObjectHideFlags: 0

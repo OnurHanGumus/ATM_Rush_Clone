@@ -45,13 +45,26 @@ namespace Controllers
 
         #endregion
 
-        private void UpgradeMesh(CollectableType type)
+        public void UpgradeMesh(CollectableType type)
         {
-            if (collectables[2].gameObject.activeInHierarchy == false)
+            SetActiveFalseAll();
+            switch (type)
             {
-                SetActiveFalseAll();
-                collectables[(int)type - 1].SetActive(true);
+                case CollectableType.Money:
+                    collectables[0].SetActive(true);
+                    break;
+                case CollectableType.Gold:
+                    collectables[1].SetActive(true);
+                    break;
+                case CollectableType.Gem:
+                    collectables[2].SetActive(true);
+                    break;
             }
+            // if (collectables[2].gameObject.activeInHierarchy == false)
+            // {
+            //     SetActiveFalseAll();
+            //     collectables[(int)type - 1].SetActive(true);
+            // }
         }
 
         private void SetActiveFalseAll()

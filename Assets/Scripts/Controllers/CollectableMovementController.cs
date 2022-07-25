@@ -16,7 +16,9 @@ public class CollectableMovementController : MonoBehaviour
     #region private vars
     private bool _isReadyToMove = false;
     private CollectableData _collectableData;
+    private CollectableManager _collectableManager;
     private Rigidbody _rig;
+    private Sequence _sequence;
     #endregion
     #endregion
 
@@ -87,7 +89,19 @@ public class CollectableMovementController : MonoBehaviour
 
     public void MoveToWinZone()
     {
+        if (_sequence == null)
+        {
+            _sequence = DOTween.Sequence();
+            _sequence.Append(transform.DOMove(new Vector3(-8, _rig.position.y, _rig.position.z), .5f));
+        }
+        
         ConnectedNode = null;
-        transform.DOMove(new Vector3(-10, _rig.position.y, _rig.position.z), .5f);
+        _sequence.Play();
+    }
+
+    public void StopMoveToWinZone()
+    {
+        if(_sequence != null)
+            _sequence.Kill();
     }
 }

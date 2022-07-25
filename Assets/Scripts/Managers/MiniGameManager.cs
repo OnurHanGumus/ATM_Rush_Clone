@@ -14,7 +14,8 @@ namespace Managers
 
         #region Seriliazed Field
 
-        [SerializeField] private GameObject firstMoney;
+        [SerializeField] private Transform moneyHolder;
+        [SerializeField] private Transform firstMoney;
         [SerializeField] private float stackDistanceAmount = 1.5f;
 
         #endregion
@@ -29,7 +30,7 @@ namespace Managers
 
         private void Awake()
         {
-            nextMoneyTransform = firstMoney.transform.position;
+            nextMoneyTransform = firstMoney.position;
         }
 
         #region Event Subscription
@@ -59,9 +60,10 @@ namespace Managers
         public void StackUpCollectables(GameObject collectable)
         {
             collectable.tag = "Untagged";
-            collectable.transform.SetParent(firstMoney.transform);
+            collectable.transform.SetParent(moneyHolder);
             nextMoneyTransform = new Vector3(nextMoneyTransform.x,nextMoneyTransform.y - stackDistanceAmount,nextMoneyTransform.z); 
             collectable.transform.position = nextMoneyTransform;
+            collectable.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
     }
 }
