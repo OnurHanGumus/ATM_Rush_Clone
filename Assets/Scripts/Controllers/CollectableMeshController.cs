@@ -24,8 +24,8 @@ namespace Controllers
         #endregion
 
         #region Event Subsicription
-        private void OnEnable() 
-        { 
+        private void OnEnable()
+        {
             SubscribeEvents();
         }
         private void OnDestroy()
@@ -42,7 +42,7 @@ namespace Controllers
         {
             collectableManager.onCollectableTypeChanged += UpgradeMesh;
         }
-        
+
         private void UnSubscribeEvents()
         {
             collectableManager.onCollectableTypeChanged -= UpgradeMesh;
@@ -65,7 +65,11 @@ namespace Controllers
                 case CollectableType.Gem:
                     _meshFilter.sharedMesh = meshFilter[2].sharedMesh;
                     break;
+                    // default:
+                    //     collectables[0].SetActive(true);
+                    //     break;
             }
+
         }
     }
 }

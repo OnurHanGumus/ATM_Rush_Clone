@@ -918,18 +918,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewCollectable
       objectReference: {fileID: 0}
-    - target: {fileID: 895945716046570024, guid: cb6ca915b94046a46a00cfe8d296d11f, type: 3}
-      propertyPath: meshFilter.Array.data[0]
-      value: 
-      objectReference: {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
-    - target: {fileID: 895945716046570024, guid: cb6ca915b94046a46a00cfe8d296d11f, type: 3}
-      propertyPath: meshFilter.Array.data[1]
-      value: 
-      objectReference: {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
-    - target: {fileID: 895945716046570024, guid: cb6ca915b94046a46a00cfe8d296d11f, type: 3}
-      propertyPath: meshFilter.Array.data[2]
-      value: 
-      objectReference: {fileID: 4738028301749549601, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb6ca915b94046a46a00cfe8d296d11f, type: 3}
 --- !u!1001 &272888891

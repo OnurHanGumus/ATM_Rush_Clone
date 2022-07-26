@@ -39,8 +39,7 @@ public class CoreGameSignals : MonoBehaviour
     public UnityAction onRestartLevel = delegate { };
     public UnityAction onPlay = delegate { };
     public UnityAction onReset = delegate { };
+    public UnityAction onEndGame = delegate { };
     public UnityAction onSaveGame = delegate { };
     public UnityAction onSetCameraTarget = delegate { };
-
-
 }

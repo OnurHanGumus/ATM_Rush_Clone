@@ -87,7 +87,7 @@ public class CollectableManager : MonoBehaviour
 
     public void OnUpgradeCollectableCollide(Transform upgradedNode)
     {
-        if (upgradedNode.Equals(transform))
+        if (upgradedNode.Equals(transform) && collectableType!= CollectableType.Gem)
         {
             ++collectableType;
             // print("Upgrade Collide");
@@ -207,7 +207,6 @@ public class CollectableManager : MonoBehaviour
     
     private int OnGetCollectableType()
     {
-
         if (collectableState.Equals(CollectableState.notCollected))
         {
             print(collectableType);
