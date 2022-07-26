@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Enums;
 using Signals;
 using UnityEngine;
@@ -11,28 +12,32 @@ namespace Controllers
 
         #region Serialized Variables
         [SerializeField] private CollectableManager collectableManager;
-        [SerializeField] private GameObject[] collectables = new GameObject[3];
+        [SerializeField]
+        private List<MeshFilter> meshFilter = new List<MeshFilter>();
 
         #endregion
         #region private vars
-
-
-        #endregion
+        private MeshFilter _meshFilter;
 
         #endregion
 
-
+        #endregion
 
         #region Event Subsicription
-        private void Start()
-        {
+        private void OnEnable() 
+        { 
             SubscribeEvents();
         }
         private void OnDestroy()
         {
             UnSubscribeEvents();
         }
-        
+        private void Awake()
+        {
+            _meshFilter = GetComponent<MeshFilter>();
+            _meshFilter.sharedMesh = meshFilter[0].sharedMesh;
+        }
+
         private void SubscribeEvents()
         {
             collectableManager.onCollectableTypeChanged += UpgradeMesh;
@@ -47,31 +52,19 @@ namespace Controllers
 
         public void UpgradeMesh(CollectableType type)
         {
-            SetActiveFalseAll();
             switch (type)
             {
                 case CollectableType.Money:
-                    collectables[0].SetActive(true);
+                    _meshFilter.sharedMesh = meshFilter[0].sharedMesh;
+
                     break;
                 case CollectableType.Gold:
-                    collectables[1].SetActive(true);
+                    _meshFilter.sharedMesh = meshFilter[1].sharedMesh;
+
                     break;
                 case CollectableType.Gem:
-                    collectables[2].SetActive(true);
+                    _meshFilter.sharedMesh = meshFilter[2].sharedMesh;
                     break;
-            }
-            // if (collectables[2].gameObject.activeInHierarchy == false)
-            // {
-            //     SetActiveFalseAll();
-            //     collectables[(int)type - 1].SetActive(true);
-            // }
-        }
-
-        private void SetActiveFalseAll()
-        {
-            foreach (var collectable in collectables)
-            {
-                collectable.SetActive(false);
             }
         }
     }
