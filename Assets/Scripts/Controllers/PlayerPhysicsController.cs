@@ -1,3 +1,4 @@
+using System.Collections;
 using Enums;
 using Managers;
 using Signals;
@@ -30,7 +31,7 @@ namespace Controllers
             if (other.CompareTag("FinishFlag"))
             {
                 PlayerSignals.Instance.onPlayerEnterFinishLine?.Invoke();
-                CoreGameSignals.Instance.onLevelSuccessful?.Invoke();
+                CoreGameSignals.Instance.onEndGame?.Invoke();
             }
         }
     }

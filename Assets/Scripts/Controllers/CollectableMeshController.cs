@@ -59,7 +59,11 @@ namespace Controllers
                 case CollectableType.Gem:
                     collectables[2].SetActive(true);
                     break;
+                // default:
+                //     collectables[0].SetActive(true);
+                //     break;
             }
+
             // if (collectables[2].gameObject.activeInHierarchy == false)
             // {
             //     SetActiveFalseAll();
