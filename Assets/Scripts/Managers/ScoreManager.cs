@@ -46,12 +46,12 @@ namespace Managers
         {
             playerScore = value;
             UpdateTotalScore(playerScore, atmScore);
-            //ScoreSignals.Instance.onPlayerScoreUpdated(playerScore);
         }
 
         private void OnAtmScoreUpdated(int value)
         {
             atmScore += value;
+            playerScore -= value;
             UpdateTotalScore(playerScore, atmScore);
             ScoreSignals.Instance.onUpdateAtmScore(atmScore);
         }
