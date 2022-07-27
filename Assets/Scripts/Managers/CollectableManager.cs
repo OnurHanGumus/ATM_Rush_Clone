@@ -34,11 +34,9 @@ public class CollectableManager : MonoBehaviour
     #endregion
     #endregion
 
-    public UnityAction<CollectableType> onCollectableTypeChanged = delegate { };
     
     private void Awake()
     {
-        // _meshRenderer = GetComponent<MeshRenderer>();
         _collectableMovementController = GetComponent<CollectableMovementController>();
         SendCollectableDataToController();
         collectableType = GetCollectableType();
@@ -59,7 +57,6 @@ public class CollectableManager : MonoBehaviour
         CollectableSignals.Instance.onCollectableAndCollectableCollide += OnCollectableAndCollectableCollide;
         CollectableSignals.Instance.onCollectableUpgradeCollide += OnUpgradeCollectableCollide;
         CollectableSignals.Instance.onCollectableATMCollide += OnCollectableAndATMCollide;
-        CollectableSignals.Instance.onGetCollectableType += OnGetCollectableType;
         
         CollectableSignals.Instance.onCollectableWalkingPlatformCollide += OnCollectableAndWalkingPlatformCollide;
         CollectableSignals.Instance.onCollectableWinZoneCollide += OnCollectableAndWinZoneCollide;
@@ -71,7 +68,6 @@ public class CollectableManager : MonoBehaviour
         CollectableSignals.Instance.onCollectableAndCollectableCollide -= OnCollectableAndCollectableCollide;
         CollectableSignals.Instance.onCollectableUpgradeCollide -= OnUpgradeCollectableCollide;
         CollectableSignals.Instance.onCollectableATMCollide -= OnCollectableAndATMCollide;
-        CollectableSignals.Instance.onGetCollectableType -= OnGetCollectableType;
         
         CollectableSignals.Instance.onCollectableWalkingPlatformCollide -= OnCollectableAndWalkingPlatformCollide;
         CollectableSignals.Instance.onCollectableWinZoneCollide -= OnCollectableAndWinZoneCollide;
@@ -85,23 +81,22 @@ public class CollectableManager : MonoBehaviour
     private CollectableData GetCollectableData() => Resources.Load<CD_Collectable>("Datas/UnityObjects/CD_Collectable").Data;
     private CollectableType GetCollectableType() => Resources.Load<CD_Collectable>("Datas/UnityObjects/CD_Collectable").collectableType;
 
-    public void OnUpgradeCollectableCollide(Transform upgradedNode)
+    private void OnCollectableAndCollectableCollide(Transform otherNode, Transform parent)
     {
-        if (upgradedNode.Equals(transform) && collectableType!= CollectableType.Gem)
+        if (otherNode.Equals(transform) && collectableState.Equals(CollectableState.notCollected))
         {
-            ++collectableType;
-            // print("Upgrade Collide");
-            onCollectableTypeChanged?.Invoke(collectableType);
+            SetControllerParentNode(parent);
+            collectableState = CollectableState.collected;
+            GetBigger();
+            _collectableMovementController.ActivateMovement();
         }
     }
-
     private void OnCollectableAndObstacleCollide(Transform crashedNode)
     {
         if (crashedNode.Equals(transform))
         {
             DestroyCollectable();
             ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(_collectableStackManager.CalculateStackValue());
-
         }
         else if (collectableState.Equals(CollectableState.collected))
         {
@@ -115,6 +110,22 @@ public class CollectableManager : MonoBehaviour
             }
         }
     }
+
+    private void DestroyCollectable()
+    {
+        _collectableMovementController.DeactivateMovement();
+        Destroy(gameObject);
+    }
+
+    public void OnUpgradeCollectableCollide(Transform upgradedNode)
+    {
+        if (upgradedNode.Equals(transform) && collectableType != CollectableType.Gem)
+        {
+            ++collectableType;
+            collectableMeshController.UpgradeMesh(collectableType);
+        }
+    }
+
 
     private void OnPlayerAndObstacleCrash()
     {
@@ -151,20 +162,6 @@ public class CollectableManager : MonoBehaviour
         }
     }
 
-    private void OnCollectableAndCollectableCollide(Transform otherNode, Transform parent)
-    {
-        if (otherNode.Equals(transform) && collectableState.Equals(CollectableState.notCollected))
-        {
-            collectableState = CollectableState.collected;
-            GetBigger();
-
-            //Transform parentNode = _collectableStackManager.GetLastNodeOfList();
-            //_collectableMovementController.SetConnectedNode(parentNode);
-
-            _collectableMovementController.ActivateMovement();
-        }
-    }
-
     private void SendCollectableDataToController()
     {
         _collectableData = GetCollectableData();
@@ -189,11 +186,6 @@ public class CollectableManager : MonoBehaviour
         }
     }
 
-    private void DestroyCollectable()
-    {
-        _collectableMovementController.DeactivateMovement();
-        Destroy(gameObject);
-    }
 
     public void StackCollectablesToMiniGame()
     {
@@ -205,14 +197,6 @@ public class CollectableManager : MonoBehaviour
         CollectableSignals.Instance.onMiniGameStackCollected(gameObject);
     }
     
-    private int OnGetCollectableType()
-    {
-        if (collectableState.Equals(CollectableState.notCollected))
-        {
-            print(collectableType);
-        }
-        return (int) collectableType;
-    }
 
     public void SetControllerParentNode(Transform parentNode)
     {
@@ -222,7 +206,7 @@ public class CollectableManager : MonoBehaviour
 
     public void GetBigger()
     {
-        StartCoroutine(GetBiggerCoroutine());
+        //StartCoroutine(GetBiggerCoroutine());
     }
 
     public IEnumerator GetBiggerCoroutine()

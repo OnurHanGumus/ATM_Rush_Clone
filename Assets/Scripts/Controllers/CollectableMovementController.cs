@@ -25,7 +25,7 @@ public class CollectableMovementController : MonoBehaviour
     private void Awake()
     {
         _rig = GetComponent<Rigidbody>();
-        ConnectedNode = transform; //hata vermesin diye bu yapıldı. Aslında kendinden bir öncekinin pozisyonuna gidiyor olmalı.
+        ConnectedNode = transform; 
     }
 
     void FixedUpdate()
@@ -56,7 +56,6 @@ public class CollectableMovementController : MonoBehaviour
         {
             Vector3 targetPos = ConnectedNode.position;
             targetPos.z += _collectableData.lerpData.lerpSpaces;
-            //transform.position = Vector3.Lerp(transform.position, targetPos, _collectableData.lerpData.lerpSoftness * Time.deltaTime);
 
             _rig.position = new Vector3(Mathf.Lerp(_rig.position.x, targetPos.x, Time.deltaTime * _collectableData.lerpData.lerpSoftnessX),
                 transform.position.y,
@@ -81,10 +80,7 @@ public class CollectableMovementController : MonoBehaviour
     public void AddDropForce()
     {
         Vector3 targetLocation = new Vector3(Random.Range(-4, 4), _rig.position.y, _rig.position.z);
-        //_rig.AddForce(new Vector3(0, 0, 500), ForceMode.Impulse);
-        //_rig.position = new Vector3(Random.Range(-4, 4), _rig.position.y, _rig.position.z);
         transform.DOMove(targetLocation, 0.5f);
-        //transform.DOJump(new Vector3(transform.position.x, 1, transform.position.z), 1f, 0, 0.5f);
     }
 
     public void MoveToWinZone()

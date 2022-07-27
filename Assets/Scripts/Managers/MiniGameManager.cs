@@ -92,7 +92,7 @@ namespace Managers
             finishPlayerTransform.DOMove(new Vector3(finishPlayerTransform.position.x,
                 finishPlayerTransform.position.y - _nextMoneyTransform.y,
                 finishPlayerTransform.position.z),Math.Abs(finishPlayerTransform.position.y / stackUpTimeMultipler));
-            print(Math.Abs(finishPlayerTransform.position.y/stackUpTimeMultipler));
+            //print(Math.Abs(finishPlayerTransform.position.y/stackUpTimeMultipler));
         }
 
         private void SetActiveAllCollectables()

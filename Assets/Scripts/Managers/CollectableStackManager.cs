@@ -12,7 +12,6 @@ public class CollectableStackManager : MonoBehaviour
     #region Serialized Variables
     #endregion
     #region private vars
-    private int _score = 0;
     #endregion
     #endregion
     void Awake()
@@ -56,10 +55,6 @@ public class CollectableStackManager : MonoBehaviour
         UnsubscribeEvents();
     }
 
-    private void Update()
-    {
-        //StayInTheLine();
-    }
     //private void StayInTheLine()
     //{
     //    for (int i = 0; i < collectables.Count; i++)
@@ -74,6 +69,24 @@ public class CollectableStackManager : MonoBehaviour
     //    }
 
     //}
+
+    private void OnCollectableAndCollectableCollide(Transform addedNode, Transform parentNode)
+    {
+        ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
+    }
+
+    public void AddCollectableToList(Transform other)
+    {
+
+        if (collectables.Contains(other))
+        {
+            return;
+        }
+
+        collectables.Add(other);
+        other.transform.parent = transform;
+        other.tag = "Player";
+    }
 
     private void OnCollectableAndObstacleCollide(Transform kazaYapanObje)
     {
@@ -93,37 +106,15 @@ public class CollectableStackManager : MonoBehaviour
             }
         }
     }
-    private void OnCollectableAndCollectableCollide(Transform addedNode, Transform parentNode)
-    {
-        ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
-    }
-    
-    public void AddCollectableToList(Transform other)
-    {
-        Transform parentNode = collectables[collectables.Count - 1];
-
-        if (collectables.Contains(other))
-        {
-            return;
-        }
-
-        collectables.Add(other);
-        other.transform.parent = transform;
-        other.tag = "Player";
-
-        CollectableManager collectableManager = other.GetComponent<CollectableManager>();
-        collectableManager.SetControllerParentNode(parentNode);
-        //collectableMovementController.ActivateMovement();
-    }
-    
-    private void OnPlayerAndObstacleCrash()
-    {
-        RemoveAllList();
-        ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
-    }
 
     private void OnCollectableUpgradeCollide(Transform upgradedNode)
     {
+        ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
+    }
+
+    private void OnPlayerAndObstacleCrash()
+    {
+        RemoveAllList();
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
 
@@ -174,14 +165,7 @@ public class CollectableStackManager : MonoBehaviour
         {
             _score += (int)collectables[i].GetComponent<CollectableManager>().collectableType;
         }
-        //CalculateStackValue2();
 
         return _score;
-    }
-
-    public void CalculateStackValue2()
-    {
-        _score += CollectableSignals.Instance.onGetCollectableType();
-        //Debug.Log(_score);
     }
 }
