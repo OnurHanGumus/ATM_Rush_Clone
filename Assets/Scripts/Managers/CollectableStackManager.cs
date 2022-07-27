@@ -1,6 +1,7 @@
 using Signals;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CollectableStackManager : MonoBehaviour
 {
@@ -8,16 +9,21 @@ public class CollectableStackManager : MonoBehaviour
     #region public vars
     public List<Transform> collectables;
 
+
     #endregion
     #region Serialized Variables
     #endregion
     #region private vars
+    private CollectableData _collectableData;
+
     #endregion
     #endregion
     void Awake()
     {
         collectables = new List<Transform>();
         collectables.Add(transform);
+        _collectableData = GetCollectableData();
+
     }
 
     void OnEnable()
@@ -54,21 +60,26 @@ public class CollectableStackManager : MonoBehaviour
     {
         UnsubscribeEvents();
     }
+    private CollectableData GetCollectableData() => Resources.Load<CD_Collectable>("Datas/UnityObjects/CD_Collectable").Data;
 
-    //private void StayInTheLine()
-    //{
-    //    for (int i = 0; i < collectables.Count; i++)
-    //    {
-    //        if (i == 0)
-    //        {
-    //            continue;
-    //        }
-    //        Vector3 targetPos = collectables[i - 1].position;
-    //        targetPos.z += lerpSpaces;
-    //        collectables[i].position = Vector3.Lerp(collectables[i].position, targetPos, lerpSoftness * Time.deltaTime);
-    //    }
+    private void Update()
+    {
+        StayInTheLine();
+    }
+    private void StayInTheLine()
+    {
+        for (int i = 0; i < collectables.Count; i++)
+        {
+            if (i == 0)
+            {
+                continue;
+            }
+            collectables[i].transform.DOMoveX(collectables[i - 1].transform.position.x, .1f);
+            collectables[i].transform.position = new Vector3(collectables[i].transform.position.x, collectables[i].transform.position.y, collectables[i - 1].transform.position.z + _collectableData.lerpData.lerpSpaces);
 
-    //}
+        }
+
+    }
 
     private void OnCollectableAndCollectableCollide(Transform addedNode, Transform parentNode)
     {
