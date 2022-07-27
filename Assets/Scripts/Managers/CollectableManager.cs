@@ -54,9 +54,7 @@ public class CollectableManager : MonoBehaviour
     {
         PlayerSignals.Instance.onPlayerAndObstacleCrash += OnPlayerAndObstacleCrash;
         CollectableSignals.Instance.onCollectableAndObstacleCollide += OnCollectableAndObstacleCollide;
-        CollectableSignals.Instance.onCollectableAndCollectableCollide += OnCollectableAndCollectableCollide;
         CollectableSignals.Instance.onCollectableUpgradeCollide += OnUpgradeCollectableCollide;
-        CollectableSignals.Instance.onCollectableATMCollide += OnCollectableAndATMCollide;
         
         CollectableSignals.Instance.onCollectableWalkingPlatformCollide += OnCollectableAndWalkingPlatformCollide;
         CollectableSignals.Instance.onCollectableWinZoneCollide += OnCollectableAndWinZoneCollide;
@@ -65,9 +63,7 @@ public class CollectableManager : MonoBehaviour
     {
         PlayerSignals.Instance.onPlayerAndObstacleCrash -= OnPlayerAndObstacleCrash;
         CollectableSignals.Instance.onCollectableAndObstacleCollide -= OnCollectableAndObstacleCollide;
-        CollectableSignals.Instance.onCollectableAndCollectableCollide -= OnCollectableAndCollectableCollide;
         CollectableSignals.Instance.onCollectableUpgradeCollide -= OnUpgradeCollectableCollide;
-        CollectableSignals.Instance.onCollectableATMCollide -= OnCollectableAndATMCollide;
         
         CollectableSignals.Instance.onCollectableWalkingPlatformCollide -= OnCollectableAndWalkingPlatformCollide;
         CollectableSignals.Instance.onCollectableWinZoneCollide -= OnCollectableAndWinZoneCollide;
@@ -81,16 +77,7 @@ public class CollectableManager : MonoBehaviour
     private CollectableData GetCollectableData() => Resources.Load<CD_Collectable>("Datas/UnityObjects/CD_Collectable").Data;
     private CollectableType GetCollectableType() => Resources.Load<CD_Collectable>("Datas/UnityObjects/CD_Collectable").collectableType;
 
-    private void OnCollectableAndCollectableCollide(Transform otherNode, Transform parent)
-    {
-        if (otherNode.Equals(transform) && collectableState.Equals(CollectableState.notCollected))
-        {
-            SetControllerParentNode(parent);
-            collectableState = CollectableState.collected;
-            GetBigger();
-            _collectableMovementController.ActivateMovement();
-        }
-    }
+    
     private void OnCollectableAndObstacleCollide(Transform crashedNode)
     {
         if (crashedNode.Equals(transform))
@@ -168,23 +155,7 @@ public class CollectableManager : MonoBehaviour
         _collectableMovementController.SetCollectableData(_collectableData);
     }
 
-    private void OnCollectableAndATMCollide(Transform atmyeGirenObje)
-    {
-        if (atmyeGirenObje.Equals(transform))
-        {
-            ScoreSignals.Instance.onATMScoreUpdated?.Invoke((int)collectableType);
-            StackCollectablesToMiniGame();
-        }
-        else if (collectableState.Equals(CollectableState.collected))
-        {
-            if (atmyeGirenObje.position.z <= transform.position.z)
-            {
-                ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(_collectableStackManager.CalculateStackValue());
-                collectableState = CollectableState.notCollected;
-                CollectableBreak();
-            }
-        }
-    }
+    
 
 
     public void StackCollectablesToMiniGame()
@@ -226,5 +197,28 @@ public class CollectableManager : MonoBehaviour
             yield return new WaitForSeconds(2f);
             _isAnimating = false;
         }
+    }
+
+    //yeni 
+
+    public void OnCollectableAndCollectableCollide(Transform otherNode)
+    {
+
+        collectableState = CollectableState.collected;
+        CollectableSignals.Instance.onCollectableAndCollectableCollide?.Invoke(transform);
+
+    }
+
+    public void OnCollectableAndATMCollide(Transform atmyeGirenObje)
+    {
+        CollectableSignals.Instance.onCollectableATMCollide?.Invoke(transform);
+
+        if (atmyeGirenObje.Equals(transform))
+        {
+            ScoreSignals.Instance.onATMScoreUpdated?.Invoke((int)collectableType);
+            DestroyCollectable();
+        }
+     
+
     }
 }

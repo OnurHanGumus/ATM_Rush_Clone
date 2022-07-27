@@ -81,8 +81,9 @@ public class CollectableStackManager : MonoBehaviour
 
     }
 
-    private void OnCollectableAndCollectableCollide(Transform addedNode, Transform parentNode)
+    private void OnCollectableAndCollectableCollide(Transform addedNode)
     {
+        AddCollectableToList(addedNode);
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
 
@@ -95,6 +96,7 @@ public class CollectableStackManager : MonoBehaviour
         }
 
         collectables.Add(other);
+        collectables.TrimExcess();
         other.transform.parent = transform;
         other.tag = "Player";
     }
@@ -114,6 +116,8 @@ public class CollectableStackManager : MonoBehaviour
             if (collectables.Count > kazaYapanObjeninIndeksi)
             {
                 collectables.RemoveAt(i);
+                collectables.TrimExcess();
+
             }
         }
     }
@@ -134,13 +138,14 @@ public class CollectableStackManager : MonoBehaviour
         for (int i = collectables.Count - 1; i > 0; i--)
         {
             collectables.RemoveAt(i);
+            collectables.TrimExcess();
         }
-        collectables.TrimExcess();
     }
 
     public void OnCollectableAndATMCollide(Transform atmyeGirenObje)
     {
         int atmyeGirenObjeninIndeksi = collectables.IndexOf(atmyeGirenObje);
+        print(atmyeGirenObjeninIndeksi);
 
         RemoveCollectablesFromList(atmyeGirenObjeninIndeksi);
     }
@@ -151,14 +156,20 @@ public class CollectableStackManager : MonoBehaviour
 
     private void RemoveCollectablesFromList(int kazaYapanObjeninIndeksi)
     {
-        for (int i = collectables.Count - 1; i > 0; i--)
+        if (kazaYapanObjeninIndeksi == -1)
+        {
+            return;
+        }
+        int collectablesCount = collectables.Count;
+        for (int i = collectablesCount - 1; i > 0; i--)
         {
             if (collectables.Count > kazaYapanObjeninIndeksi)
             {
                 collectables.RemoveAt(i);
+                collectables.TrimExcess();
+
             }
         }
-        collectables.TrimExcess();
     }
 
     public Transform GetLastNodeOfList(Transform addedNode)

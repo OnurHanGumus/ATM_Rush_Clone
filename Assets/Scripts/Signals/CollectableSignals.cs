@@ -36,7 +36,7 @@ namespace Signals
         public Func<Transform, Transform> getLastNodeOfList = delegate { return null; };
 
 
-        public UnityAction<Transform, Transform> onCollectableAndCollectableCollide = delegate { };
+        public UnityAction<Transform> onCollectableAndCollectableCollide = delegate { };
         public UnityAction<Transform> onCollectableAndObstacleCollide = delegate { };
         public UnityAction<Transform> onCollectableUpgradeCollide = delegate { };
         public UnityAction<Transform> onCollectableATMCollide = delegate { };

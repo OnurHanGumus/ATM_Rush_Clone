@@ -48,8 +48,7 @@ namespace Controllers
         
         private void CollectableAndCollectableCollide()
         {
-            Transform parentNode = CollectableSignals.Instance.getLastNodeOfList(transform);
-            CollectableSignals.Instance.onCollectableAndCollectableCollide?.Invoke(transform, parentNode);
+            collectableManager.OnCollectableAndCollectableCollide(transform);
         }
         private void CollectableAndObstacleCollide()
         {
@@ -63,7 +62,7 @@ namespace Controllers
 
         private void CollectableAndATMCollide()
         {
-            CollectableSignals.Instance.onCollectableATMCollide?.Invoke(transform);
+            collectableManager.OnCollectableAndATMCollide(transform);
         }
         
         private void CollectableAndWalkingPlatformCollide()
