@@ -52,12 +52,12 @@ namespace Controllers
         }
         private void CollectableAndObstacleCollide()
         {
-            CollectableSignals.Instance.onCollectableAndObstacleCollide?.Invoke(transform);
+            collectableManager.OnCollectableAndObstacleCollide(transform);
         }
 
         private void CollectableUpgradeCollide()
         {
-            CollectableSignals.Instance.onCollectableUpgradeCollide?.Invoke(transform);
+            collectableManager.OnUpgradeCollectableCollide(transform);
         }
 
         private void CollectableAndATMCollide()
@@ -67,12 +67,12 @@ namespace Controllers
         
         private void CollectableAndWalkingPlatformCollide()
         {
-            CollectableSignals.Instance.onCollectableWalkingPlatformCollide?.Invoke(transform);
+            collectableManager.OnCollectableAndWalkingPlatformCollide(transform);
         }
         
         private void CollectableAndWinZoneCollide()
         {
-            CollectableSignals.Instance.onCollectableWinZoneCollide?.Invoke(transform);
+            collectableManager.OnCollectableAndWinZoneCollide(transform);
         }
     }
 }

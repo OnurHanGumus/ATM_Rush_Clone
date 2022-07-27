@@ -76,9 +76,7 @@ public class CollectableStackManager : MonoBehaviour
             }
             collectables[i].transform.DOMoveX(collectables[i - 1].transform.position.x, .1f);
             collectables[i].transform.position = new Vector3(collectables[i].transform.position.x, collectables[i].transform.position.y, collectables[i - 1].transform.position.z + _collectableData.lerpData.lerpSpaces);
-
         }
-
     }
 
     private void OnCollectableAndCollectableCollide(Transform addedNode)
@@ -89,7 +87,6 @@ public class CollectableStackManager : MonoBehaviour
 
     public void AddCollectableToList(Transform other)
     {
-
         if (collectables.Contains(other))
         {
             return;
@@ -105,22 +102,10 @@ public class CollectableStackManager : MonoBehaviour
     {
         int kazaYapanObjeninIndeksi = collectables.IndexOf(kazaYapanObje);
 
-        DropCollectables(kazaYapanObjeninIndeksi);
+        RemoveCollectablesFromList(kazaYapanObjeninIndeksi);
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
-
     }
-    private void DropCollectables(int kazaYapanObjeninIndeksi)
-    {
-        for (int i = collectables.Count - 1; i > 0; i--)
-        {
-            if (collectables.Count > kazaYapanObjeninIndeksi)
-            {
-                collectables.RemoveAt(i);
-                collectables.TrimExcess();
 
-            }
-        }
-    }
 
     private void OnCollectableUpgradeCollide(Transform upgradedNode)
     {
@@ -167,7 +152,6 @@ public class CollectableStackManager : MonoBehaviour
             {
                 collectables.RemoveAt(i);
                 collectables.TrimExcess();
-
             }
         }
     }
