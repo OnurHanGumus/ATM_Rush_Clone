@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class UIManager : MonoBehaviour
 {
     #region self vars
@@ -59,4 +60,11 @@ public class UIManager : MonoBehaviour
     {
         uiPanelController.ClosePanel(panel);
     }
+
+    public void ResetButton()
+    {
+        CoreGameSignals.Instance.onRestartLevel?.Invoke();
+    }
+
+
 }

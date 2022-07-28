@@ -12,6 +12,9 @@ namespace Managers
 {
     public class LevelManager : MonoSingleton<LevelManager>
     {
+        [SerializeField]
+        UnityEngine.Object[] Levels;
+
         #region Self Variables
 
         #region Public Variables
@@ -52,8 +55,8 @@ namespace Managers
 
         private LevelData GetLevelData()
         {
-            int newLevelData = _levelID % Resources.Load<CD_Level>("Data/CD_Level").Levels.Count;
-            return Resources.Load<CD_Level>("Data/CD_Level").Levels[newLevelData];
+            int newLevelData = _levelID % Resources.Load<CD_Level>("Datas/UnityObjects/CD_Level").Levels.Count;
+            return Resources.Load<CD_Level>("Datas/UnityObjects/CD_Level").Levels[newLevelData];
         }
 
         #region Event Subscription
@@ -116,7 +119,8 @@ namespace Managers
 
         private void OnInitializeLevel()
         {
-            var newLevelData = _levelID % Resources.Load<CD_Level>("Data/CD_Level").Levels.Count;
+             Levels = Resources.LoadAll("Levels");
+            var newLevelData = _levelID % Levels.Length;
             levelLoader.InitializeLevel(newLevelData, levelHolder.transform);
         }
 

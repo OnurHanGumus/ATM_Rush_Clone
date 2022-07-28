@@ -37,21 +37,22 @@ public class PlayerManager : MonoBehaviour
 
     private void SubscribeEvents()
     {
-        CoreGameSignals.Instance.onPlay += ActivateMovement;
+        CoreGameSignals.Instance.onPlay += OnActivateMovement;
         InputSignals.Instance.onInputDragged += OnInputDragged;
         InputSignals.Instance.onInputReleased += OnInputReleased;
         PlayerSignals.Instance.onPlayerAndObstacleCrash += OnPlayerAndObstacleCrash;
-        ScoreSignals.Instance.onTotalScoreUpdated += UpdateCurrentScore;
-        PlayerSignals.Instance.onPlayerEnterFinishLine += DeactivateMovement;
+        ScoreSignals.Instance.onTotalScoreUpdated += OnUpdateCurrentScore;
+        PlayerSignals.Instance.onPlayerEnterFinishLine += OnDeactivateMovement;
+        CoreGameSignals.Instance.onRestartLevel += OnPlayerRestart;
     }
     private void UnsubscribeEvents()
     {
-        CoreGameSignals.Instance.onPlay -= ActivateMovement;
+        CoreGameSignals.Instance.onPlay -= OnActivateMovement;
         InputSignals.Instance.onInputDragged -= OnInputDragged;
         InputSignals.Instance.onInputReleased -= OnInputReleased;
         PlayerSignals.Instance.onPlayerAndObstacleCrash -= OnPlayerAndObstacleCrash;
-        ScoreSignals.Instance.onTotalScoreUpdated -= UpdateCurrentScore;
-        PlayerSignals.Instance.onPlayerEnterFinishLine -= DeactivateMovement;
+        ScoreSignals.Instance.onTotalScoreUpdated -= OnUpdateCurrentScore;
+        PlayerSignals.Instance.onPlayerEnterFinishLine -= OnDeactivateMovement;
     }
 
     private void OnDisable()
@@ -60,17 +61,23 @@ public class PlayerManager : MonoBehaviour
     }
 
     #endregion
-    private void ActivateMovement()
+    private void OnActivateMovement()
     {
         _playerMovementController.ActivateMovement();
     }
 
-    private void DeactivateMovement()
+    private void OnDeactivateMovement()
     {
         _playerMovementController.DeactivateMovement();
         playerAnimationController.StartIdleAnim();
     }
 
+    private void OnPlayerRestart()
+    {
+        OnDeactivateMovement();
+        transform.position = Vector3.zero;
+       
+    }
     private void SendPlayerDataToController()
     {
         _playerMovementController.SetMovementData(_playerData.playerMovementData);
@@ -89,7 +96,7 @@ public class PlayerManager : MonoBehaviour
     {
         _playerMovementController.PushPlayerBack();
     }
-    private void UpdateCurrentScore(int score)
+    private void OnUpdateCurrentScore(int score)
     {
         playerScoreTextController.UpdateScoreText(score);
     }

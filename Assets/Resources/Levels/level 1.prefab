@@ -121,7 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951751860993874}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -742,7 +741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951751912296723}
   meshFilter: []
 --- !u!1 &6192951751912980552
 GameObject:
@@ -1310,7 +1308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951751961417446}
   meshFilter: []
 --- !u!1 &6192951751962399355
 GameObject:
@@ -1434,7 +1431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951751962399350}
   meshFilter: []
 --- !u!1 &6192951751965862377
 GameObject:
@@ -1558,7 +1554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951751965862372}
   meshFilter: []
 --- !u!1 &6192951751966023540
 GameObject:
@@ -1583,7 +1578,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6192951751966023540}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1723,7 +1718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951751967759886}
   meshFilter: []
 --- !u!1 &6192951751973297027
 GameObject:
@@ -1847,7 +1841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951751973297086}
   meshFilter: []
 --- !u!1 &6192951751988185330
 GameObject:
@@ -1970,7 +1963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951751988185323}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -2227,7 +2219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752007363239}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -2477,7 +2468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752026479433}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -2734,7 +2724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752031948982}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -3673,7 +3662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752080745224}
   meshFilter: []
 --- !u!1 &6192951752082770899
 GameObject:
@@ -4450,7 +4438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752169368836}
   meshFilter: []
 --- !u!1 &6192951752172222101
 GameObject:
@@ -4574,7 +4561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752172222096}
   meshFilter: []
 --- !u!1 &6192951752180103075
 GameObject:
@@ -5273,7 +5259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752269490786}
   meshFilter: []
 --- !u!1 &6192951752274417536
 GameObject:
@@ -5902,7 +5887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752323187450}
   meshFilter: []
 --- !u!1 &6192951752323837172
 GameObject:
@@ -6107,7 +6091,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752328321053}
   meshFilter: []
 --- !u!1 &6192951752330369299
 GameObject:
@@ -6313,7 +6296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752332246967}
   meshFilter: []
 --- !u!1 &6192951752333134174
 GameObject:
@@ -6437,7 +6419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752333134169}
   meshFilter: []
 --- !u!1 &6192951752336371682
 GameObject:
@@ -6642,7 +6623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752337734976}
   meshFilter: []
 --- !u!1 &6192951752345618678
 GameObject:
@@ -6880,7 +6860,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752348551565}
   meshFilter: []
 --- !u!1 &6192951752364482435
 GameObject:
@@ -7004,7 +6983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752364482494}
   meshFilter: []
 --- !u!1 &6192951752387214223
 GameObject:
@@ -7744,7 +7722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752440970805}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -8182,7 +8159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752504172359}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -8521,7 +8497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752555050169}
   meshFilter: []
 --- !u!1 &6192951752580700547
 GameObject:
@@ -8645,7 +8620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752580700606}
   meshFilter: []
 --- !u!1 &6192951752586586476
 GameObject:
@@ -8863,7 +8837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752598580026}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -9039,7 +9012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752616784379}
   meshFilter: []
 --- !u!1 &6192951752629641693
 GameObject:
@@ -9163,7 +9135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752629641688}
   meshFilter: []
 --- !u!1 &6192951752632542914
 GameObject:
@@ -9286,7 +9257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752632542971}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -9542,7 +9512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752647332582}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -9717,7 +9686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752649651587}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -9974,7 +9942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752662706147}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -10150,7 +10117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752662718245}
   meshFilter: []
 --- !u!1 &6192951752685404225
 GameObject:
@@ -10849,7 +10815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752767528476}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -11025,7 +10990,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752774534729}
   meshFilter: []
 --- !u!1 &6192951752780432964
 GameObject:
@@ -11771,7 +11735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752861618868}
   meshFilter: []
 --- !u!1 &6192951752862436497
 GameObject:
@@ -11976,7 +11939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752863806869}
   meshFilter: []
 --- !u!1 &6192951752867745992
 GameObject:
@@ -12507,7 +12469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752915082955}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -13088,7 +13049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752963877873}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -13264,7 +13224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752976168125}
   meshFilter: []
 --- !u!1 &6192951752990621152
 GameObject:
@@ -13713,7 +13672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951752998489087}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -14209,7 +14167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753092870480}
   meshFilter: []
 --- !u!1 &6192951753097596288
 GameObject:
@@ -14494,7 +14451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753098793946}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -14669,7 +14625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753114752337}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -14845,7 +14800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753115261941}
   meshFilter: []
 --- !u!1 &6192951753130684663
 GameObject:
@@ -15330,7 +15284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753152199435}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -15587,7 +15540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753156187588}
   meshFilter: []
 --- !u!1 &6192951753172752983
 GameObject:
@@ -15824,7 +15776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753189549051}
   meshFilter: []
 --- !u!1 &6192951753206333885
 GameObject:
@@ -15948,7 +15899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753206333880}
   meshFilter: []
 --- !u!1 &6192951753227763909
 GameObject:
@@ -16833,7 +16783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753274877859}
   meshFilter: []
 --- !u!1 &6192951753280335629
 GameObject:
@@ -17260,7 +17209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753328919303}
   meshFilter: []
 --- !u!1 &6192951753343720174
 GameObject:
@@ -17646,7 +17594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753371779020}
   meshFilter: []
 --- !u!1 &6192951753401018834
 GameObject:
@@ -17851,7 +17798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753424204163}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -18108,7 +18054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753428346503}
   meshFilter: []
 --- !u!1 &6192951753438256939
 GameObject:
@@ -18313,7 +18258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753444619162}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -18489,7 +18433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753455182088}
   meshFilter: []
 --- !u!1 &6192951753456483620
 GameObject:
@@ -18693,7 +18636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753464134257}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -19389,7 +19331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753577561425}
   meshFilter: []
 --- !u!1 &6192951753589554198
 GameObject:
@@ -19513,7 +19454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753589554193}
   meshFilter: []
 --- !u!1 &6192951753602923745
 GameObject:
@@ -19636,7 +19576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753602923674}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -20378,7 +20317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753710076871}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -20636,7 +20574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753759723880}
   meshFilter: []
 --- !u!1 &6192951753761706459
 GameObject:
@@ -20840,7 +20777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753765547803}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -21422,7 +21358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753794890463}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -21597,7 +21532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753806427716}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -22035,7 +21969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753811332614}
   meshFilter: []
 --- !u!1 &6192951753817536284
 GameObject:
@@ -22402,7 +22335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753847902925}
   meshFilter:
   - {fileID: -6749094374590335035, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
   - {fileID: -6390563017650441280, guid: 5cfe293773e94ec4390b42f3350b7b56, type: 3}
@@ -23229,7 +23161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753978753876}
   meshFilter: []
 --- !u!1 &6192951753986328409
 GameObject:
@@ -23353,7 +23284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528466519f5a4611a8653d78bae91084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableManager: {fileID: 6192951753986328404}
   meshFilter: []
 --- !u!1 &6192951753993580758
 GameObject:
