@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2358599005190744749}
   - component: {fileID: 3527398060155766293}
-  - component: {fileID: 986358671379512015}
   m_Layer: 0
   m_Name: SwingAxe
   m_TagString: Obstacle
@@ -50,19 +49,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 110
   m_CollisionDetection: 0
---- !u!65 &986358671379512015
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107742129961699073}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.923514, y: 5.8249526, z: 0.25734794}
-  m_Center: {x: -0.003397286, y: 2.8834975, z: 0.014875621}
 --- !u!1 &3565576659290707238
 GameObject:
   m_ObjectHideFlags: 0

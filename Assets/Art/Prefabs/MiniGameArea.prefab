@@ -49,7 +49,7 @@ MonoBehaviour:
   moneyHolder: {fileID: 5092567339446685381}
   firstMoney: {fileID: 4216790416248861873}
   stackDistanceAmount: 1.1
-  nextMoneyTransform: {x: 0, y: 0, z: 0}
+  stackUpTimeMultipler: 0.2
 --- !u!1001 &3615523185964533421
 PrefabInstance:
   m_ObjectHideFlags: 0
