@@ -26,6 +26,7 @@ namespace Managers
         [Header("Adjustments")]
         [SerializeField] private float stackDistanceAmount = 1.5f;
         [SerializeField][Range(0,1)] private float stackUpTimeMultipler;
+        [SerializeField][Range(0,0.1f)] private float endPanelTimer;
 
         #endregion
 
@@ -57,14 +58,14 @@ namespace Managers
 
         private void SubscribeEvents()
         {
-            CoreGameSignals.Instance.onEndGame += MoveFinishPlayerUp;
+            CoreGameSignals.Instance.onLevelSuccessful += MoveFinishPlayerUp;
             CollectableSignals.Instance.onMiniGameStackCollected += StackUpCollectables;
         }
 
 
         private void UnSubscribeEvents()
         {
-            CoreGameSignals.Instance.onEndGame -= MoveFinishPlayerUp;
+            CoreGameSignals.Instance.onLevelSuccessful -= MoveFinishPlayerUp;
             CollectableSignals.Instance.onMiniGameStackCollected -= StackUpCollectables;
         }
         
@@ -89,12 +90,13 @@ namespace Managers
         {
             yield return new WaitForSeconds(1.5f);
             SetActiveAllCollectables();
-            finishPlayerTransform.DOMove(new Vector3(finishPlayerTransform.position.x,
-                finishPlayerTransform.position.y - _nextMoneyTransform.y,
-                finishPlayerTransform.position.z),Math.Abs(finishPlayerTransform.position.y / stackUpTimeMultipler));
-            //print(Math.Abs(finishPlayerTransform.position.y/stackUpTimeMultipler));
+            finishPlayerTransform.DOMoveY(finishPlayerTransform.position.y - _nextMoneyTransform.y,
+                _Dollars.Count * stackUpTimeMultipler);
+            yield return new WaitForSeconds(/*_Dollars.Count * 1.25f * endPanelTimer*/3.5f);
+            CoreGameSignals.Instance.onGameEnd?.Invoke();
         }
 
+        
         private void SetActiveAllCollectables()
         {
             foreach (var D in _Dollars)

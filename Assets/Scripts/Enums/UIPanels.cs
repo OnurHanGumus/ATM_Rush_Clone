@@ -6,7 +6,7 @@ namespace Enums
     public enum UIPanels
     {
         StartPanel,
-        WinPanel,
-        FailPanel,
+        InGamePanel,
+        EndGamePanel
     }
 }

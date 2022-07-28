@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
     playerMovementData:
-      ForwardSpeed: 15
+      ForwardSpeed: 45.59
       SidewaysSpeed: 20

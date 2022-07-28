@@ -33,11 +33,19 @@ public class UIManager : MonoBehaviour
     private void SubscribeEvents()
     {
         CoreGameSignals.Instance.onPlay += OnPlay;
+        CoreGameSignals.Instance.onGameEnd += OnEndGame;
+        CoreGameSignals.Instance.onNextLevel += OnNextLevel;
+        UISignals.Instance.onOpenPanel += OnOpenPanel;
         UISignals.Instance.onClosePanel += OnClosePanel;
     }
+
+
     private void UnsubscribeEvents()
     {
         CoreGameSignals.Instance.onPlay -= OnPlay;
+        CoreGameSignals.Instance.onGameEnd -= OnEndGame;
+        CoreGameSignals.Instance.onNextLevel -= OnNextLevel;
+        UISignals.Instance.onOpenPanel -= OnOpenPanel;
         UISignals.Instance.onClosePanel -= OnClosePanel;
     }
     private void OnDisable()
@@ -46,25 +54,47 @@ public class UIManager : MonoBehaviour
     }
 
     #endregion
+    
     private void OnPlay()
     {
+        UISignals.Instance.onOpenPanel?.Invoke(UIPanels.InGamePanel);
         UISignals.Instance.onClosePanel?.Invoke(UIPanels.StartPanel);
     }
+    private void OnEndGame()
+    {
+        UISignals.Instance.onOpenPanel?.Invoke(UIPanels.EndGamePanel);
+        UISignals.Instance.onClosePanel?.Invoke(UIPanels.InGamePanel);
+    }
+    
+    private void OnNextLevel()
+    {
+        UISignals.Instance.onOpenPanel?.Invoke(UIPanels.StartPanel);
+        UISignals.Instance.onClosePanel?.Invoke(UIPanels.EndGamePanel);
+    }
+
 
     public void PlayBtn()
     {
-        CoreGameSignals.Instance?.onPlay();
+        CoreGameSignals.Instance.onPlay?.Invoke();
     }
 
+    public void NextLevelBtn()
+    {
+        CoreGameSignals.Instance.onNextLevel?.Invoke();
+    }
+
+    private void OnOpenPanel(UIPanels panel)
+    {
+        uiPanelController.OpenPanel(panel);
+    }
+    
     private void OnClosePanel(UIPanels panel)
     {
         uiPanelController.ClosePanel(panel);
     }
 
-    public void ResetButton()
+    public void RestartButton()
     {
         CoreGameSignals.Instance.onRestartLevel?.Invoke();
     }
-
-
 }

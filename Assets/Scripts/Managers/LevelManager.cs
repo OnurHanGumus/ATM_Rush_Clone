@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Managers
 {
-    public class LevelManager : MonoSingleton<LevelManager>
+    public class LevelManager : MonoBehaviour
     {
         [SerializeField]
         UnityEngine.Object[] Levels;
@@ -41,10 +41,11 @@ namespace Managers
 
         #endregion
 
-        protected override void Awake()
+        protected void Awake()
         {
             _levelID = GetActiveLevel();
             Data = GetLevelData();
+            OnInitializeLevel();
         }
 
         private int GetActiveLevel()
@@ -89,10 +90,9 @@ namespace Managers
 
         #endregion
 
-        private void Start()
-        {
-            OnInitializeLevel();
-        }
+        // private void Start()
+        // {
+        // }
 
         private void OnNextLevel()
         {
@@ -122,6 +122,7 @@ namespace Managers
              Levels = Resources.LoadAll("Levels");
             var newLevelData = _levelID % Levels.Length;
             levelLoader.InitializeLevel(newLevelData, levelHolder.transform);
+            CoreGameSignals.Instance.onCameraInitialized?.Invoke();
         }
 
         private void OnClearActiveLevel()
