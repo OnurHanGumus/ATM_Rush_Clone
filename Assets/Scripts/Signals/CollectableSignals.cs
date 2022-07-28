@@ -35,9 +35,8 @@ namespace Signals
         #endregion
         public Func<Transform, Transform> getLastNodeOfList = delegate { return null; };
 
-        public Func<int> onGetCollectableType = delegate { return 1; };
 
-        public UnityAction<Transform, Transform> onCollectableAndCollectableCollide = delegate { };
+        public UnityAction<Transform> onCollectableAndCollectableCollide = delegate { };
         public UnityAction<Transform> onCollectableAndObstacleCollide = delegate { };
         public UnityAction<Transform> onCollectableUpgradeCollide = delegate { };
         public UnityAction<Transform> onCollectableATMCollide = delegate { };

@@ -92,7 +92,7 @@ namespace Managers
             finishPlayerTransform.DOMove(new Vector3(finishPlayerTransform.position.x,
                 finishPlayerTransform.position.y - _nextMoneyTransform.y,
                 finishPlayerTransform.position.z),Math.Abs(finishPlayerTransform.position.y / stackUpTimeMultipler));
-            print(Math.Abs(finishPlayerTransform.position.y/stackUpTimeMultipler));
+            //print(Math.Abs(finishPlayerTransform.position.y/stackUpTimeMultipler));
         }
 
         private void SetActiveAllCollectables()
@@ -100,6 +100,7 @@ namespace Managers
             foreach (var D in _Dollars)
             {
                 D.SetActive(true);
+                D.transform.localPosition = new Vector3(0, D.transform.localPosition.y, 0);
             }
         }
     }

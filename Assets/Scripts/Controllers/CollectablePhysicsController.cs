@@ -18,7 +18,7 @@ namespace Controllers
         {
             if (other.CompareTag("Player"))
             {
-                CollectableAndCollectableCollide();
+                CollectableAndCollectableCollide(other.transform);
             }
 
             if (other.CompareTag("Obstacle"))
@@ -46,34 +46,36 @@ namespace Controllers
             }
         }
         
-        private void CollectableAndCollectableCollide()
+        private void CollectableAndCollectableCollide(Transform other)
         {
-            Transform parentNode = CollectableSignals.Instance.getLastNodeOfList(transform);
-            CollectableSignals.Instance.onCollectableAndCollectableCollide?.Invoke(transform, parentNode);
+            if (other.CompareTag("Player"))
+            {
+                collectableManager.OnCollectableAndCollectableCollide(transform);
+            }
         }
         private void CollectableAndObstacleCollide()
         {
-            CollectableSignals.Instance.onCollectableAndObstacleCollide?.Invoke(transform);
+            collectableManager.OnCollectableAndObstacleCollide(transform);
         }
 
         private void CollectableUpgradeCollide()
         {
-            CollectableSignals.Instance.onCollectableUpgradeCollide?.Invoke(transform);
+            collectableManager.OnUpgradeCollectableCollide(transform);
         }
 
         private void CollectableAndATMCollide()
         {
-            CollectableSignals.Instance.onCollectableATMCollide?.Invoke(transform);
+            collectableManager.OnCollectableAndATMCollide(transform);
         }
         
         private void CollectableAndWalkingPlatformCollide()
         {
-            CollectableSignals.Instance.onCollectableWalkingPlatformCollide?.Invoke(transform);
+            collectableManager.OnCollectableAndWalkingPlatformCollide(transform);
         }
         
         private void CollectableAndWinZoneCollide()
         {
-            CollectableSignals.Instance.onCollectableWinZoneCollide?.Invoke(transform);
+            collectableManager.OnCollectableAndWinZoneCollide(transform);
         }
     }
 }

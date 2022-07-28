@@ -46,18 +46,14 @@ namespace Managers
         private void OnUpdateAtmScore(int atmScore)
         {
             scoreText.text = atmScore.ToString();
-
         }
+        
         private void OnPlayerandATMCollide(Transform atm)
         {
             if (atm.Equals(transform))
             {
                 atm.DOMoveY(-2.5f, 1);
             }
-            
-           
         }
-
-
     }
 }

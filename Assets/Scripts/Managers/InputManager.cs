@@ -15,16 +15,7 @@ public class InputManager : MonoBehaviour
     #region private vars
     #endregion
     #endregion
-    private void Awake()
-    {
 
-    }
-    void OnEnable()
-    {
-        SubscribeEvents();
-    }
-
-    // Update is called once per frame
     private void Update()
     {
         if (fixedJoystick.Horizontal > 0.1f || fixedJoystick.Horizontal < -0.1f)
@@ -39,28 +30,5 @@ public class InputManager : MonoBehaviour
         {
             InputSignals.Instance.onInputReleased?.Invoke();
         }
-       
     }
-
-    private void SubscribeEvents()
-    {
-        //InputSignals.Instance.onInputDragged += OnInputDragged;
-    }
-    private void UnsubscribeEvents()
-    {
-        //InputSignals.Instance.onInputDragged -= OnInputDragged;
-
-    }
-
-    private void OnDisable()
-    {
-        UnsubscribeEvents();
-    }
-    //private void OnInputDragged(HorizontalInputParams horizontalInput)
-    //{
-    //    PlayerManager.
-    //}
-
-    
-
 }
