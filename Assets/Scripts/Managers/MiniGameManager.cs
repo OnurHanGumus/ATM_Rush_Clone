@@ -100,6 +100,7 @@ namespace Managers
             foreach (var D in _Dollars)
             {
                 D.SetActive(true);
+                D.transform.localPosition = new Vector3(0, D.transform.localPosition.y, 0);
             }
         }
     }

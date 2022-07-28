@@ -18,7 +18,7 @@ namespace Controllers
         {
             if (other.CompareTag("Player"))
             {
-                CollectableAndCollectableCollide();
+                CollectableAndCollectableCollide(other.transform);
             }
 
             if (other.CompareTag("Obstacle"))
@@ -46,9 +46,12 @@ namespace Controllers
             }
         }
         
-        private void CollectableAndCollectableCollide()
+        private void CollectableAndCollectableCollide(Transform other)
         {
-            collectableManager.OnCollectableAndCollectableCollide(transform);
+            if (other.CompareTag("Player"))
+            {
+                collectableManager.OnCollectableAndCollectableCollide(transform);
+            }
         }
         private void CollectableAndObstacleCollide()
         {

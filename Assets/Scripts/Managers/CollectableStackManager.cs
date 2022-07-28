@@ -2,6 +2,7 @@ using Signals;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public class CollectableStackManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class CollectableStackManager : MonoBehaviour
     #endregion
     #region private vars
     private CollectableData _collectableData;
+    private bool _isAnimating = false;
 
     #endregion
     #endregion
@@ -33,7 +35,6 @@ public class CollectableStackManager : MonoBehaviour
 
     private void SubscribeEvents()
     {
-        CollectableSignals.Instance.getLastNodeOfList += GetLastNodeOfList;
 
         PlayerSignals.Instance.onPlayerAndObstacleCrash += OnPlayerAndObstacleCrash;
         CollectableSignals.Instance.onCollectableAndObstacleCollide += OnCollectableAndObstacleCollide;
@@ -44,7 +45,6 @@ public class CollectableStackManager : MonoBehaviour
     }
     private void UnsubscribeEvents()
     {
-        CollectableSignals.Instance.getLastNodeOfList -= GetLastNodeOfList;
 
 
         PlayerSignals.Instance.onPlayerAndObstacleCrash -= OnPlayerAndObstacleCrash;
@@ -74,7 +74,7 @@ public class CollectableStackManager : MonoBehaviour
             {
                 continue;
             }
-            collectables[i].transform.DOMoveX(collectables[i - 1].transform.position.x, .1f);
+            collectables[i].transform.DOMoveX(collectables[i - 1].transform.position.x, _collectableData.lerpData.lerpSoftnessX);
             collectables[i].transform.position = new Vector3(collectables[i].transform.position.x, collectables[i].transform.position.y, collectables[i - 1].transform.position.z + _collectableData.lerpData.lerpSpaces);
         }
     }
@@ -82,6 +82,7 @@ public class CollectableStackManager : MonoBehaviour
     private void OnCollectableAndCollectableCollide(Transform addedNode)
     {
         AddCollectableToList(addedNode);
+        //StartCoroutine(AddCollectableEffect());
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
 
@@ -98,11 +99,9 @@ public class CollectableStackManager : MonoBehaviour
         other.tag = "Player";
     }
 
-    private void OnCollectableAndObstacleCollide(Transform kazaYapanObje)
+    private void OnCollectableAndObstacleCollide(Transform node)
     {
-        int kazaYapanObjeninIndeksi = collectables.IndexOf(kazaYapanObje);
-
-        RemoveCollectablesFromList(kazaYapanObjeninIndeksi);
+        RemoveCollectablesFromList(node);
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
 
@@ -122,47 +121,97 @@ public class CollectableStackManager : MonoBehaviour
     {
         for (int i = collectables.Count - 1; i > 0; i--)
         {
+            collectables[i].tag = "Collectable";
+            AddBreakeForce(collectables[i].transform);
             collectables.RemoveAt(i);
             collectables.TrimExcess();
         }
     }
 
-    public void OnCollectableAndATMCollide(Transform atmyeGirenObje)
+    public void OnCollectableAndATMCollide(Transform node)
     {
-        int atmyeGirenObjeninIndeksi = collectables.IndexOf(atmyeGirenObje);
-        print(atmyeGirenObjeninIndeksi);
+        
 
-        RemoveCollectablesFromList(atmyeGirenObjeninIndeksi);
+        RemoveCollectablesFromList(node);
     }
     private void OnWalkingPlatformCollide(Transform arg)
     {
-        RemoveCollectablesFromList(collectables.IndexOf(arg));
+        RemoveCollectablesFromList(arg, true);
     }
 
-    private void RemoveCollectablesFromList(int kazaYapanObjeninIndeksi)
+    private void RemoveCollectablesFromList(Transform node)
     {
-        if (kazaYapanObjeninIndeksi == -1)
+        int indexOfNode = collectables.IndexOf(node);
+        int collectablesCount = collectables.Count;
+
+        if (indexOfNode == -1)
         {
             return;
         }
-        int collectablesCount = collectables.Count;
         for (int i = collectablesCount - 1; i > 0; i--)
         {
-            if (collectables.Count > kazaYapanObjeninIndeksi)
+            if (collectables.Count > indexOfNode)
             {
+                Transform transform = collectables[i].transform;
+                AddBreakeForce(transform);
+
+                collectables[i].tag = "Collectable";
                 collectables.RemoveAt(i);
                 collectables.TrimExcess();
             }
         }
     }
 
+    private void RemoveCollectablesFromList(Transform node,bool isWalkingArea)
+    {
+        int indexOfNode = collectables.IndexOf(node);
+        int collectablesCount = collectables.Count;
+
+        if (indexOfNode == -1)
+        {
+            return;
+        }
+        for (int i = collectablesCount - 1; i > 0; i--)
+        {
+            if (collectables.Count > indexOfNode)
+            {
+                collectables[i].tag = "Collectable";
+                collectables.RemoveAt(i);
+                collectables.TrimExcess();
+            }
+        }
+    }
     public Transform GetLastNodeOfList(Transform addedNode)
     {
         AddCollectableToList(addedNode);
         return collectables[collectables.Count - 2];
     }
-    
-    public int CalculateStackValue()
+    private void AddBreakeForce(Transform node)
+    {
+        node.position = new Vector3(Random.Range(-2f, 2f), node.position.y, node.position.z);
+        node.DOJump(node.position, 1f, 1, 0.1f);
+    }
+
+    public IEnumerator AddCollectableEffect()
+    {
+        if (!_isAnimating)
+        {
+            _isAnimating = true;
+            for (int i = 0; i < collectables.Count; i++)
+            {
+                //int index = (collectables.Count - 1) - i;
+                collectables[i].transform.DOScale(new Vector3(2, 2, 2), 0.2f).SetEase(Ease.Flash);
+                collectables[i].transform.DOScale(Vector3.one, 0.2f).SetDelay(0.2f).SetEase(Ease.Flash);
+                yield return new WaitForSeconds(0.05f);
+            }
+            yield return new WaitForSeconds(0.05f * collectables.Count);
+            _isAnimating = false;
+
+        }
+
+    }
+
+public int CalculateStackValue()
     {
         int _score = 0;
         _score = 0;
@@ -174,4 +223,5 @@ public class CollectableStackManager : MonoBehaviour
 
         return _score;
     }
+
 }
