@@ -1,7 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Keys;
 
 public class CoreGameSignals : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class CoreGameSignals : MonoBehaviour
     public UnityAction onPlay = delegate { };
     public UnityAction onReset = delegate { };
     public UnityAction onEndGame = delegate { };
-    public UnityAction onSaveGame = delegate { };
-    public UnityAction onSetCameraTarget = delegate { };
+    public UnityAction<SaveGameDataParams> onSaveGame = delegate { };
+
+    public Func<int> onGetLevelID = delegate { return 0; };
 }
