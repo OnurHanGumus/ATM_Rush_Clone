@@ -25,7 +25,6 @@ public class CollectableStackManager : MonoBehaviour
         collectables = new List<Transform>();
         collectables.Add(transform);
         _collectableData = GetCollectableData();
-
     }
 
     void OnEnable()
@@ -35,7 +34,6 @@ public class CollectableStackManager : MonoBehaviour
 
     private void SubscribeEvents()
     {
-
         PlayerSignals.Instance.onPlayerAndObstacleCrash += OnPlayerAndObstacleCrash;
         CollectableSignals.Instance.onCollectableAndObstacleCollide += OnCollectableAndObstacleCollide;
         CollectableSignals.Instance.onCollectableAndCollectableCollide += OnCollectableAndCollectableCollide;
@@ -45,8 +43,6 @@ public class CollectableStackManager : MonoBehaviour
     }
     private void UnsubscribeEvents()
     {
-
-
         PlayerSignals.Instance.onPlayerAndObstacleCrash -= OnPlayerAndObstacleCrash;
         CollectableSignals.Instance.onCollectableAndObstacleCollide -= OnCollectableAndObstacleCollide;
         CollectableSignals.Instance.onCollectableAndCollectableCollide -= OnCollectableAndCollectableCollide;
@@ -54,8 +50,7 @@ public class CollectableStackManager : MonoBehaviour
         CollectableSignals.Instance.onCollectableATMCollide -= OnCollectableAndATMCollide;
         CollectableSignals.Instance.onCollectableWalkingPlatformCollide -= OnWalkingPlatformCollide;
     }
-
-
+    
     private void OnDisable()
     {
         UnsubscribeEvents();
@@ -130,8 +125,6 @@ public class CollectableStackManager : MonoBehaviour
 
     public void OnCollectableAndATMCollide(Transform node)
     {
-        
-
         RemoveCollectablesFromList(node);
     }
     private void OnWalkingPlatformCollide(Transform arg)
@@ -206,9 +199,7 @@ public class CollectableStackManager : MonoBehaviour
             }
             yield return new WaitForSeconds(0.05f * collectables.Count);
             _isAnimating = false;
-
         }
-
     }
 
 public int CalculateStackValue()
@@ -220,8 +211,6 @@ public int CalculateStackValue()
         {
             _score += (int)collectables[i].GetComponent<CollectableManager>().collectableType;
         }
-
         return _score;
     }
-
 }
