@@ -41,7 +41,7 @@ public class CoreGameSignals : MonoBehaviour
     public UnityAction onPlay = delegate { };
     public UnityAction onReset = delegate { };
     public UnityAction onEndGame = delegate { };
-    public UnityAction<SaveGameDataParams> onSaveGame = delegate { };
+    public UnityAction<SaveGameDataParams> onSaveGameData = delegate { };
 
     public Func<int> onGetLevelID = delegate { return 0; };
 }
