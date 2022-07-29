@@ -30,59 +30,22 @@ public class CollectableMovementController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_isReadyToMove)
-        {
-            //LerpMove();
-        }
-        else
+        if (!_isReadyToMove)
         {
             Stop();
         }
     }
-
-    public void ActivateMovement()
-    {
-        _isReadyToMove = true;
-    }
-
+    
     public void DeactivateMovement()
     {
         _isReadyToMove = false;
     }
-
-    private void LerpMove()
-    {
-        if (ConnectedNode != null)
-        {
-            Vector3 targetPos = ConnectedNode.position;
-            targetPos.z += _collectableData.lerpData.lerpSpaces;
-
-            _rig.position = new Vector3(Mathf.Lerp(_rig.position.x, targetPos.x, Time.deltaTime * _collectableData.lerpData.lerpSoftnessX),
-                transform.position.y,
-                Mathf.Lerp(_rig.position.z, targetPos.z, Time.deltaTime * _collectableData.lerpData.lerpSoftnessZ));
-        }
-    }
-
+    
     private void Stop()
     {
         _rig.velocity = Vector3.zero;
     }
-
-    public void SetConnectedNode(Transform transform)
-    {
-        ConnectedNode = transform;
-    }
-
-    public void SetCollectableData(CollectableData collectableData)
-    {
-        _collectableData = collectableData;
-    }
-    public void AddDropForce()
-    {
-        Vector3 targetLocation = new Vector3(Random.Range(-4, 4), _rig.position.y, _rig.position.z);
-        transform.DOMove(targetLocation, 0.5f);
-    }
-
+    
     public void MoveToWinZone()
     {
         if (_sequence == null)

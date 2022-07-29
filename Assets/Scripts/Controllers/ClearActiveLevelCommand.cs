@@ -6,9 +6,7 @@ namespace Controllers
     {
         public void ClearActiveLevel(Transform levelHolder)
         {
-            Debug.Log("destroyed");
             Destroy(levelHolder.GetChild(0).gameObject);
-
         }
     }
 }
