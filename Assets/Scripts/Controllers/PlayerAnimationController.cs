@@ -18,6 +18,7 @@ namespace Controllers
         private void Awake()
         {
             StartIdleAnim();
+            animator = GetComponent<Animator>();
         }
 
         #region EventSubsicription
@@ -71,8 +72,8 @@ namespace Controllers
 
         public void ResetAllAnims()
         {
-            animator.SetBool("Idle" ,false);
-            animator.SetBool("Run" ,false);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Run", false);
         }
         #endregion
     }

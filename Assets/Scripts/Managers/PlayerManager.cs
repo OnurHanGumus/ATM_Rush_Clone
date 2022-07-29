@@ -43,7 +43,6 @@ public class PlayerManager : MonoBehaviour
         PlayerSignals.Instance.onPlayerAndObstacleCrash += OnPlayerAndObstacleCrash;
         ScoreSignals.Instance.onTotalScoreUpdated += OnUpdateCurrentScore;
         PlayerSignals.Instance.onPlayerEnterFinishLine += OnDeactivateMovement;
-        CoreGameSignals.Instance.onRestartLevel += OnPlayerRestart;
     }
     private void UnsubscribeEvents()
     {
@@ -72,12 +71,6 @@ public class PlayerManager : MonoBehaviour
         playerAnimationController.StartIdleAnim();
     }
 
-    private void OnPlayerRestart()
-    {
-        OnDeactivateMovement();
-        transform.position = Vector3.zero;
-       
-    }
     private void SendPlayerDataToController()
     {
         _playerMovementController.SetMovementData(_playerData.playerMovementData);
