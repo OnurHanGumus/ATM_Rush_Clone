@@ -26,6 +26,7 @@ public class CollectableStackManager : MonoBehaviour
         collectables = new List<Transform>();
         collectables.Add(transform);
         _collectableData = GetCollectableData();
+        _sequence = DOTween.Sequence();
 
     }
 
@@ -36,7 +37,6 @@ public class CollectableStackManager : MonoBehaviour
 
     private void SubscribeEvents()
     {
-
         PlayerSignals.Instance.onPlayerAndObstacleCrash += OnPlayerAndObstacleCrash;
         CollectableSignals.Instance.onCollectableAndObstacleCollide += OnCollectableAndObstacleCollide;
         CollectableSignals.Instance.onCollectableAndCollectableCollide += OnCollectableAndCollectableCollide;
@@ -46,8 +46,6 @@ public class CollectableStackManager : MonoBehaviour
     }
     private void UnsubscribeEvents()
     {
-
-
         PlayerSignals.Instance.onPlayerAndObstacleCrash -= OnPlayerAndObstacleCrash;
         CollectableSignals.Instance.onCollectableAndObstacleCollide -= OnCollectableAndObstacleCollide;
         CollectableSignals.Instance.onCollectableAndCollectableCollide -= OnCollectableAndCollectableCollide;
@@ -55,8 +53,7 @@ public class CollectableStackManager : MonoBehaviour
         CollectableSignals.Instance.onCollectableATMCollide -= OnCollectableAndATMCollide;
         CollectableSignals.Instance.onCollectableWalkingPlatformCollide -= OnWalkingPlatformCollide;
     }
-
-
+    
     private void OnDisable()
     {
         UnsubscribeEvents();
@@ -82,8 +79,9 @@ public class CollectableStackManager : MonoBehaviour
 
     private void OnCollectableAndCollectableCollide(Transform addedNode)
     {
+        collectables.TrimExcess();
         AddCollectableToList(addedNode);
-        StartCoroutine(AddCollectableEffect());
+        StartCoroutine(AddCollectableEffect(collectables.Count));
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
 
@@ -102,7 +100,6 @@ public class CollectableStackManager : MonoBehaviour
 
     private void OnCollectableAndObstacleCollide(Transform node)
     {
-        _sequence.Kill();
 
         RemoveCollectablesFromList(node);
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
@@ -116,7 +113,6 @@ public class CollectableStackManager : MonoBehaviour
 
     private void OnPlayerAndObstacleCrash()
     {
-        _sequence.Kill();
 
         RemoveAllList();
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
@@ -135,7 +131,6 @@ public class CollectableStackManager : MonoBehaviour
 
     public void OnCollectableAndATMCollide(Transform node)
     {
-        _sequence.Kill();
 
 
         RemoveCollectablesFromList(node);
@@ -166,6 +161,7 @@ public class CollectableStackManager : MonoBehaviour
                 collectables.TrimExcess();
             }
         }
+
     }
 
     private void RemoveCollectablesFromList(Transform node,bool isWalkingArea)
@@ -198,28 +194,29 @@ public class CollectableStackManager : MonoBehaviour
         node.DOJump(node.position, 1f, 1, 0.1f);
     }
 
-    public IEnumerator AddCollectableEffect()
+    public IEnumerator AddCollectableEffect(int collectableCount)
     {
-        collectables.TrimExcess();
         _sequence.Kill();
         if (!_isAnimating)
         {
             _isAnimating = true;
-            for (int i = 0; i < collectables.Count; i++)
+            for (int i = 1; i < collectables.Count; i++)
             {
+                int tersIndex = collectables.Count - i;
+                collectables[tersIndex].transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
                 //int index = (collectables.Count - 1) - i;
-                _sequence.Append(collectables[i].transform.DOScale(new Vector3(2, 2, 2), 0.2f).SetEase(Ease.Flash));
-                _sequence.Append(collectables[i].transform.DOScale(Vector3.one, 0.2f).SetDelay(0.2f).SetEase(Ease.Flash));
+                _sequence.Append(collectables[tersIndex].transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.2f).SetEase(Ease.Flash));
+                _sequence.Append(collectables[tersIndex].transform.DOScale( new Vector3(0.75f, 0.75f, 0.75f), 0.2f).SetDelay(0.2f).SetEase(Ease.Flash));
                 yield return new WaitForSeconds(0.05f);
             }
             yield return new WaitForSeconds(0.05f * collectables.Count);
             _isAnimating = false;
-
         }
+        collectables.TrimExcess();
 
     }
 
-public int CalculateStackValue()
+    public int CalculateStackValue()
     {
         int _score = 0;
         _score = 0;
@@ -228,8 +225,6 @@ public int CalculateStackValue()
         {
             _score += (int)collectables[i].GetComponent<CollectableManager>().collectableType;
         }
-
         return _score;
     }
-
 }

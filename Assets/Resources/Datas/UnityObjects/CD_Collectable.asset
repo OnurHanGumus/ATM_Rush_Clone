@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
     lerpData:
-      lerpSpaces: 1
+      lerpSpaces: 2
       lerpSoftnessX: 0.1
       lerpSoftnessZ: 60
   collectableType: 1
