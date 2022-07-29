@@ -76,11 +76,12 @@ namespace Managers
             _Dollars.Add(collectable);
             collectable.tag = "Untagged";
             collectable.transform.SetParent(moneyHolder);
-            _nextMoneyTransform = new Vector3(_nextMoneyTransform.x,_nextMoneyTransform.y - stackDistanceAmount,_nextMoneyTransform.z); 
-            collectable.transform.position = _nextMoneyTransform;
+            _nextMoneyTransform = new Vector3(_nextMoneyTransform.x,_nextMoneyTransform.y - stackDistanceAmount,_nextMoneyTransform.z);
+            // collectable.transform.position = _nextMoneyTransform;
+            collectable.transform.DOMove(_nextMoneyTransform,.5f,false);
             collectable.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
-        
+
         private void MoveFinishPlayerUp()
         {
             StartCoroutine("Move");

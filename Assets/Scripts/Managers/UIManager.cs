@@ -79,8 +79,7 @@ public class UIManager : MonoBehaviour
         UISignals.Instance.onClosePanel?.Invoke(UIPanels.InGamePanel);
         UISignals.Instance.onClosePanel?.Invoke(UIPanels.EndGamePanel);
     }
-
-
+    
     public void PlayBtn()
     {
         CoreGameSignals.Instance.onPlay?.Invoke();
@@ -105,6 +104,4 @@ public class UIManager : MonoBehaviour
     {
         uiPanelController.ClosePanel(panel);
     }
-
-    
 }
