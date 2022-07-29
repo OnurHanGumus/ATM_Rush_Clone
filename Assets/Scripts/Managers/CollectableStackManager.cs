@@ -17,6 +17,7 @@ public class CollectableStackManager : MonoBehaviour
     #region private vars
     private CollectableData _collectableData;
     private bool _isAnimating = false;
+    private Sequence _sequence;
 
     #endregion
     #endregion
@@ -82,7 +83,7 @@ public class CollectableStackManager : MonoBehaviour
     private void OnCollectableAndCollectableCollide(Transform addedNode)
     {
         AddCollectableToList(addedNode);
-        //StartCoroutine(AddCollectableEffect());
+        StartCoroutine(AddCollectableEffect());
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
 
@@ -101,6 +102,8 @@ public class CollectableStackManager : MonoBehaviour
 
     private void OnCollectableAndObstacleCollide(Transform node)
     {
+        _sequence.Kill();
+
         RemoveCollectablesFromList(node);
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
@@ -113,6 +116,8 @@ public class CollectableStackManager : MonoBehaviour
 
     private void OnPlayerAndObstacleCrash()
     {
+        _sequence.Kill();
+
         RemoveAllList();
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
@@ -130,7 +135,8 @@ public class CollectableStackManager : MonoBehaviour
 
     public void OnCollectableAndATMCollide(Transform node)
     {
-        
+        _sequence.Kill();
+
 
         RemoveCollectablesFromList(node);
     }
@@ -194,14 +200,16 @@ public class CollectableStackManager : MonoBehaviour
 
     public IEnumerator AddCollectableEffect()
     {
+        collectables.TrimExcess();
+        _sequence.Kill();
         if (!_isAnimating)
         {
             _isAnimating = true;
             for (int i = 0; i < collectables.Count; i++)
             {
                 //int index = (collectables.Count - 1) - i;
-                collectables[i].transform.DOScale(new Vector3(2, 2, 2), 0.2f).SetEase(Ease.Flash);
-                collectables[i].transform.DOScale(Vector3.one, 0.2f).SetDelay(0.2f).SetEase(Ease.Flash);
+                _sequence.Append(collectables[i].transform.DOScale(new Vector3(2, 2, 2), 0.2f).SetEase(Ease.Flash));
+                _sequence.Append(collectables[i].transform.DOScale(Vector3.one, 0.2f).SetDelay(0.2f).SetEase(Ease.Flash));
                 yield return new WaitForSeconds(0.05f);
             }
             yield return new WaitForSeconds(0.05f * collectables.Count);
