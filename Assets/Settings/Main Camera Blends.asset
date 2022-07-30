@@ -17,7 +17,7 @@ MonoBehaviour:
     m_To: InGameCam
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 0.75
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -28,7 +28,7 @@ MonoBehaviour:
     m_To: EndGameCam
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 0.75
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -36,6 +36,17 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: EndGameCam
+    m_To: EndGameSideCam
+    m_Blend:
+      m_Style: 1
+      m_Time: 0.5
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: EndGameSideCam
     m_To: PreStartCam
     m_Blend:
       m_Style: 1

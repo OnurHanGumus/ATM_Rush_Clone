@@ -37,33 +37,16 @@ public class CollectableManager : MonoBehaviour
 
     public void OnCollectableAndCollectableCollide(Transform otherNode)
     {
-
         collectableState = CollectableState.collected;
         CollectableSignals.Instance.onCollectableAndCollectableCollide?.Invoke(transform);
-
     }
-
-    public void OnCollectableAndATMCollide(Transform atmyeGirenObje)
-    {
-        CollectableSignals.Instance.onCollectableATMCollide?.Invoke(transform);
-
-        ScoreSignals.Instance.onATMScoreUpdated?.Invoke((int)collectableType);
-        StackCollectablesToMiniGame();
-    }
-
+    
     public void OnCollectableAndObstacleCollide(Transform crashedNode)
     {
         CollectableSignals.Instance.onCollectableAndObstacleCollide?.Invoke(transform);
-
         DestroyCollectable();
     }
-
-    private void DestroyCollectable()
-    {
-        _collectableMovementController.DeactivateMovement();
-        Destroy(gameObject);
-    }
-
+    
     public void OnUpgradeCollectableCollide(Transform upgradedNode)
     {
         if (collectableType != CollectableType.Gem)
@@ -73,7 +56,14 @@ public class CollectableManager : MonoBehaviour
             CollectableSignals.Instance.onCollectableUpgradeCollide?.Invoke(transform);
         }
     }
-
+    
+    public void OnCollectableAndATMCollide(Transform atmyeGirenObje)
+    {
+        ScoreSignals.Instance.onATMScoreUpdated?.Invoke((int)collectableType);
+        StackCollectablesToMiniGame();
+        CollectableSignals.Instance.onCollectableATMCollide?.Invoke(transform);
+    }
+    
     public void OnCollectableAndWalkingPlatformCollide(Transform _transform)
     {
         connectedNode = null;
@@ -87,6 +77,12 @@ public class CollectableManager : MonoBehaviour
         StackCollectablesToMiniGame();
         CollectableSignals.Instance.onCollectableWinZoneCollide?.Invoke(transform);
     }
+    
+    private void DestroyCollectable()
+    {
+        _collectableMovementController.DeactivateMovement();
+        Destroy(gameObject);
+    }
 
     public void StackCollectablesToMiniGame()
     {
@@ -95,6 +91,6 @@ public class CollectableManager : MonoBehaviour
         _collectableMovementController.StopMoveToWinZone();
 
         gameObject.SetActive(false);
-        CollectableSignals.Instance.onMiniGameStackCollected(gameObject);
+        // CollectableSignals.Instance.onMiniGameStackCollected(gameObject);
     }
 }

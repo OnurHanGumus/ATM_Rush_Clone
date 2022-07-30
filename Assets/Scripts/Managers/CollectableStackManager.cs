@@ -43,6 +43,7 @@ public class CollectableStackManager : MonoBehaviour
         CollectableSignals.Instance.onCollectableUpgradeCollide += OnCollectableUpgradeCollide;
         CollectableSignals.Instance.onCollectableATMCollide += OnCollectableAndATMCollide;
         CollectableSignals.Instance.onCollectableWalkingPlatformCollide += OnWalkingPlatformCollide;
+        CollectableSignals.Instance.onCollectableWinZoneCollide += OnCollectableAndWinZoneCollide;
     }
     private void UnsubscribeEvents()
     {
@@ -52,6 +53,7 @@ public class CollectableStackManager : MonoBehaviour
         CollectableSignals.Instance.onCollectableUpgradeCollide -= OnCollectableUpgradeCollide;
         CollectableSignals.Instance.onCollectableATMCollide -= OnCollectableAndATMCollide;
         CollectableSignals.Instance.onCollectableWalkingPlatformCollide -= OnWalkingPlatformCollide;
+        CollectableSignals.Instance.onCollectableWinZoneCollide -= OnCollectableAndWinZoneCollide;
     }
     
     private void OnDisable()
@@ -100,12 +102,10 @@ public class CollectableStackManager : MonoBehaviour
 
     private void OnCollectableAndObstacleCollide(Transform node)
     {
-
-        RemoveCollectablesFromList(node);
+        RemoveCollectablesFromList(node,false,"Collectable");
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
-
-
+    
     private void OnCollectableUpgradeCollide(Transform upgradedNode)
     {
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
@@ -113,7 +113,6 @@ public class CollectableStackManager : MonoBehaviour
 
     private void OnPlayerAndObstacleCrash()
     {
-
         RemoveAllList();
         ScoreSignals.Instance.onPlayerScoreUpdated?.Invoke(CalculateStackValue());
     }
@@ -129,18 +128,22 @@ public class CollectableStackManager : MonoBehaviour
         }
     }
 
-    public void OnCollectableAndATMCollide(Transform node)
+    public void OnCollectableAndATMCollide(Transform collectable)
     {
-
-
-        RemoveCollectablesFromList(node);
+        RemoveCollectablesFromList(collectable,false,"Collectable");
+        CollectableSignals.Instance.onMiniGameStackCollected?.Invoke(collectable.gameObject);
     }
+    public void OnCollectableAndWinZoneCollide(Transform collectable)
+    {
+        RemoveCollectablesFromList(collectable,false,"Collectable");
+        CollectableSignals.Instance.onMiniGameStackCollected?.Invoke(collectable.gameObject);
+    }
+    
     private void OnWalkingPlatformCollide(Transform arg)
     {
-        RemoveCollectablesFromList(arg, true);
+        RemoveCollectablesFromList(arg, true, "Untagged");
     }
-
-    private void RemoveCollectablesFromList(Transform node)
+    private void RemoveCollectablesFromList(Transform node,bool isWalkingArea, string tagName)
     {
         int indexOfNode = collectables.IndexOf(node);
         int collectablesCount = collectables.Count;
@@ -153,36 +156,18 @@ public class CollectableStackManager : MonoBehaviour
         {
             if (collectables.Count > indexOfNode)
             {
-                Transform transform = collectables[i].transform;
-                AddBreakeForce(transform);
-
-                collectables[i].tag = "Collectable";
-                collectables.RemoveAt(i);
-                collectables.TrimExcess();
-            }
-        }
-
-    }
-
-    private void RemoveCollectablesFromList(Transform node,bool isWalkingArea)
-    {
-        int indexOfNode = collectables.IndexOf(node);
-        int collectablesCount = collectables.Count;
-
-        if (indexOfNode == -1)
-        {
-            return;
-        }
-        for (int i = collectablesCount - 1; i > 0; i--)
-        {
-            if (collectables.Count > indexOfNode)
-            {
-                collectables[i].tag = "Collectable";
+                if (!isWalkingArea)
+                {
+                    Transform transform = collectables[i].transform;
+                    AddBreakeForce(transform);
+                }
+                collectables[i].tag = tagName;
                 collectables.RemoveAt(i);
                 collectables.TrimExcess();
             }
         }
     }
+
     public Transform GetLastNodeOfList(Transform addedNode)
     {
         AddCollectableToList(addedNode);

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using Cinemachine;
+using Controllers;
+using Signals;
 using UnityEngine;
 
 namespace Managers
@@ -15,6 +17,7 @@ namespace Managers
         [SerializeField] private CinemachineVirtualCamera PreStartCam;
         [SerializeField] private CinemachineVirtualCamera InGameCam;
         [SerializeField] private CinemachineVirtualCamera EndGameCam;
+        [SerializeField] private CinemachineVirtualCamera EndGameSideCam;
 
         #endregion
 
@@ -23,6 +26,7 @@ namespace Managers
         private Vector3 _preStartCamPos;
         private Vector3 _inGameCamPos;
         private Vector3 _endGameCamPos;
+        private Vector3 _endGameSideCamPos;
         
         
         #endregion
@@ -34,6 +38,7 @@ namespace Managers
             _preStartCamPos = PreStartCam.transform.position;
             _inGameCamPos = InGameCam.transform.position;
             _endGameCamPos = EndGameCam.transform.position;
+            _endGameSideCamPos = EndGameSideCam.transform.position;
 
             OnLevelInitiliaze();
         }
@@ -51,6 +56,7 @@ namespace Managers
             CoreGameSignals.Instance.onPlay += OnPlay;
             CoreGameSignals.Instance.onLevelSuccessful += OnLevelSuccessful;
             CoreGameSignals.Instance.onCameraInitialized += OnCameraInitialized;
+            CoreGameSignals.Instance.onGameEnd += OnEndGameSideCamera;
         }
 
         private void UnsubscribeEvents()
@@ -59,6 +65,7 @@ namespace Managers
             CoreGameSignals.Instance.onPlay -= OnPlay;
             CoreGameSignals.Instance.onLevelSuccessful -= OnLevelSuccessful;
             CoreGameSignals.Instance.onCameraInitialized -= OnCameraInitialized;
+            CoreGameSignals.Instance.onGameEnd -= OnEndGameSideCamera;
         }
 
         private void OnDisable()
@@ -78,6 +85,7 @@ namespace Managers
             PreStartCam.transform.position = _preStartCamPos;
             InGameCam.transform.position = _inGameCamPos;
             EndGameCam.transform.position = _endGameCamPos;
+            EndGameSideCam.transform.position = _endGameSideCamPos;
 
             SetAllCameraToTarget();
         }
@@ -86,7 +94,9 @@ namespace Managers
         {
             SetCameraTargetToPlayer(PreStartCam);
             SetCameraTargetToPlayer(InGameCam);
-            EndGameCam.Follow = FindObjectOfType<MiniGameManager>().transform.GetChild(0).transform;
+            var playerFinish = FindObjectOfType<MiniGameManager>().transform.GetChild(0).transform;
+            EndGameCam.Follow = playerFinish;
+            EndGameSideCam.Follow = playerFinish;
 
             #region SORULACAK
             /*
@@ -113,6 +123,11 @@ namespace Managers
         {
             yield return new WaitForSeconds(delay);
             animator.Play("EndGameCam");
+        }
+
+        private void OnEndGameSideCamera()
+        {
+            animator.Play("EndGameSideCam");
         }
     }
 }
