@@ -12,8 +12,7 @@ namespace Managers
 {
     public class LevelManager : MonoBehaviour
     {
-        [SerializeField]
-        UnityEngine.Object[] Levels;
+     
 
         #region Self Variables
 
@@ -31,11 +30,16 @@ namespace Managers
         [SerializeField] private LevelLoaderCommand levelLoader;
         [SerializeField] private ClearActiveLevelCommand levelClearer;
 
+        //[SerializeField] private ScoreManager _scoreManager;
+
+
         #endregion
 
         #region Private Variables
 
         [ShowInInspector] private int _levelID;
+        [ShowInInspector] private int _score;
+        
 
         #endregion
 
@@ -50,8 +54,7 @@ namespace Managers
 
         private int GetActiveLevel()
         {
-            if (!ES3.FileExists()) return 0;
-            return ES3.KeyExists("Level") ? ES3.Load<int>("Level") : 0;
+            return ScoreSignals.Instance.loadSavedLevelValue();
         }
 
         private LevelData GetLevelData()
@@ -73,6 +76,7 @@ namespace Managers
             CoreGameSignals.Instance.onClearActiveLevel += OnClearActiveLevel;
             CoreGameSignals.Instance.onNextLevel += OnNextLevel;
             CoreGameSignals.Instance.onRestartLevel += OnRestartLevel;
+            ScoreSignals.Instance.onCompleteScore += OnComplateScore;
         }
 
         private void UnsubscribeEvents()
@@ -81,6 +85,7 @@ namespace Managers
             CoreGameSignals.Instance.onClearActiveLevel -= OnClearActiveLevel;
             CoreGameSignals.Instance.onNextLevel -= OnNextLevel;
             CoreGameSignals.Instance.onRestartLevel -= OnRestartLevel;
+            ScoreSignals.Instance.onCompleteScore -= OnComplateScore;
         }
 
         private void OnDisable()
@@ -90,9 +95,7 @@ namespace Managers
 
         #endregion
 
-        // private void Start()
-        // {
-        // }
+
 
         private void OnNextLevel()
         {
@@ -101,7 +104,9 @@ namespace Managers
             CoreGameSignals.Instance.onReset?.Invoke();
             CoreGameSignals.Instance.onSaveGameData?.Invoke(new SaveGameDataParams()
             {
-                Level = _levelID
+                Level = _levelID,
+                Money = _score
+                //Money = _scoreManager.totalScore
             });
             CoreGameSignals.Instance.onLevelInitialize?.Invoke();
         }
@@ -119,7 +124,7 @@ namespace Managers
 
         private void OnInitializeLevel()
         {
-             Levels = Resources.LoadAll("Levels");
+            UnityEngine.Object[] Levels = Resources.LoadAll("Levels");
             var newLevelData = _levelID % Levels.Length;
             levelLoader.InitializeLevel(newLevelData, levelHolder.transform);
             CoreGameSignals.Instance.onCameraInitialized?.Invoke();
@@ -128,6 +133,11 @@ namespace Managers
         private void OnClearActiveLevel()
         {
             levelClearer.ClearActiveLevel(levelHolder.transform);
+        }
+
+        private void OnComplateScore(float score)
+        {
+            _score = Convert.ToInt32(score);
         }
     }
 }

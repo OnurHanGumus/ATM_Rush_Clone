@@ -62,31 +62,30 @@ public class UIManager : MonoBehaviour
 
     #endregion
 
-
-
     private void Awake()
     {
         _uiPanelController = GetComponent<UIPanelController>();
-        _levelID = GetLevelIDData();
-        _money = GetMoneyData();
+       
     }
 
     private void Start()
     {
+        _levelID = GetLevelIDData();
+        _money = GetMoneyData();
+
         UpdateLevelText(0);
-        UpdateMoneyText(0);
+        UpdateMoneyText();
     }
 
     private int GetLevelIDData()
     {
-        if (!ES3.FileExists()) return 0;
-        return ES3.KeyExists("Level") ? ES3.Load<int>("Level") : 0;
+        return ScoreSignals.Instance.loadSavedLevelValue();
     }
 
     private int GetMoneyData()
     {
-        if (!ES3.FileExists()) return 0;
-        return ES3.KeyExists("Money") ? ES3.Load<int>("Money") : 0;
+        return ScoreSignals.Instance.loadSavedMoneyValue();
+
     }
 
     private void UpdateLevelText(int incremental)
@@ -95,9 +94,9 @@ public class UIManager : MonoBehaviour
         levelText.text = "LEVEL " + _levelID.ToString();
     }
 
-    private void UpdateMoneyText(int incremental)
+    private void UpdateMoneyText()
     {
-        _money += incremental;
+        
         moneyText.text = _money.ToString();
     }
 

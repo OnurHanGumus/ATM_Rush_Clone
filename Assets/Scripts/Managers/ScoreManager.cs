@@ -61,12 +61,13 @@ namespace Managers
         private void UpdateTotalScore(int playerScore, int atmScore)
         {
             //Debug.Log("toplam score: " +(playerScore + atmScore));
-            ScoreSignals.Instance.onTotalScoreUpdated?.Invoke(playerScore + atmScore);
+            totalScore = playerScore + atmScore;
+            ScoreSignals.Instance.onTotalScoreUpdated?.Invoke(totalScore);
         }
         private void OnBoxPoint(float boxpoint)
         {
-            ScoreSignals.Instance.onCompleteScore((playerScore + atmScore) * boxpoint);
+            int oldValue = ScoreSignals.Instance.loadSavedMoneyValue();
+            ScoreSignals.Instance.onCompleteScore?.Invoke((totalScore) * boxpoint + oldValue);
         }
     }
-
 }
