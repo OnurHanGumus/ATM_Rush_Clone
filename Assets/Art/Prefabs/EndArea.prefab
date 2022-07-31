@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3783312025639681070, guid: 543358b8ce61e7048bb7fe2a40dae847, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 3783312025639681070, guid: 543358b8ce61e7048bb7fe2a40dae847, type: 3}
       propertyPath: m_LocalRotation.w
@@ -210,10 +210,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6377988519413846952, guid: 124ff034e395e274aa8b384eab57be78, type: 3}
       propertyPath: m_Name
-      value: FinishFlag
-      objectReference: {fileID: 0}
-    - target: {fileID: 6377988519413846952, guid: 124ff034e395e274aa8b384eab57be78, type: 3}
-      propertyPath: m_TagString
       value: FinishFlag
       objectReference: {fileID: 0}
     m_RemovedComponents: []

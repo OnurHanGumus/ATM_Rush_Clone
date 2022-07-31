@@ -34,6 +34,7 @@ namespace Managers
 
         private Vector3 _nextMoneyTransform;
         private List<GameObject> _Dollars = new List<GameObject>();
+        private int _playerScore;
         
         #endregion
         
@@ -60,6 +61,7 @@ namespace Managers
         {
             CoreGameSignals.Instance.onLevelSuccessful += MoveFinishPlayerUp;
             CollectableSignals.Instance.onMiniGameStackCollected += StackUpCollectables;
+            ScoreSignals.Instance.onTotalScoreUpdated += OnTotalScoreUpdated;
         }
 
 
@@ -67,8 +69,10 @@ namespace Managers
         {
             CoreGameSignals.Instance.onLevelSuccessful -= MoveFinishPlayerUp;
             CollectableSignals.Instance.onMiniGameStackCollected -= StackUpCollectables;
+            ScoreSignals.Instance.onTotalScoreUpdated -= OnTotalScoreUpdated;
         }
-        
+
+
         #endregion
 
         public void StackUpCollectables(GameObject collectable)
@@ -84,19 +88,27 @@ namespace Managers
 
         private void MoveFinishPlayerUp()
         {
-            StartCoroutine("Move");
+            StartCoroutine(Move());
         }
 
         private IEnumerator Move()
         {
             yield return new WaitForSeconds(1.5f);
             SetActiveAllCollectables();
-            finishPlayerTransform.DOMoveY(finishPlayerTransform.position.y - _nextMoneyTransform.y,
+            // finishPlayerTransform.DOMoveY(finishPlayerTransform.position.y - _nextMoneyTransform.y,
+            //     _Dollars.Count * stackUpTimeMultipler);
+            finishPlayerTransform.DOMoveY(_playerScore * stackDistanceAmount,
                 _Dollars.Count * stackUpTimeMultipler);
+            print(_playerScore * stackDistanceAmount);
             yield return new WaitForSeconds(/*_Dollars.Count * 1.25f * endPanelTimer*/3.5f);
             CoreGameSignals.Instance.onGameEnd?.Invoke();
         }
 
+        private void OnTotalScoreUpdated(int score)
+        {
+            _playerScore = score;
+            print("PlayerScore" + _playerScore);
+        }
         
         private void SetActiveAllCollectables()
         {
