@@ -95,8 +95,6 @@ namespace Managers
         {
             yield return new WaitForSeconds(1.5f);
             SetActiveAllCollectables();
-            // finishPlayerTransform.DOMoveY(finishPlayerTransform.position.y - _nextMoneyTransform.y,
-            //     _Dollars.Count * stackUpTimeMultipler);
             finishPlayerTransform.DOMoveY(_playerScore * stackDistanceAmount,
                 _Dollars.Count * stackUpTimeMultipler);
             print(_playerScore * stackDistanceAmount);
@@ -107,7 +105,6 @@ namespace Managers
         private void OnTotalScoreUpdated(int score)
         {
             _playerScore = score;
-            print("PlayerScore" + _playerScore);
         }
         
         private void SetActiveAllCollectables()
