@@ -18,6 +18,7 @@ public class CollectableStackManager : MonoBehaviour
     private CollectableData _collectableData;
     private bool _isAnimating = false;
     private Sequence _sequence;
+    private StackLerpMoveController _stackLerpMoveController;
 
     #endregion
     #endregion
@@ -27,7 +28,7 @@ public class CollectableStackManager : MonoBehaviour
         collectables.Add(transform);
         _collectableData = GetCollectableData();
         _sequence = DOTween.Sequence();
-
+        _stackLerpMoveController = GetComponent<StackLerpMoveController>();
     }
 
     void OnEnable()
@@ -64,7 +65,8 @@ public class CollectableStackManager : MonoBehaviour
 
     private void Update()
     {
-        StayInTheLine();
+        //StayInTheLine();
+        _stackLerpMoveController.StayInTheLine(collectables, _collectableData);
     }
     private void StayInTheLine()
     {

@@ -92,7 +92,7 @@ public class UIManager : MonoBehaviour
     private void UpdateLevelText(int incremental)
     {
         _levelID += incremental;
-        levelText.text = _levelID.ToString();
+        levelText.text = "LEVEL " + _levelID.ToString();
     }
 
     private void UpdateMoneyText(int incremental)
