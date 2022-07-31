@@ -29,11 +29,13 @@ namespace Managers
         {
             ScoreSignals.Instance.onPlayerScoreUpdated += OnPlayerScoreUpdated;
             ScoreSignals.Instance.onATMScoreUpdated += OnAtmScoreUpdated;
+            ScoreSignals.Instance.onBoxPoint += OnBoxPoint;
         }
         private void UnsubscribeEvents()
         {
             ScoreSignals.Instance.onPlayerScoreUpdated -= OnPlayerScoreUpdated;
             ScoreSignals.Instance.onATMScoreUpdated -= OnAtmScoreUpdated;
+            ScoreSignals.Instance.onBoxPoint -= OnBoxPoint;
         }
 
         private void OnDisable()
@@ -61,5 +63,10 @@ namespace Managers
             //Debug.Log("toplam score: " +(playerScore + atmScore));
             ScoreSignals.Instance.onTotalScoreUpdated?.Invoke(playerScore + atmScore);
         }
+        private void OnBoxPoint(float boxpoint)
+        {
+            ScoreSignals.Instance.onCompleteScore((playerScore + atmScore) * boxpoint);
+        }
     }
+
 }

@@ -37,5 +37,8 @@ namespace Signals
         public UnityAction<int> onATMScoreUpdated = delegate { };
         public UnityAction<int> onTotalScoreUpdated = delegate { };
         public UnityAction<int> onUpdateAtmScore = delegate {  };
+        public UnityAction<float>onBoxPoint = delegate { };
+        public UnityAction<float>onCompleteScore = delegate { };    
+
     }
 }

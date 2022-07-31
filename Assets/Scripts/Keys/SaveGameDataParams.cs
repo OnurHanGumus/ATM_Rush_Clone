@@ -6,6 +6,7 @@ namespace Keys
         public int Money;
         public bool SFX;
         public bool VFX;
+        public int UILevel;
         
     }
 }

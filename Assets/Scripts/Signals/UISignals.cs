@@ -32,5 +32,5 @@ public class UISignals : MonoBehaviour
     #endregion
     public UnityAction<UIPanels> onOpenPanel = delegate { };
     public UnityAction<UIPanels> onClosePanel = delegate { };
-    public UnityAction onUpdateStageData = delegate { };
+   // public UnityAction onUpdateStageData = delegate { };
 }
