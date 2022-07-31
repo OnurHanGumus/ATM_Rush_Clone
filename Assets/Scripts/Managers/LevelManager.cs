@@ -48,7 +48,6 @@ namespace Managers
         protected void Awake()
         {
             _levelID = GetActiveLevel();
-            Data = GetLevelData();
             OnInitializeLevel();
         }
 
@@ -57,11 +56,7 @@ namespace Managers
             return ScoreSignals.Instance.loadSavedLevelValue();
         }
 
-        private LevelData GetLevelData()
-        {
-            int newLevelData = _levelID % Resources.Load<CD_Level>("Datas/UnityObjects/CD_Level").Levels.Count;
-            return Resources.Load<CD_Level>("Datas/UnityObjects/CD_Level").Levels[newLevelData];
-        }
+   
 
         #region Event Subscription
 
