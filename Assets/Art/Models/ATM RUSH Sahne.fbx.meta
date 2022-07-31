@@ -3,7 +3,167 @@ guid: e112bcd6b97f22645936e81a66424b92
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ATM
+    second: {fileID: 2100000, guid: 4ca8b25dfab222a459db46742ff5dada, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Banka_2
+    second: {fileID: 2100000, guid: 245ab2e695e6b8f41baa352bb92f114c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Card
+    second: {fileID: 2100000, guid: 9d03f24f6276b964dbddd3f8f12ce370, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Development_Gate
+    second: {fileID: 2100000, guid: eb1180d8a350424498b9e828555c3dfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Development_Gate_texture
+    second: {fileID: 2100000, guid: 7c0a4a63891cd5a498dee4f39f186914, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fixed_Obstacle
+    second: {fileID: 2100000, guid: 7782669197c901f42b04471e3fef6b7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold
+    second: {fileID: 2100000, guid: 7f49828bc42a71244b54bf7f135651e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hand_Obstacles
+    second: {fileID: 2100000, guid: 9be1d84ea5e3ca94d9297667661ed9e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Money
+    second: {fileID: 2100000, guid: 925c17f479cab3942b643add3c39f914, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road
+    second: {fileID: 2100000, guid: 497577f647ee34d4ba61fa78a1900eb8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spinning_Obstacle
+    second: {fileID: 2100000, guid: b58b8ff1dba5f894f846aed382707cef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spinning_Obstacle_black
+    second: {fileID: 2100000, guid: 6293f6de30fe03d468fb855fc4bad65f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Starting_area_ground
+    second: {fileID: 2100000, guid: a80599d2cfc346d41b7a82326125b9aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Swimging_Obstacle
+    second: {fileID: 2100000, guid: 20890a04c5d0e844a9f9ca21a436ff55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vase
+    second: {fileID: 2100000, guid: ef013a664e086cb4483683dfe35850ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walking_Platform_corner
+    second: {fileID: 2100000, guid: 70b6d46e4555c8348a3d6b7638ed43bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walking_platform
+    second: {fileID: 2100000, guid: 7a1aa37a2f1532346ab956b30583d92b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bank_1
+    second: {fileID: 2100000, guid: f23560171985d4f4faac79a04454e8ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barbed_Obstacles
+    second: {fileID: 2100000, guid: df616a264a1237c4c8655ebe01810b51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bear
+    second: {fileID: 2100000, guid: dd9168171c582df4392d5cb651d370e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: diamond
+    second: {fileID: 2100000, guid: d1811738caef2a14ea8134be05199976, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: starting_area_grass
+    second: {fileID: 2100000, guid: 899bea1b227121046831d363d524f37a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ATM
+    second: {fileID: 2800000, guid: 0fb5ba3b4b754e1488f3a288ab74a107, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Banka
+    second: {fileID: 2800000, guid: 579f3185819a91a42b2f543bebec7a16, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Banka 1
+    second: {fileID: 2800000, guid: f8a8a3c96a3d0924280c45cc9424879a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Degistirme Gecidi Panel Yesil Transparan
+    second: {fileID: 2800000, guid: e4cbdf70f8713c94ea07601a66c1e750, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: El Texture
+    second: {fileID: 2800000, guid: 72942d9f3114d354b8961bfed111d7fd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sallanan Engel
+    second: {fileID: 2800000, guid: 323bc0a51ee1a3a409a4743876595344, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: kart 01
+    second: {fileID: 2800000, guid: 5a87644bc5aa5354c8e27dda078049d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: para
+    second: {fileID: 2800000, guid: 891591601449faf468bb7000ffe84b8c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: saksi
+    second: {fileID: 2800000, guid: 816ff970fa70e3c47837b084fb7f4cb3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "y\xFCr\xFCyen zemin"
+    second: {fileID: 2800000, guid: e4c89fcf6f15b8941b88a1367a0597fa, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
