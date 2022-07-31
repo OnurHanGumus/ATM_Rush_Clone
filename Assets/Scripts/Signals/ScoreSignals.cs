@@ -28,7 +28,7 @@ namespace Signals
             }
             else
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
         #endregion

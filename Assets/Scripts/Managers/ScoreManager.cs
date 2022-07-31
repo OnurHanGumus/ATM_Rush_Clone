@@ -30,12 +30,16 @@ namespace Managers
             ScoreSignals.Instance.onPlayerScoreUpdated += OnPlayerScoreUpdated;
             ScoreSignals.Instance.onATMScoreUpdated += OnAtmScoreUpdated;
             ScoreSignals.Instance.onBoxPoint += OnBoxPoint;
+
+            CoreGameSignals.Instance.onNextLevel += OnResetLevel;
         }
         private void UnsubscribeEvents()
         {
             ScoreSignals.Instance.onPlayerScoreUpdated -= OnPlayerScoreUpdated;
             ScoreSignals.Instance.onATMScoreUpdated -= OnAtmScoreUpdated;
             ScoreSignals.Instance.onBoxPoint -= OnBoxPoint;
+            CoreGameSignals.Instance.onNextLevel -= OnResetLevel;
+
         }
 
         private void OnDisable()
@@ -68,6 +72,12 @@ namespace Managers
         {
             int oldValue = ScoreSignals.Instance.loadSavedMoneyValue();
             ScoreSignals.Instance.onCompleteScore?.Invoke((totalScore) * boxpoint + oldValue);
+        }
+
+        private void OnResetLevel()
+        {
+            atmScore = 0;
+            OnPlayerScoreUpdated(0);
         }
     }
 }
