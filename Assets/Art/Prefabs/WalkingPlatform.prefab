@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2381442737887594892}
   - component: {fileID: 1822190581570307625}
   - component: {fileID: 6297346649376165227}
+  - component: {fileID: 378404017657007083}
   m_Layer: 0
   m_Name: WalkingPlatform
   m_TagString: WalkingPlatform
@@ -112,3 +113,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.508132, y: 0.71999997, z: 1.0076251}
   m_Center: {x: -0.22993422, y: -9.893095e-25, z: -0.25218755}
+--- !u!114 &378404017657007083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345016265305603873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5d77b5e49274e488cf34e8e1c35fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.25
+  renderer: {fileID: 2381442737887594892}
