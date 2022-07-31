@@ -38,6 +38,8 @@ MonoBehaviour:
     - Boxophobic.Utils.Scripts
     - Boxophobic.PolyverseSkies.Runtime
     - Boxophobic.PolyverseSkies.Scripts
+    - sc.stylizedwater2.editor
+    - sc.stylizedwater2.runtime
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - ToonyColorsPro.Editor
     - ToonyColorsPro.Demo.Editor
