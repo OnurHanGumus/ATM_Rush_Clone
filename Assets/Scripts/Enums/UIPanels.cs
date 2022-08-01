@@ -7,6 +7,7 @@ namespace Enums
     {
         StartPanel,
         InGamePanel,
-        EndGamePanel
+        EndGamePanel,
+        MoneyAndLevelPanel
     }
 }

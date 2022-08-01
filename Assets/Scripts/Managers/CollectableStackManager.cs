@@ -200,7 +200,6 @@ public class CollectableStackManager : MonoBehaviour
             _isAnimating = false;
         }
         collectables.TrimExcess();
-
     }
 
     public int CalculateStackValue()

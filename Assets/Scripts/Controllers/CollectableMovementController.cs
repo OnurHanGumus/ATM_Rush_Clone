@@ -51,7 +51,7 @@ public class CollectableMovementController : MonoBehaviour
         if (_sequence == null)
         {
             _sequence = DOTween.Sequence();
-            _sequence.Append(transform.DOMove(new Vector3(-8, _rig.position.y, _rig.position.z), .25f));
+            _sequence.Append(transform.DOMove(new Vector3(-8, _rig.position.y, _rig.position.z), .75f));
         }
         
         ConnectedNode = null;

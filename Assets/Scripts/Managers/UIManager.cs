@@ -111,12 +111,14 @@ public class UIManager : MonoBehaviour
     {
         UISignals.Instance.onOpenPanel?.Invoke(UIPanels.EndGamePanel);
         UISignals.Instance.onClosePanel?.Invoke(UIPanels.InGamePanel);
+        UISignals.Instance.onClosePanel?.Invoke(UIPanels.MoneyAndLevelPanel);
     }
 
     private void OnNextLevel()
     {
         UISignals.Instance.onOpenPanel?.Invoke(UIPanels.StartPanel);
         UISignals.Instance.onClosePanel?.Invoke(UIPanels.EndGamePanel);
+        UISignals.Instance.onOpenPanel?.Invoke(UIPanels.MoneyAndLevelPanel);
         UpdateLevelText(1);
     }
     private void OnRestartLevel()

@@ -82,7 +82,7 @@ namespace Managers
             collectable.transform.SetParent(moneyHolder);
             _nextMoneyTransform = new Vector3(_nextMoneyTransform.x,_nextMoneyTransform.y - stackDistanceAmount,_nextMoneyTransform.z);
             // collectable.transform.position = _nextMoneyTransform;
-            collectable.transform.DOMove(_nextMoneyTransform,.5f,false);
+            collectable.transform.DOMove(_nextMoneyTransform,0.1f,false);
             collectable.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
 
@@ -96,7 +96,7 @@ namespace Managers
             yield return new WaitForSeconds(1.5f);
             SetActiveAllCollectables();
             finishPlayerTransform.DOMoveY(_playerScore * stackDistanceAmount,
-                _Dollars.Count * stackUpTimeMultipler).SetEase(Ease.InQuad);
+                _Dollars.Count * stackUpTimeMultipler).SetEase(Ease.OutQuart);
             yield return new WaitForSeconds(/*_Dollars.Count * 1.25f * endPanelTimer*/3.5f);
             CoreGameSignals.Instance.onGameEnd?.Invoke();
         }
