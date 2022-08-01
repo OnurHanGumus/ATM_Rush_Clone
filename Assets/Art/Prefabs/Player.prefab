@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3988063421066741289}
   - component: {fileID: 2875007958196386217}
   - component: {fileID: 2166128513623078734}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382280273448762785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.15}
   m_LocalScale: {x: 0.17369, y: 0.17369, z: 0.17369}
   m_Children: []
   m_Father: {fileID: 752574321512371822}
@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.262}
+  m_AnchoredPosition: {x: 0, y: 0.28}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2875007958196386217
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 4.7803454, y: 0.5378212, z: 4.8778944, w: 0.3841381}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -275,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4095966267386092835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.006000012, y: -0.39800024, z: -0.016000032}
+  m_LocalPosition: {x: 0, y: -0.31, z: -0.016000032}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 3988063421066741289}
@@ -460,7 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2092130832231868965}
   - component: {fileID: 2781221130150137222}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ScorePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5342766656328785466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.36, z: -0.94617}
+  m_LocalPosition: {x: 0, y: 2.36, z: -0.7}
   m_LocalScale: {x: 0.24620512, y: 0.24620512, z: 0.24620512}
   m_Children:
   - {fileID: 752574321512371822}
@@ -586,6 +586,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1139266312880138913, guid: 8da6b9c24d59b694db8389bee131fd2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426443671464833243, guid: 8da6b9c24d59b694db8389bee131fd2b, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
