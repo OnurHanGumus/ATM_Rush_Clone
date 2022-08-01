@@ -24,7 +24,7 @@ namespace Managers
         [SerializeField] private Transform firstMoney;
         [Space]
         [Header("Adjustments")]
-        [SerializeField] private float stackDistanceAmount = 1.5f;
+        [SerializeField] private float stackDistanceAmount = 1.1f;
         [SerializeField][Range(0,1)] private float stackUpTimeMultipler;
         [SerializeField][Range(0,0.1f)] private float endPanelTimer;
 

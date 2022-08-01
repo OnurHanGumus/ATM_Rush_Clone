@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45c59a2d-5edf-40dd-8aed-7e8923ce9fac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/EndGameBoxColorChangeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/FinishPlayerPhysicController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/MiniGameArea.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/MiniGameArea.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinishPlayerPhysicController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinishPlayerPhysicController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/FinishPlayerPhysicController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Datas/UnityObjects/CD_Player.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Datas/UnityObjects/CD_Player.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/EndGameBoxColorChanger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/EndGameBoxColorChanger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/EndGameBoxColorChangeController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MiniGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MiniGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Signals/PlayerSignals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Signals/PlayerSignals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Signals/CoreGameSignals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Signals/CoreGameSignals.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +86,7 @@
       <workItem from="1659096144429" duration="9941000" />
       <workItem from="1659258874734" duration="1455000" />
       <workItem from="1659265194455" duration="4172000" />
+      <workItem from="1659304913141" duration="1690000" />
     </task>
     <servers />
   </component>

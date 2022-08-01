@@ -31,21 +31,21 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
-    - Boxophobic.PolyverseSkies.Runtime
     - Cinemachine
     - ToonyColorsPro2.Demo
-    - sc.stylizedwater2.runtime
-    - Boxophobic.Utils.Scripts
-    - sc.stylizedwater2.editor
     - Sirenix.OdinInspector.CompatibilityLayer
     - ToonyColorsPro.Runtime
+    - sc.stylizedwater2.editor
+    - sc.stylizedwater2.runtime
+    - Boxophobic.Utils.Scripts
+    - Boxophobic.PolyverseSkies.Runtime
     - Boxophobic.PolyverseSkies.Scripts
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
-    - Boxophobic.Utils.Editor
     - ToonyColorsPro.Editor
-    - Boxophobic.PolyverseSkies.Editor
     - ToonyColorsPro.Demo.Editor
     - Sirenix.OdinInspector.Modules.UnityMathematics
+    - Boxophobic.Utils.Editor
+    - Boxophobic.PolyverseSkies.Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
