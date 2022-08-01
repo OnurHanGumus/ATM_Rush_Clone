@@ -2,16 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45c59a2d-5edf-40dd-8aed-7e8923ce9fac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/EndArea.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/EndArea.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CollectableMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/UIPanels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/UIPanels.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CollectableStackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CollectableStackManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MiniGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MiniGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/ATM 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/ATM 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/ATM.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/ATM.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Banka_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Banka_2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Card.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Card.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Development_Gate.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Development_Gate.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Development_Gate_texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Development_Gate_texture.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Fixed_Obstacle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Fixed_Obstacle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Gold.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Gold.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Hand_Obstacles.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Hand_Obstacles.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Money.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Money.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Road.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Road.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/ScoreBoxMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/ScoreBoxMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Spinning_Obstacle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Spinning_Obstacle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Spinning_Obstacle_black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Spinning_Obstacle_black.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Starting_area_ground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Starting_area_ground.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Swimging_Obstacle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Swimging_Obstacle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/UpgradeBody.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/UpgradeBody.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Vase.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Vase.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Walking_Platform_corner.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Walking_Platform_corner.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Walking_platform.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Walking_platform.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/bank_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/bank_1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/barbed_Obstacles.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/barbed_Obstacles.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/bear.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/bear.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/diamond.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/diamond.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/starting_area_grass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/starting_area_grass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/ATM.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/ATM.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/DevelopmentGate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/DevelopmentGate.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AtmManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AtmManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/GamePlayProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/GamePlayProfile.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +115,7 @@
       <workItem from="1659265194455" duration="4172000" />
       <workItem from="1659304913141" duration="1690000" />
       <workItem from="1659353208311" duration="233000" />
-      <workItem from="1659353498338" duration="3428000" />
+      <workItem from="1659353498338" duration="4062000" />
     </task>
     <servers />
   </component>

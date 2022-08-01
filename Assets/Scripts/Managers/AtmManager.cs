@@ -1,3 +1,4 @@
+using System;
 using Signals;
 using UnityEngine;
 using TMPro;
@@ -42,6 +43,11 @@ namespace Managers
         }
 
         #endregion
+
+        private void Awake()
+        {
+            OnUpdateAtmScore(0);
+        }
 
         private void OnUpdateAtmScore(int atmScore)
         {
