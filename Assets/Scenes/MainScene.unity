@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: 0.5048693, g: 0.38470095, b: 0.8962264, a: 1}
-  m_AmbientGroundColor: {r: 0.5660378, g: 0.56514776, b: 0.5633678, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 0.9411765, b: 0.7607843, a: 1}
+  m_AmbientEquatorColor: {r: 0.78353804, g: 0.70110214, b: 0.9646866, a: 1}
+  m_AmbientGroundColor: {r: 0.6444799, g: 0.637597, b: 0.6514058, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
-  m_SubtractiveShadowColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+  m_SubtractiveShadowColor: {r: 0.41960785, g: 0.47843137, b: 0.627451, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 50bf15468c19e0e40b5bf26662770a34, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 312da5f1311898c4d9372a43f3d6c224, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1574,7 +1574,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1322259188}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 23.12, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!114 &1083838181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2185,8 +2185,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230214102}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.13387, y: -85.47864, z: -133.47263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1322259188}

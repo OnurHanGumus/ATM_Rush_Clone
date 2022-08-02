@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 340ceef9b5d95a24c9bb8552a5a4f2ba
 ModelImporter:
-  serializedVersion: 19301
+  serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 1558715428343100093
@@ -12,7 +12,67 @@ ModelImporter:
   - first:
       74: 8061465127764819259
     second: "Armature|\u0131dle"
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt
+    second: {fileID: 2100000, guid: 949aa4ab5b132de4c929a4efb044b42b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beard_hair_eyebrow
+    second: {fileID: 2100000, guid: af0d3e1a11bd3f449bb1e8915a265c7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bow_tie
+    second: {fileID: 2100000, guid: 28c2c987382b52c49931371060de0c8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: character
+    second: {fileID: 2100000, guid: 0f8c944c6a15031428c519a9fb352cf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye
+    second: {fileID: 2100000, guid: c8f18925ecfa3e141bc9c1b43eb4908f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hat
+    second: {fileID: 2100000, guid: e4eed45613633e3499d479d3904b5a5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hat_red
+    second: {fileID: 2100000, guid: b5d7a1ab9c1b2b54db5465f59409fd93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iris
+    second: {fileID: 2100000, guid: b7de3c38a345d10469a06b7e7a89a695, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jacket
+    second: {fileID: 2100000, guid: 59f7e024d410be543875a4d1a63dbf6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pants
+    second: {fileID: 2100000, guid: 150b34212088d174ba3bc54628218a00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shoes
+    second: {fileID: 2100000, guid: 8964376dce913b24999b243d10bde305, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: switch
+    second: {fileID: 2100000, guid: 94e7995b62e9f0e4b8f2918e8c0fb4b4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -145,6 +205,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -154,6 +215,9 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -599,8 +663,7 @@ ModelImporter:
     - name: mixamorig:Hips
       parentName: Armature
       position: {x: 0.0036995183, y: 2.1000512, z: 0.03720749}
-      rotation: {x: 0.000000071506356, y: -0.0000000023228537, z: 0.0000000035854357,
-        w: 1}
+      rotation: {x: 0.000000071506356, y: -0.0000000023228537, z: 0.0000000035854357, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Spine
       parentName: mixamorig:Hips
@@ -615,8 +678,7 @@ ModelImporter:
     - name: mixamorig:Spine2
       parentName: mixamorig:Spine1
       position: {x: 0.000000005960464, y: 0.34731823, z: 0.000000024624168}
-      rotation: {x: -0.000000119209275, y: -0.000000003259124, z: -0.000000002663606,
-        w: 1}
+      rotation: {x: -0.000000119209275, y: -0.000000003259124, z: -0.000000002663606, w: 1}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: mixamorig:Neck
       parentName: mixamorig:Spine2
@@ -711,8 +773,7 @@ ModelImporter:
     - name: mixamorig:LeftHandMiddle4
       parentName: mixamorig:LeftHandMiddle3
       position: {x: -0.00034881115, y: 0.093087785, z: 0.00000006020069}
-      rotation: {x: 0.000000014901158, y: 0.00000005910329, z: 0.000000012928847,
-        w: 1}
+      rotation: {x: 0.000000014901158, y: 0.00000005910329, z: 0.000000012928847, w: 1}
       scale: {x: 0.9999998, y: 0.99999994, z: 0.99999994}
     - name: mixamorig:LeftHandRing1
       parentName: mixamorig:LeftHand
@@ -732,8 +793,7 @@ ModelImporter:
     - name: mixamorig:LeftHandRing4
       parentName: mixamorig:LeftHandRing3
       position: {x: -0.00002976656, y: 0.07597564, z: 0.00000015258789}
-      rotation: {x: 0.000000029802319, y: 0.000000010519288, z: -0.00000012662022,
-        w: 1}
+      rotation: {x: 0.000000029802319, y: 0.000000010519288, z: -0.00000012662022, w: 1}
       scale: {x: 1.0000005, y: 1.0000002, z: 0.99999994}
     - name: mixamorig:LeftHandPinky1
       parentName: mixamorig:LeftHand
@@ -793,8 +853,7 @@ ModelImporter:
     - name: mixamorig:RightHandThumb4
       parentName: mixamorig:RightHandThumb3
       position: {x: 0.016414804, y: 0.17519218, z: 0.00000022888183}
-      rotation: {x: 0.00000015646215, y: -0.000000023247823, z: -0.00000012304432,
-        w: 1}
+      rotation: {x: 0.00000015646215, y: -0.000000023247823, z: -0.00000012304432, w: 1}
       scale: {x: 1.0000001, y: 1.0000004, z: 1.0000005}
     - name: mixamorig:RightHandIndex1
       parentName: mixamorig:RightHand
@@ -834,8 +893,7 @@ ModelImporter:
     - name: mixamorig:RightHandMiddle4
       parentName: mixamorig:RightHandMiddle3
       position: {x: 0.000071086884, y: 0.08364199, z: -0.00000019073485}
-      rotation: {x: -0.000000048428763, y: -0.000000029435427, z: -0.00000000792722,
-        w: 1}
+      rotation: {x: -0.000000048428763, y: -0.000000029435427, z: -0.00000000792722, w: 1}
       scale: {x: 0.9999998, y: 1.0000001, z: 1}
     - name: mixamorig:RightHandRing1
       parentName: mixamorig:RightHand
@@ -855,8 +913,7 @@ ModelImporter:
     - name: mixamorig:RightHandRing4
       parentName: mixamorig:RightHandRing3
       position: {x: -0.000006523132, y: 0.072887555, z: 0.000000095367426}
-      rotation: {x: 0.00000010430811, y: -0.0000000033471528, z: 0.000000014645163,
-        w: 1}
+      rotation: {x: 0.00000010430811, y: -0.0000000033471528, z: 0.000000014645163, w: 1}
       scale: {x: 1.0000007, y: 1.0000005, z: 1.0000007}
     - name: mixamorig:RightHandPinky1
       parentName: mixamorig:RightHand
@@ -876,8 +933,7 @@ ModelImporter:
     - name: mixamorig:RightHandPinky4
       parentName: mixamorig:RightHandPinky3
       position: {x: -0.00077331543, y: 0.048648275, z: -0.00000017166137}
-      rotation: {x: -0.00000025331966, y: -0.0000005494317, z: -0.00000065663323,
-        w: 1}
+      rotation: {x: -0.00000025331966, y: -0.0000005494317, z: -0.00000065663323, w: 1}
       scale: {x: 1.0000002, y: 1.0000006, z: 1.0000004}
     - name: mixamorig:LeftUpLeg
       parentName: mixamorig:Hips
@@ -902,8 +958,7 @@ ModelImporter:
     - name: mixamorig:LeftToe_End
       parentName: mixamorig:LeftToeBase
       position: {x: -0.00000003993511, y: 0.2654621, z: -0.000000033974647}
-      rotation: {x: -0.00000008940696, y: -0.000014115123, z: -0.000000104308114,
-        w: 1}
+      rotation: {x: -0.00000008940696, y: -0.000014115123, z: -0.000000104308114, w: 1}
       scale: {x: 1.0000012, y: 1.0000007, z: 1.0000008}
     - name: mixamorig:RightUpLeg
       parentName: mixamorig:Hips
@@ -972,6 +1027,7 @@ ModelImporter:
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

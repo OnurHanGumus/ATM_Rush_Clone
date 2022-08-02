@@ -14,7 +14,7 @@ namespace Managers
 
         #region Public
 
-        
+
         #endregion
 
         #region Seriliazed Field
@@ -25,8 +25,8 @@ namespace Managers
         [Space]
         [Header("Adjustments")]
         [SerializeField] private float stackDistanceAmount = 1.1f;
-        [SerializeField][Range(0,1)] private float stackUpTimeMultipler;
-        [SerializeField][Range(0,0.1f)] private float endPanelTimer;
+        [SerializeField][Range(0, 1)] private float stackUpTimeMultipler;
+        [SerializeField][Range(0, 0.1f)] private float endPanelTimer;
 
         #endregion
 
@@ -35,9 +35,9 @@ namespace Managers
         private Vector3 _nextMoneyTransform;
         private List<GameObject> _Dollars = new List<GameObject>();
         private int _playerScore;
-        
+
         #endregion
-        
+
         #endregion
 
         private void Awake()
@@ -80,21 +80,22 @@ namespace Managers
             _Dollars.Add(collectable);
             collectable.tag = "Untagged";
             collectable.transform.SetParent(moneyHolder);
-            _nextMoneyTransform = new Vector3(_nextMoneyTransform.x,_nextMoneyTransform.y - stackDistanceAmount,_nextMoneyTransform.z);
+            _nextMoneyTransform = new Vector3(_nextMoneyTransform.x, _nextMoneyTransform.y - stackDistanceAmount, _nextMoneyTransform.z);
             // collectable.transform.position = _nextMoneyTransform;
-            collectable.transform.DOMove(_nextMoneyTransform,0.1f,false);
+            collectable.transform.DOMove(_nextMoneyTransform, 0.1f, false);
             collectable.transform.localScale = new Vector3(1.5f, 1f, 1.5f);
         }
 
         private void MoveFinishPlayerUp()
         {
-            finishPlayerTransform.gameObject.SetActive(true);
+
             StartCoroutine(Move());
         }
 
         private IEnumerator Move()
         {
             yield return new WaitForSeconds(1.5f);
+            finishPlayerTransform.gameObject.SetActive(true);
             SetActiveAllCollectables();
             finishPlayerTransform.DOMoveY(_playerScore * stackDistanceAmount,
                 _Dollars.Count * stackUpTimeMultipler).SetEase(Ease.OutQuart);
@@ -106,7 +107,7 @@ namespace Managers
         {
             _playerScore = score;
         }
-        
+
         private void SetActiveAllCollectables()
         {
             foreach (var D in _Dollars)
