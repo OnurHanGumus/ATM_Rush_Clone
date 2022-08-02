@@ -38,7 +38,7 @@ public class CollectableManager : MonoBehaviour
     public void OnCollectableAndCollectableCollide(Transform otherNode)
     {
         collectableState = CollectableState.collected;
-        CollectableSignals.Instance.onCollectableAndCollectableCollide?.Invoke(transform);
+        CollectableSignals.Instance.onCollectableAndCollectableCollide?.Invoke(otherNode);
     }
     
     public void OnCollectableAndObstacleCollide(Transform crashedNode)
@@ -66,7 +66,8 @@ public class CollectableManager : MonoBehaviour
     
     public void OnCollectableAndWalkingPlatformCollide(Transform _transform)
     {
-        gameObject.tag = "Untagged";
+
+        collectableState = CollectableState.onWalkingArea;
         connectedNode = null;
         _collectableMovementController.DeactivateMovement();
         _collectableMovementController.MoveToWinZone();

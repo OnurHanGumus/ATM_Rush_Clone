@@ -13,6 +13,7 @@ public class StackLerpMoveController : MonoBehaviour
             {
                 continue;
             }
+         
             collectables[i].transform.DOMoveX(collectables[i - 1].transform.position.x, _collectableData.lerpData.lerpSoftnessX);
             collectables[i].transform.position = new Vector3(collectables[i].transform.position.x, collectables[i].transform.position.y, collectables[i - 1].transform.position.z + _collectableData.lerpData.lerpSpaces);
         }

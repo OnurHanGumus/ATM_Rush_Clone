@@ -16,7 +16,7 @@ namespace Controllers
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("Player") && !other.CompareTag("Untagged"))
             {
                 CollectableAndCollectableCollide(other.transform);
             }
@@ -48,10 +48,8 @@ namespace Controllers
         
         private void CollectableAndCollectableCollide(Transform other)
         {
-            if (other.CompareTag("Player"))
-            {
-                collectableManager.OnCollectableAndCollectableCollide(transform);
-            }
+            collectableManager.OnCollectableAndCollectableCollide(transform);
+            
         }
         private void CollectableAndObstacleCollide()
         {

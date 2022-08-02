@@ -65,24 +65,15 @@ public class CollectableStackManager : MonoBehaviour
 
     private void Update()
     {
-        //StayInTheLine();
         _stackLerpMoveController.StayInTheLine(collectables, _collectableData);
-    }
-    private void StayInTheLine()
-    {
-        for (int i = 0; i < collectables.Count; i++)
-        {
-            if (i == 0)
-            {
-                continue;
-            }
-            collectables[i].transform.DOMoveX(collectables[i - 1].transform.position.x, _collectableData.lerpData.lerpSoftnessX);
-            collectables[i].transform.position = new Vector3(collectables[i].transform.position.x, collectables[i].transform.position.y, collectables[i - 1].transform.position.z + _collectableData.lerpData.lerpSpaces);
-        }
     }
 
     private void OnCollectableAndCollectableCollide(Transform addedNode)
     {
+        if (addedNode.CompareTag("Untagged"))
+        {
+            return;
+        }
         collectables.TrimExcess();
         AddCollectableToList(addedNode);
         StartCoroutine(AddCollectableEffect(collectables.Count));
@@ -123,7 +114,7 @@ public class CollectableStackManager : MonoBehaviour
     {
         for (int i = collectables.Count - 1; i > 0; i--)
         {
-            collectables[i].tag = "Collectable";
+            //collectables[i].tag = "Collectable";
             AddBreakeForce(collectables[i].transform);
             collectables.RemoveAt(i);
             collectables.TrimExcess();
@@ -143,7 +134,8 @@ public class CollectableStackManager : MonoBehaviour
     
     private void OnWalkingPlatformCollide(Transform arg)
     {
-        RemoveCollectablesFromList(arg, true, "Untagged");
+        //RemoveCollectablesFromList(arg, true, "Untagged");
+        RemoveLastNodeFromList();
     }
     private void RemoveCollectablesFromList(Transform node,bool isWalkingArea, string tagName)
     {
@@ -170,11 +162,12 @@ public class CollectableStackManager : MonoBehaviour
         }
     }
 
-    public Transform GetLastNodeOfList(Transform addedNode)
+    private void RemoveLastNodeFromList()
     {
-        AddCollectableToList(addedNode);
-        return collectables[collectables.Count - 2];
+        collectables[collectables.Count - 1].tag = "Untagged";
+        collectables.Remove(collectables[collectables.Count - 1]);
     }
+
     private void AddBreakeForce(Transform node)
     {
         node.position = new Vector3(Random.Range(-2f, 2f), node.position.y, node.position.z);

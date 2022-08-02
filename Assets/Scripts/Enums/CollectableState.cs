@@ -6,6 +6,7 @@ namespace Enums
     public enum CollectableState
     {
         notCollected,
-        collected
+        collected,
+        onWalkingArea
     }
 }

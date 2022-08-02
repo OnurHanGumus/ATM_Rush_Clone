@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
         _SaveGameCommand = new SaveGameCommand();
 
 
-        //if there is no save file created
         if (!ES3.FileExists())
         {
             ES3.Save("Score", 0);
@@ -43,19 +42,6 @@ public class GameManager : MonoBehaviour
     {
         SubscribeEvents();
     }
-
-
-    //private void SubscribeEvents()
-    //{
-    //    //CoreGameSignals.Instance.onChangeGameState += OnChangeGameState;
-    //    CoreGameSignals.Instance.onSaveGameData += OnSaveGame;
-    //}
-
-    //private void UnsubscribeEvents()
-    //{
-    //    //CoreGameSignals.Instance.onChangeGameState -= OnChangeGameState;
-    //    CoreGameSignals.Instance.onSaveGameData -= OnSaveGame;
-    //}
 
     private void SubscribeEvents()
     {
@@ -85,18 +71,4 @@ public class GameManager : MonoBehaviour
     {
         return loadGameCommand.OnLoadGameData(SaveLoadStates.Money);
     }
-
-    //private void OnSaveGame(SaveGameDataParams saveDataParams)
-    //{
-    //    if (saveDataParams.Level != null)
-    //    {
-    //        ES3.Save("Level", saveDataParams.Level);
-    //    }
-    //    if (saveDataParams.Money != null) ES3.Save("Money", saveDataParams.Money);
-    //    //if (saveDataParams.SFX != null) ES3.Save("SFX", saveDataParams.SFX);
-    //    //if (saveDataParams.VFX != null) ES3.Save("VFX", saveDataParams.VFX);
-    //    //if (saveDataParams.Haptic != null) ES3.Save("Haptic", saveDataParams.Haptic);
-    //}
-
-    
 }
