@@ -66,6 +66,7 @@ public class CollectableManager : MonoBehaviour
     
     public void OnCollectableAndWalkingPlatformCollide(Transform _transform)
     {
+        gameObject.tag = "Untagged";
         connectedNode = null;
         _collectableMovementController.DeactivateMovement();
         _collectableMovementController.MoveToWinZone();
