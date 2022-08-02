@@ -1544,6 +1544,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2176603205498297465}
     m_Modifications:
+    - target: {fileID: 2070966805690953553, guid: 5b12fdc87b54cc44bab3054c8bcc6b89, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 2072916490584931975, guid: 5b12fdc87b54cc44bab3054c8bcc6b89, type: 3}
       propertyPath: m_Name
       value: StartArea
