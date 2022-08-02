@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finishPlayerTransform: {fileID: 40219344331568501}
   moneyHolder: {fileID: 5092567339446685381}
-  firstMoney: {fileID: 4216790416248861873}
-  stackDistanceAmount: 1.1
+  firstMoney: {fileID: 8908982004950205943}
+  stackDistanceAmount: 0.753
   stackUpTimeMultipler: 0.2
   endPanelTimer: 0
 --- !u!114 &7039642194583790953
@@ -74,22 +74,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5940597900715589232}
     m_Modifications:
-    - target: {fileID: 1503447270385077670, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1503447270385077670, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1503447270385077670, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1503447270385077670, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5980741921098167825, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
       propertyPath: m_Name
       value: PlayerFinish
@@ -108,7 +92,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5980741921098167830, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.21
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 5980741921098167830, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
       propertyPath: m_LocalRotation.w
@@ -138,10 +122,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6715044872648455537, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
 --- !u!4 &40219344331568501 stripped
@@ -154,9 +134,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1503447270385077670, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
   m_PrefabInstance: {fileID: 5940597900415107939}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4216790416248861873 stripped
+--- !u!4 &8908982004950205943 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7562725586471516114, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3013525794200422036, guid: 6e88abe652c15ab4284e5981521fd891, type: 3}
   m_PrefabInstance: {fileID: 5940597900415107939}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8879408126896950406

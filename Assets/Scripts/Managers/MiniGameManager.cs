@@ -83,11 +83,12 @@ namespace Managers
             _nextMoneyTransform = new Vector3(_nextMoneyTransform.x,_nextMoneyTransform.y - stackDistanceAmount,_nextMoneyTransform.z);
             // collectable.transform.position = _nextMoneyTransform;
             collectable.transform.DOMove(_nextMoneyTransform,0.1f,false);
-            collectable.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            collectable.transform.localScale = new Vector3(1.5f, 1f, 1.5f);
         }
 
         private void MoveFinishPlayerUp()
         {
+            finishPlayerTransform.gameObject.SetActive(true);
             StartCoroutine(Move());
         }
 
