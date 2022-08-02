@@ -1,5 +1,6 @@
 using Keys;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerMovementController : MonoBehaviour
 {
@@ -92,6 +93,7 @@ public class PlayerMovementController : MonoBehaviour
 
     public void PushPlayerBack()
     {
-        _rig.AddForce(new Vector3(0, 0, -500), ForceMode.VelocityChange);
+        //_rig.AddForce(new Vector3(0, 0, -500), ForceMode.VelocityChange);
+        transform.DOMove(new Vector3(transform.position.x, transform.position.y, transform.position.z - 5f), 0.75f);
     }
 }
