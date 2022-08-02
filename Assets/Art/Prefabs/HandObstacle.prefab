@@ -126,9 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cdc844a0de4b5c9f573a534d2d585f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  easeStart: 1
+  easeEnd: 1
   path:
   - {x: 0, y: 0.3, z: 0}
   - {x: 9, y: 0.3, z: 0}
-  speed: 0.5
+  speedStart: 0.5
+  speedEnd: 2
   delay: 1
-  _ease: 6
