@@ -128,13 +128,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doMove: 1
   doShake: 0
+  doRotate: 0
+  piganim: 0
   easeStart: 1
   easeEnd: 1
   path:
-  - {x: 0, y: 0.3, z: 0}
-  - {x: 9, y: 0.3, z: 0}
+  - {x: 0, y: 0.3, z: 108.3}
+  - {x: 9, y: 0.3, z: 108.3}
   speedStart: 1
   speedEnd: 4
   firstDelay: 8
   secondDelay: 0
   shakeSpeed: 0
+  rotateSpeed: 0
