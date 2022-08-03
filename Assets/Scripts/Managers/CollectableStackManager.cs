@@ -183,10 +183,10 @@ public class CollectableStackManager : MonoBehaviour
             for (int i = 1; i < collectables.Count; i++)
             {
                 int tersIndex = collectables.Count - i;
-                collectables[tersIndex].transform.localScale = new Vector3(1, 0.75f, 1);
+                collectables[tersIndex].transform.localScale = new Vector3(1.8f, 1.125f, 1.8f);
                 //int index = (collectables.Count - 1) - i;
-                _sequence.Append(collectables[tersIndex].transform.DOScale(new Vector3(2f, 1.5f, 2f), 0.25f).SetEase(Ease.Flash));
-                _sequence.Append(collectables[tersIndex].transform.DOScale( new Vector3(1f, 0.75f, 1f), 0.25f).SetDelay(0.25f).SetEase(Ease.Flash));
+                _sequence.Append(collectables[tersIndex].transform.DOScale(new Vector3(3.6f, 2.5f, 3.6f), 0.25f).SetEase(Ease.Flash));
+                _sequence.Append(collectables[tersIndex].transform.DOScale( new Vector3(1.8f, 1.125f, 1.8f), 0.25f).SetDelay(0.25f).SetEase(Ease.Flash));
                 yield return new WaitForSeconds(0.085f);
             }
             yield return new WaitForSeconds(0.05f * collectables.Count);
