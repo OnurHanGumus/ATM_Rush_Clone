@@ -2,47 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45c59a2d-5edf-40dd-8aed-7e8923ce9fac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Models/Collibtable2.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Models/Collibtable2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Road.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Road.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Textures/RoadTextureHorizontal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Textures/RoadTextureHorizontal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Textures/RoadTextureVertical.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Textures/RoadTextureVertical.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Picker3D_Onur/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Collibtable.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Collibtable.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/CollibtableMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/CollibtableMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Development_Gate.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Development_Gate.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Development_Gate_texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Development_Gate_texture.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Ground/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Ground/Green.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Ground/White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Ground/White.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/Shirt.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/Shirt.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/beard_hair_eyebrow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/beard_hair_eyebrow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/bow_tie.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/bow_tie.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/character.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/character.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/eye.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/eye.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/hat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/hat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/hat_red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/hat_red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/iris.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/iris.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/jacket.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/jacket.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/pants.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/pants.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/shoes.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/shoes.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Player/switch.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Player/switch.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/Shirt.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/Shirt.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/beard_hair_eyebrow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/beard_hair_eyebrow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/bow_tie.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/bow_tie.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/character.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/character.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/eye.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/eye.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/hat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/hat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/hat_red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/hat_red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/iris.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/iris.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/jacket.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/jacket.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/pants.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/pants.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/shoes.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/shoes.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/switch.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/PlayerMesh/switch.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Road.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Road.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Collectable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/Collectable.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/DevelopmentGate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/DevelopmentGate.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Degistirme Gecidi Panel Yesil Transparan 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/Degistirme Gecidi Panel Yesil Transparan 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Spinning_Obstacle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Spinning_Obstacle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Spinning_Obstacle_black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Spinning_Obstacle_black.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Vase.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Vase.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Ground.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/Ground.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/GroundHolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/GroundHolder.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/StartArea.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/StartArea.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Prefabs/SwingAxe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Prefabs/SwingAxe.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Levels/level 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Levels/level 0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Levels/level 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Levels/level 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScenes.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScenes.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/EndGameBoxColorChangeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/EndGameBoxColorChangeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CollectableStackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CollectableStackManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +112,7 @@
       <workItem from="1659353498338" duration="4062000" />
       <workItem from="1659425669685" duration="296000" />
       <workItem from="1659434147843" duration="3520000" />
-      <workItem from="1659512522127" duration="4527000" />
+      <workItem from="1659512522127" duration="6404000" />
     </task>
     <servers />
   </component>
