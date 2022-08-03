@@ -113,6 +113,7 @@ namespace Managers
             {
                 D.SetActive(true);
                 D.transform.localPosition = new Vector3(0, D.transform.localPosition.y, 0);
+                D.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
             }
         }
     }

@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doMove: 1
   doShake: 0
+  doRotate: 0
+  piganim: 0
   easeStart: 28
   easeEnd: 28
   path:
@@ -137,6 +139,7 @@ MonoBehaviour:
   firstDelay: 1
   secondDelay: 1
   shakeSpeed: 1
+  rotateSpeed: 0
 --- !u!1 &6120208796462585835
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +167,7 @@ Transform:
   m_GameObject: {fileID: 6120208796462585835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.10000002, z: 0}
-  m_LocalScale: {x: 0.7, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7928043881440618099}
   m_RootOrder: 1
