@@ -64,7 +64,7 @@ namespace Controllers
 
         private void ScaleUp(GameObject box)
         {
-            box.transform.DOScale(new Vector3(5, 2, 3), 1);
+            box.transform.DOScale(new Vector3(8.5f, 3.5f, 5.5f), 1);
             box.transform.DOLocalMoveZ(-.25f, 1, false);
         }
         

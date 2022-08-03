@@ -13,7 +13,7 @@ namespace Managers
         [SerializeField] private GameObject prefab;
         [SerializeField] private int amount;
         [SerializeField] private Vector3 startPosition;
-        private int aradakiMesafe = 2;
+        [SerializeField] private float aradakiMesafe = 3.5f;
         private float startAmount = 1f;
         private float increaseAmount = 0.1f;
 
