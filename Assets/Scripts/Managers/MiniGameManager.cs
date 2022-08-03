@@ -26,8 +26,7 @@ namespace Managers
         [Header("Adjustments")]
         [SerializeField] private float stackDistanceAmount = 1.1f;
         [SerializeField][Range(0, 1)] private float stackUpTimeMultipler;
-        [SerializeField][Range(0, 0.1f)] private float endPanelTimer;
-
+        [SerializeField] [Range(1, 10)] private float increaseStackUpMultiplier = 1f;
         #endregion
 
         #region Private Field
@@ -97,7 +96,7 @@ namespace Managers
             yield return new WaitForSeconds(1.5f);
             finishPlayerTransform.gameObject.SetActive(true);
             SetActiveAllCollectables();
-            finishPlayerTransform.DOMoveY(_playerScore * stackDistanceAmount,
+            finishPlayerTransform.DOMoveY(_playerScore * stackDistanceAmount * increaseStackUpMultiplier,
                 _Dollars.Count * stackUpTimeMultipler).SetEase(Ease.OutQuart);
             yield return new WaitForSeconds(/*_Dollars.Count * 1.25f * endPanelTimer*/3.5f);
             CoreGameSignals.Instance.onGameEnd?.Invoke();

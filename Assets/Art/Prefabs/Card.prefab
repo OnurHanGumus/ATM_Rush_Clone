@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cdc844a0de4b5c9f573a534d2d585f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doMove: 1
+  doShake: 0
   easeStart: 28
   easeEnd: 28
   path:
@@ -132,7 +134,9 @@ MonoBehaviour:
   - {x: -4, y: 1.1, z: 0}
   speedStart: 0.5
   speedEnd: 1
-  delay: 1
+  firstDelay: 1
+  secondDelay: 1
+  shakeSpeed: 1
 --- !u!1 &6120208796462585835
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,7 +51,7 @@ MonoBehaviour:
   firstMoney: {fileID: 8908982004950205943}
   stackDistanceAmount: 0.753
   stackUpTimeMultipler: 0.2
-  endPanelTimer: 0
+  increaseStackUpMultiplier: 2.5
 --- !u!114 &7039642194583790953
 MonoBehaviour:
   m_ObjectHideFlags: 0
