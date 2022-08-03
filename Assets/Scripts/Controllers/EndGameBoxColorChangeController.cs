@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using Signals;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -57,7 +58,15 @@ namespace Controllers
                 }
 
                 box.GetComponent<Renderer>().material.color = Color.HSVToRGB(_colorValue, saturation, brightness);
+                ScaleUp(box);
             }
         }
+
+        private void ScaleUp(GameObject box)
+        {
+            box.transform.DOScale(new Vector3(5, 2, 3), 1);
+            box.transform.DOLocalMoveZ(-.25f, 1, false);
+        }
+        
     }
 }

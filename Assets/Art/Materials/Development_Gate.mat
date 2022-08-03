@@ -23,18 +23,18 @@ Material:
   m_Name: Development_Gate
   m_Shader: {fileID: 4800000, guid: 7ffc1bc2bbb1ef64f84b552b2d2f0619, type: 3}
   m_ShaderKeywords: TCP2_MOBILE TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING_LIGHTMASK
-    TCP2_UV_NORMALS_FULL
+    TCP2_UV_NORMALS_FULL _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ed743708addd5ac41945f9aeb41c3be1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -115,12 +115,12 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Cull: 2
+    - _Cull: 0
     - _Cutoff: 1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DirectIntensityOutline: 1
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EmissionChannel: 4
     - _EnvironmentReflections: 1
     - _FresnelMax: 1.5
@@ -151,14 +151,14 @@ Material:
     - _RampBandsSmoothing: 0.1
     - _RampOffset: 0
     - _RampScale: 1
-    - _RampSmoothing: 1
-    - _RampThreshold: 0.75
+    - _RampSmoothing: 0.4
+    - _RampThreshold: 0.5
     - _RampType: 0
     - _ReceiveShadows: 1
     - _ReceiveShadowsOff: 1
     - _ReflectionMapType: 0
     - _ReflectionSmoothness: 0.5
-    - _RenderingMode: 0
+    - _RenderingMode: 2
     - _RimMax: 1
     - _RimMin: 0.5
     - _SingleIndirectColor: 0
@@ -188,9 +188,9 @@ Material:
     - _UseShadowTexture: 0
     - _UseSpecular: 0
     - _WorkflowMode: 1
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.90588236, g: 0.77887875, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.81960785}
     - _Color: {r: 0.09350986, g: 0.8000001, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
