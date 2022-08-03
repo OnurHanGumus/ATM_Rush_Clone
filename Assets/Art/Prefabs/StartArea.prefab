@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 8229419693893696016}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6, y: 2.54, z: -29.419998}
-  m_LocalScale: {x: 1.688894, y: 1.688894, z: 1.688894}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8461780090284360798}
   m_RootOrder: 1
@@ -372,14 +372,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cdc844a0de4b5c9f573a534d2d585f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doMove: 1
-  doShake: 1
+  doMove: 0
+  doShake: 0
+  doRotate: 0
+  piganim: 1
   easeStart: 1
   easeEnd: 30
   path:
   - {x: 6, y: 1.1, z: -29.42}
   - {x: 6, y: 2.54, z: -29.42}
-  speedStart: 1
-  speedEnd: 2.5
-  delay: 0
-  shakeSpeed: 5
+  speedStart: 0.5
+  speedEnd: 0.5
+  firstDelay: 0
+  secondDelay: 0
+  shakeSpeed: 0
+  rotateSpeed: 0.1

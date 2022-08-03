@@ -10,6 +10,9 @@ namespace Controllers
         [Header("Bool")] 
         [SerializeField] private bool doMove = true;
         [SerializeField] private bool doShake = false;
+        [SerializeField] private bool doRotate = false;
+        [SerializeField] private bool piganim = false;
+        
         [Space]
         [Header("Move")][Space]
         [SerializeField] private Ease easeStart = Ease.Linear;
@@ -26,6 +29,11 @@ namespace Controllers
         [Header("Shake")] [Space] 
         [SerializeField] private float shakeSpeed = 1;
 
+        [Header("Rotate")] [Space] 
+        [SerializeField] private float rotateSpeed;
+        
+        
+        
         private Sequence _sequence;
     #endregion
     
@@ -39,6 +47,10 @@ namespace Controllers
                 MoveAnimation();
             if(doShake)
                 ShakeAnim();
+            if (doRotate)
+                RotateAnim();
+            if(piganim)
+                PigAnim();
             
             SetLoop();
             
@@ -76,15 +88,15 @@ namespace Controllers
 
         private void ShakeAnim()
         {
-            _sequence.Append(transform.DOShakePosition(.5f, .5f));
+            _sequence.Append(transform.DOShakePosition(1/shakeSpeed, .5f));
         }
         
-        #region Rotate
+
         private void RotateAnim()
         {
-            
+            _sequence.Append(transform.DORotate(new Vector3(0, 360, 0), 1/rotateSpeed,RotateMode.FastBeyond360));
         }
-        #endregion
+
         
         private void SetLoop()
         {
@@ -99,6 +111,14 @@ namespace Controllers
         private void SetPlay()
         {
             _sequence.Play();
+        }
+
+        private void PigAnim()
+        {
+            transform.DOMove(path[0], 1 / speedStart).SetEase(easeStart).SetLoops(-1, LoopType.Yoyo);
+            transform.DORotate(new Vector3(0, 360, 0), 1 / rotateSpeed, RotateMode.FastBeyond360)
+                .SetLoops(-1, LoopType.Restart).SetEase(Ease.Linear);
+            
         }
     }
 }
