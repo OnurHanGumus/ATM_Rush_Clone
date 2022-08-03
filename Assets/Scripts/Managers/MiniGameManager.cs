@@ -96,7 +96,7 @@ namespace Managers
             yield return new WaitForSeconds(1.5f);
             finishPlayerTransform.gameObject.SetActive(true);
             SetActiveAllCollectables();
-            finishPlayerTransform.DOMoveY(_playerScore * stackDistanceAmount * increaseStackUpMultiplier,
+            finishPlayerTransform.DOMoveY(_playerScore * 3.5f * increaseStackUpMultiplier,
                 _Dollars.Count * stackUpTimeMultipler).SetEase(Ease.OutQuart);
             yield return new WaitForSeconds(/*_Dollars.Count * 1.25f * endPanelTimer*/3.5f);
             CoreGameSignals.Instance.onGameEnd?.Invoke();

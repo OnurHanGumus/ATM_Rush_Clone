@@ -2735,7 +2735,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1592304955605051853, guid: eff02eda663af0843a3f64f26b97f39d, type: 3}
       propertyPath: increaseStackUpMultiplier
-      value: 7.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5940597900715589232, guid: eff02eda663af0843a3f64f26b97f39d, type: 3}
       propertyPath: m_RootOrder
