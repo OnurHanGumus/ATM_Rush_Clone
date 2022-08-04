@@ -1,7 +1,11 @@
 **Proje Ekibi: **
 Umut Ünlü - https://github.com/umutunlu96
+
 Ali Şenesen - https://github.com/AliSenesen	
+
 Onur Han Gümüş - https://github.com/OnurHanGumus	
+
+
 
 **UML**
 Güncellenecek.
@@ -37,13 +41,13 @@ Projedeki mevcut sinyaller singleton olarak oluşturuldu.
 Oyunuzda gelen kamera statelerine göre geçişlerde, Cinemachine State-Driven Camera kullandık.
 
 **Odin Inspector**
-Editor tarafında kolaylık sağlamak açısından odin inspector attribute'larından yararlandık.
+Editör üzerinde çalışırken kolaylık sağlaması için Odin inspector kullanıldı.
 
 **Scriptable Objects**
-Oyunun genel özelliklerini kolay bir şekilde ayarlamak için kullandık.
+Oyun üzerinde runtime esnasında değişiklik yapmak amacıyla scriptable objects'lerden faydalanıldı.
 
 **DOTween Pro (Hot v2)**
-Animasyonlarda DOTween sıkça kullandık.
+Gerek kod gerekse inspector bileşeni olarak animasyon yapmada kullanıldı.
 
 **Toony Colors Pro 2**
 Materyallerin daha güzel gözükmesi için kullandık.
