@@ -1,8 +1,6 @@
 **Proje Ekibi: **
 Umut Ünlü - https://github.com/umutunlu96
-
 Ali Şenesen - https://github.com/AliSenesen	
-
 Onur Han Gümüş - https://github.com/OnurHanGumus	
 
 **UML**
