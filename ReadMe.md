@@ -1,10 +1,14 @@
+**GAMEPLAY**
+
+https://user-images.githubusercontent.com/96818482/182869237-abadd1a9-85df-48b0-8b5a-d7298997d36c.mov
+
+
 **Proje Ekibi: **
 Umut Ünlü - https://github.com/umutunlu96
 
 Ali Şenesen - https://github.com/AliSenesen	
 
 Onur Han Gümüş - https://github.com/OnurHanGumus	
-
 
 
 **UML**
