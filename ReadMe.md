@@ -37,7 +37,7 @@ Projedeki mevcut sinyaller singleton olarak oluşturuldu.
 Oyunuzda gelen kamera statelerine göre geçişlerde, Cinemachine State-Driven Camera kullandık.
 
 **Odin Inspector**
-Editor tarafında kolaylık sağlamak açısından odin inspector attribute'larından yarlandık.
+Editor tarafında kolaylık sağlamak açısından odin inspector attribute'larından yararlandık.
 
 **Scriptable Objects**
 Oyunun genel özelliklerini kolay bir şekilde ayarlamak için kullandık.
