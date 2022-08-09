@@ -12,7 +12,7 @@ Onur Han Gümüş - https://github.com/OnurHanGumus
 
 
 **UML**
-Güncellenecek.
+https://drive.google.com/file/d/10edv12DV6yMK-A_s2rWpYz3ropZAKEkJ/view?usp=sharing
 
 
 **Kullanılan Unity Paketleri**
